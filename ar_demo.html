@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PoreDekho VTO - Web AR Demo</title>
+    <style>
+        body { margin: 0; font-family: sans-serif; background-color: #f4f4f4; }
+        #ar-container { width: 100vw; height: 100vh; display: flex; justify-content: center; align-items: center; }
+        
+        /* Model Viewer Styles */
+        model-viewer { 
+            width: 100%; 
+            height: 100%; 
+            max-width: 800px; 
+            background-color: #ffffff; 
+        }
+        
+        /* Loading Progress Bar */
+        .progress-bar { 
+            display: block; 
+            width: 33%; 
+            height: 10%; 
+            max-height: 2%; 
+            position: absolute; 
+            left: 50%; 
+            top: 50%; 
+            transform: translate3d(-50%, -50%, 0); 
+            border-radius: 25px; 
+            box-shadow: 0px 3px 10px 3px rgba(0, 0, 0, 0.5), 0px 0px 5px 1px rgba(0, 0, 0, 0.6); 
+            border: 1px solid rgba(255, 255, 255, 0.9); 
+            background-color: rgba(0, 0, 0, 0.5); 
+        }
+        .progress-bar.hide { visibility: hidden; transition: visibility 0.3s; }
+        .update-bar { background-color: rgba(255, 255, 255, 0.9); width: 0%; height: 100%; border-radius: 25px; float: left; transition: width 0.3s; }
+        
+        /* AR Button */
+        #ar-button { 
+            background-image: url(https://modelviewer.dev/shared-assets/icons/ic_view_in_ar_new_googblue_48dp.png); 
+            background-repeat: no-repeat; 
+            background-size: 20px 20px; 
+            background-position: 12px 50%; 
+            background-color: #fff; 
+            position: absolute; 
+            left: 50%; 
+            transform: translateX(-50%); 
+            bottom: 132px; 
+            padding: 0px 16px 0px 40px; 
+            font-family: Roboto Regular, Helvetica Neue, sans-serif; 
+            font-size: 14px; 
+            color:#4285f4; 
+            height: 36px; 
+            line-height: 36px; 
+            border-radius: 18px; 
+            border: 1px solid #DADCE0; 
+            cursor: pointer;
+        }
+        #ar-button:active { background-color: #E8EAED; }
+        #ar-button:focus { outline: none; }
+        #ar-button:focus-visible { outline: 1px solid #4285f4; }
+        
+        /* AR Prompt Animation */
+        @keyframes circle { from { transform: translateX(-50%) rotate(0deg); } to { transform: translateX(-50%) rotate(360deg); } }
+        @keyframes elongate { from { transform: translateX(100px); } to { transform: translateX(-100px); } }
+        model-viewer > #ar-prompt { position: absolute; left: 50%; bottom: 175px; animation: elongate 2s infinite ease-in-out alternate; display: none; }
+        model-viewer[ar-status="session-started"] > #ar-prompt { display: block; }
+        model-viewer > #ar-prompt > img { animation: circle 4s linear infinite; }
+    </style>
+</head>
+<body>
+    <div id="ar-container">
+        <!-- 
+            PoreDekho VTO: <model-viewer> setup.
+            Using Meshopt & KTX2 compressed models is recommended for BD low-end devices.
+            Fallback to USDZ for iOS Quick Look.
+        -->
+        <model-viewer 
+            src="https://modelviewer.dev/shared-assets/models/Shoe.glb" 
+            ios-src="https://modelviewer.dev/shared-assets/models/Shoe.usdz"
+            poster="https://modelviewer.dev/shared-assets/models/Shoe.webp"
+            alt="A 3D model of a shoe for PoreDekho VTO"
+            shadow-intensity="1"
+            camera-controls
+            auto-rotate
+            ar
+            ar-modes="webxr scene-viewer quick-look"
+            environment-image="neutral">
+            
+            <button slot="ar-button" id="ar-button">
+                View in your space
+            </button>
+            
+            <div id="ar-prompt">
+                <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
+            </div>
+            
+            <div class="progress-bar hide" slot="progress-bar">
+                <div class="update-bar"></div>
+            </div>
+        </model-viewer>
+    </div>
+    
+    <!-- Import the <model-viewer> component -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+    
+    <!-- Progress Bar Script -->
+    <script>
+        const modelViewer = document.querySelector('model-viewer');
+        modelViewer.addEventListener('progress', (event) => {
+            const progressBar = event.target.querySelector('.progress-bar');
+            const updateBar = event.target.querySelector('.update-bar');
+            updateBar.style.width = `${event.detail.totalProgress * 100}%`;
+            if (event.detail.totalProgress === 1) {
+                progressBar.classList.add('hide');
+            } else {
+                progressBar.classList.remove('hide');
+            }
+        });
+    </script>
+</body>
+</html>
