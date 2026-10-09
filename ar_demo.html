@@ -1,72 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="PoreDekho VTO - Web AR Demo showing interactive 3D models with Augmented Reality integration.">
-    <title>PoreDekho VTO - Web AR Demo</title>
-    <!-- Import the <model-viewer> component first for faster initialization -->
+    <meta name="description" content="Lumina Gold Drop Necklace - E-commerce AR Try-On Demo">
+    <title>Lumina Gold Drop Necklace | PoreDekho VTO</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#121212', /* Deep Charcoal */
+                        secondary: '#D4AF37', /* Gold/Champagne */
+                        charcoal: {
+                            50: '#f6f6f6',
+                            100: '#e7e7e7',
+                            200: '#d1d1d1',
+                            300: '#b0b0b0',
+                            400: '#888888',
+                            500: '#6d6d6d',
+                            600: '#5d5d5d',
+                            700: '#4f4f4f',
+                            800: '#454545',
+                            900: '#3d3d3d',
+                            950: '#121212',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        body { 
-            margin: 0; 
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
-            background-color: #f8fafc; /* Slate 50 */
-            color: #0f172a; /* Slate 900 */
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
         
-        /* Layout */
-        .page-container {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
+        body {
+            background-color: #fafafa;
         }
 
-        header {
-            background: #ffffff;
-            padding: 1rem 2rem;
-            border-bottom: 1px solid #e2e8f0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .glass-nav {
+            background: rgba(250, 250, 250, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         }
 
-        header h1 {
-            margin: 0;
-            font-size: 1.25rem;
-            font-weight: 700;
-        }
-
-        .back-link {
-            color: #3b82f6;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.875rem;
-        }
-
-        .back-link:hover {
-            text-decoration: underline;
-        }
-
-        main {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 2rem;
-        }
-
-        .ar-wrapper {
-            width: 100%;
-            max-width: 800px;
-            height: 600px;
-            background: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            overflow: hidden;
-            position: relative;
-        }
-        
         /* Model Viewer Styles */
         model-viewer { 
             width: 100%; 
@@ -74,18 +56,22 @@
             background-color: #ffffff; 
             --poster-color: transparent;
         }
+
+        #ar-button { 
+            display: none; /* Hide default AR button since we are adding a custom one */
+        }
         
         /* Loading Progress Bar */
         .progress-bar { 
             display: block; 
             width: 33%; 
-            height: 6px; 
+            height: 4px; 
             position: absolute; 
             left: 50%; 
             top: 50%; 
             transform: translate3d(-50%, -50%, 0); 
-            border-radius: 3px; 
-            background-color: #e2e8f0; 
+            border-radius: 2px; 
+            background-color: #e7e7e7; 
             overflow: hidden;
         }
         .progress-bar.hide { 
@@ -93,134 +79,231 @@
             transition: visibility 0.3s; 
         }
         .update-bar { 
-            background-color: #3b82f6; 
+            background-color: #D4AF37; 
             width: 0%; 
             height: 100%; 
             transition: width 0.3s; 
         }
-        
-        /* AR Button */
-        #ar-button { 
-            background-image: url(https://modelviewer.dev/shared-assets/icons/ic_view_in_ar_new_googblue_48dp.png); 
-            background-repeat: no-repeat; 
-            background-size: 20px 20px; 
-            background-position: 12px 50%; 
-            background-color: #fff; 
-            position: absolute; 
-            left: 50%; 
-            transform: translateX(-50%); 
-            bottom: 24px; 
-            padding: 0px 20px 0px 40px; 
-            font-family: inherit; 
-            font-size: 14px; 
-            font-weight: 500;
-            color: #3b82f6; 
-            height: 40px; 
-            line-height: 40px; 
-            border-radius: 20px; 
-            border: 1px solid #e2e8f0; 
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-        #ar-button:hover {
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        #ar-button:active { 
-            background-color: #f8fafc; 
-        }
-        #ar-button:focus { 
-            outline: none; 
-        }
-        #ar-button:focus-visible { 
-            outline: 2px solid #3b82f6; 
-            outline-offset: 2px;
-        }
-        
-        /* AR Prompt Animation */
-        @keyframes circle { 
-            from { transform: translateX(-50%) rotate(0deg); } 
-            to { transform: translateX(-50%) rotate(360deg); } 
-        }
-        @keyframes elongate { 
-            from { transform: translateX(100px); } 
-            to { transform: translateX(-100px); } 
-        }
-        model-viewer > #ar-prompt { 
-            position: absolute; 
-            left: 50%; 
-            bottom: 175px; 
-            animation: elongate 2s infinite ease-in-out alternate; 
-            display: none; 
-        }
-        model-viewer[ar-status="session-started"] > #ar-prompt { display: block; }
-        model-viewer > #ar-prompt > img { animation: circle 4s linear infinite; }
-        
-        /* Responsiveness */
-        @media (max-width: 768px) {
-            .ar-wrapper {
-                height: 70vh;
-            }
-            main {
-                padding: 1rem;
-            }
-        }
     </style>
 </head>
-<body>
-    <div class="page-container">
-        <header>
-            <h1>PoreDekho VTO Demo</h1>
-            <a href="index.html" class="back-link">&larr; Back to Home</a>
-        </header>
+<body class="text-charcoal-950 font-sans antialiased selection:bg-secondary selection:text-white">
 
-        <main>
-            <div class="ar-wrapper">
-                <!-- 
-                    PoreDekho VTO: <model-viewer> setup.
-                    Using Meshopt & KTX2 compressed models is recommended for BD low-end devices.
-                    Fallback to USDZ for iOS Quick Look.
-                -->
-                <model-viewer 
-                    src="https://modelviewer.dev/shared-assets/models/Shoe.glb" 
-                    ios-src="https://modelviewer.dev/shared-assets/models/Shoe.usdz"
-                    poster="https://modelviewer.dev/shared-assets/models/Shoe.webp"
-                    alt="A 3D model of a shoe demonstrating PoreDekho VTO capabilities"
-                    shadow-intensity="1"
-                    camera-controls
-                    auto-rotate
-                    ar
-                    ar-modes="webxr scene-viewer quick-look"
-                    environment-image="neutral"
-                    loading="lazy">
-                    
-                    <button slot="ar-button" id="ar-button">
-                        View in your space
+    <!-- Store Navigation -->
+    <header class="fixed w-full top-0 z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center gap-8">
+                    <a href="index.html" aria-label="Back to PoreDekho" class="text-2xl font-serif font-bold tracking-tight text-primary">
+                        Maison<span class="text-secondary">D'Or</span>
+                    </a>
+                    <nav aria-label="Store Navigation" class="hidden md:flex space-x-6 text-sm font-medium">
+                        <a href="#" class="text-charcoal-600 hover:text-primary transition-colors">New Arrivals</a>
+                        <a href="#" class="text-primary border-b-2 border-secondary pb-1">Fine Jewelry</a>
+                        <a href="#" class="text-charcoal-600 hover:text-primary transition-colors">Bridal</a>
+                        <a href="#" class="text-charcoal-600 hover:text-primary transition-colors">Gifts</a>
+                    </nav>
+                </div>
+                <div class="flex items-center space-x-6">
+                    <button class="text-charcoal-600 hover:text-primary" aria-label="Search">
+                        <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                     </button>
-                    
-                    <div id="ar-prompt">
-                        <img src="https://modelviewer.dev/shared-assets/icons/hand.png" alt="AR prompt icon">
-                    </div>
-                    
-                    <div class="progress-bar hide" slot="progress-bar" role="progressbar" aria-label="Loading 3D model">
-                        <div class="update-bar"></div>
-                    </div>
-                </model-viewer>
+                    <button class="text-charcoal-600 hover:text-primary relative" aria-label="Shopping Cart">
+                        <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                        <span class="absolute -top-2 -right-2 bg-secondary text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
+                    </button>
+                </div>
             </div>
-        </main>
-    </div>
-    
-    <!-- Progress Bar Script -->
+        </div>
+    </header>
+
+    <main class="pt-24 pb-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Breadcrumbs -->
+            <nav class="flex text-xs text-charcoal-500 mb-8" aria-label="Breadcrumb">
+                <ol class="inline-flex items-center space-x-2">
+                    <li><a href="#" class="hover:text-primary transition-colors">Home</a></li>
+                    <li><span class="mx-2" aria-hidden="true">/</span></li>
+                    <li><a href="#" class="hover:text-primary transition-colors">Fine Jewelry</a></li>
+                    <li><span class="mx-2" aria-hidden="true">/</span></li>
+                    <li><a href="#" class="hover:text-primary transition-colors">Necklaces</a></li>
+                    <li><span class="mx-2" aria-hidden="true">/</span></li>
+                    <li class="text-charcoal-900" aria-current="page">Lumina Gold Drop</li>
+                </ol>
+            </nav>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+                
+                <!-- Product Media / AR Viewer -->
+                <div class="flex flex-col space-y-4">
+                    <div class="aspect-square bg-white border border-charcoal-100 rounded-sm overflow-hidden relative shadow-sm group">
+                        
+                        <!-- 3D Model Viewer Contextualized for Jewelry -->
+                        <model-viewer 
+                            id="jewelry-model"
+                            src="https://modelviewer.dev/shared-assets/models/glTF-Sample-Models/2.0/IridescenceLamp/glTF/IridescenceLamp.gltf" 
+                            alt="A 3D model of the Lumina Gold Drop Necklace"
+                            shadow-intensity="1"
+                            camera-controls
+                            auto-rotate
+                            ar
+                            ar-modes="webxr scene-viewer quick-look"
+                            environment-image="neutral"
+                            exposure="1.2"
+                            loading="eager">
+                            
+                            <div class="progress-bar hide" slot="progress-bar">
+                                <div class="update-bar"></div>
+                            </div>
+                        </model-viewer>
+
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-secondary/10 text-secondary text-xs font-semibold px-2.5 py-1 rounded-full uppercase tracking-wider">3D Interactive</span>
+                        </div>
+                        <div class="absolute bottom-4 left-0 right-0 text-center pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span class="bg-white/90 backdrop-blur text-xs font-medium px-3 py-1.5 rounded-full text-charcoal-600 shadow-sm">Drag to rotate • Pinch to zoom</span>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-4 gap-4">
+                        <button class="aspect-square bg-white border-2 border-primary rounded-sm overflow-hidden flex items-center justify-center p-2" aria-pressed="true">
+                            <span class="text-xs font-medium text-primary">3D View</span>
+                        </button>
+                        <button class="aspect-square bg-white border border-charcoal-200 hover:border-charcoal-400 rounded-sm overflow-hidden transition-colors flex items-center justify-center text-charcoal-400" aria-pressed="false">
+                            Image 1
+                        </button>
+                        <button class="aspect-square bg-white border border-charcoal-200 hover:border-charcoal-400 rounded-sm overflow-hidden transition-colors flex items-center justify-center text-charcoal-400" aria-pressed="false">
+                            Image 2
+                        </button>
+                        <button class="aspect-square bg-white border border-charcoal-200 hover:border-charcoal-400 rounded-sm overflow-hidden transition-colors flex items-center justify-center text-charcoal-400" aria-pressed="false">
+                            Image 3
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product Details -->
+                <div class="flex flex-col pt-4">
+                    <h1 class="text-4xl font-serif font-bold text-primary mb-2">Lumina Gold Drop</h1>
+                    <p class="text-2xl font-light text-charcoal-800 mb-6">$1,250.00</p>
+                    
+                    <p class="text-charcoal-600 font-light leading-relaxed mb-8">
+                        An exquisite 18k solid gold necklace featuring a delicate chain and a stunning pear-cut central pendant. Designed to catch the light from every angle, this piece transitions flawlessly from daytime elegance to evening glamour.
+                    </p>
+
+                    <!-- Materials Selection -->
+                    <div class="mb-8">
+                        <h3 class="text-sm font-medium text-primary mb-3">Material</h3>
+                        <div class="flex space-x-3">
+                            <button class="w-10 h-10 rounded-full border-2 border-primary bg-[#D4AF37] shadow-sm" aria-label="18k Yellow Gold" title="18k Yellow Gold" aria-pressed="true"></button>
+                            <button class="w-10 h-10 rounded-full border border-charcoal-200 hover:border-charcoal-400 bg-[#E6C7C2] transition-colors" aria-label="18k Rose Gold" title="18k Rose Gold" aria-pressed="false"></button>
+                            <button class="w-10 h-10 rounded-full border border-charcoal-200 hover:border-charcoal-400 bg-[#E5E4E2] transition-colors" aria-label="18k White Gold" title="18k White Gold" aria-pressed="false"></button>
+                        </div>
+                    </div>
+
+                    <!-- Chain Length -->
+                    <div class="mb-8">
+                        <div class="flex justify-between mb-3">
+                            <h3 class="text-sm font-medium text-primary">Chain Length</h3>
+                            <a href="#" class="text-xs text-charcoal-500 underline hover:text-primary">Size Guide</a>
+                        </div>
+                        <div class="grid grid-cols-3 gap-3 text-sm">
+                            <button class="py-3 border-2 border-primary rounded-sm font-medium text-primary" aria-pressed="true">16" (Choker)</button>
+                            <button class="py-3 border border-charcoal-200 hover:border-charcoal-400 rounded-sm font-medium text-charcoal-600 transition-colors" aria-pressed="false">18" (Standard)</button>
+                            <button class="py-3 border border-charcoal-200 hover:border-charcoal-400 rounded-sm font-medium text-charcoal-600 transition-colors" aria-pressed="false">20" (Long)</button>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex flex-col space-y-3 mb-10">
+                        <button type="button" class="w-full bg-primary text-white py-4 rounded-sm font-medium hover:bg-charcoal-800 transition-colors text-lg flex items-center justify-center">
+                            Add to Cart
+                        </button>
+                        
+                        <!-- Custom AR Button triggering model-viewer's AR -->
+                        <button type="button" onclick="document.querySelector('#jewelry-model').activateAR()" class="w-full bg-white text-primary border border-primary py-4 rounded-sm font-medium hover:bg-charcoal-50 transition-colors text-lg flex items-center justify-center gap-2 group">
+                            <svg class="w-5 h-5 text-secondary group-hover:scale-110 transition-transform" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                            Virtual Try-On
+                        </button>
+                    </div>
+
+                    <!-- Accordions -->
+                    <div class="border-t border-charcoal-200 divide-y divide-charcoal-200">
+                        <details class="group py-4" open>
+                            <summary class="flex justify-between items-center font-medium cursor-pointer list-none text-primary">
+                                <span>Product Details</span>
+                                <span class="transition group-open:rotate-180">
+                                    <svg aria-hidden="true" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                                </span>
+                            </summary>
+                            <div class="text-charcoal-600 text-sm font-light mt-4 space-y-2">
+                                <p>• Solid 18k Yellow Gold</p>
+                                <p>• Pendant dimensions: 12mm x 8mm</p>
+                                <p>• Spring ring clasp closure</p>
+                                <p>• Ethically sourced materials</p>
+                            </div>
+                        </details>
+                        <details class="group py-4">
+                            <summary class="flex justify-between items-center font-medium cursor-pointer list-none text-primary">
+                                <span>Shipping & Returns</span>
+                                <span class="transition group-open:rotate-180">
+                                    <svg aria-hidden="true" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                                </span>
+                            </summary>
+                            <div class="text-charcoal-600 text-sm font-light mt-4">
+                                Complimentary express shipping on all orders. Returns are accepted within 30 days of delivery in original packaging.
+                            </div>
+                        </details>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-primary text-white py-12 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="col-span-1 md:col-span-2">
+                <span class="text-2xl font-serif font-bold">Maison<span class="text-secondary">D'Or</span></span>
+                <p class="text-charcoal-400 text-sm mt-4 font-light max-w-sm">
+                    Redefining luxury jewelry with sustainable practices and cutting-edge virtual try-on technology.
+                </p>
+            </div>
+            <div>
+                <h4 class="font-medium mb-4">Customer Care</h4>
+                <ul class="space-y-2 text-sm text-charcoal-400 font-light">
+                    <li><a href="#" class="hover:text-white transition-colors">Contact Us</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Shipping</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Returns</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">FAQ</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-medium mb-4">Discover</h4>
+                <ul class="space-y-2 text-sm text-charcoal-400 font-light">
+                    <li><a href="#" class="hover:text-white transition-colors">Our Story</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Sustainability</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Store Locator</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-charcoal-800 flex justify-between items-center flex-col md:flex-row text-sm text-charcoal-500 font-light">
+            <p>&copy; <span id="year"></span> Maison D'Or. Powered by <a href="index.html" class="text-secondary hover:underline">PoreDekho VTO</a>.</p>
+        </div>
+    </footer>
+
     <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Progress bar logic
         document.addEventListener("DOMContentLoaded", () => {
             const modelViewer = document.querySelector('model-viewer');
             modelViewer.addEventListener('progress', (event) => {
                 const progressBar = event.target.querySelector('.progress-bar');
                 const updateBar = event.target.querySelector('.update-bar');
-                updateBar.style.width = `${event.detail.totalProgress * 100}%`;
-                if (event.detail.totalProgress === 1) {
+                if(updateBar) updateBar.style.width = `${event.detail.totalProgress * 100}%`;
+                if (event.detail.totalProgress === 1 && progressBar) {
                     progressBar.classList.add('hide');
-                } else {
+                } else if (progressBar) {
                     progressBar.classList.remove('hide');
                 }
             });
