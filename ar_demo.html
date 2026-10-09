@@ -3,36 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PoreDekho VTO - Web AR Demo showing interactive 3D models with Augmented Reality integration.">
     <title>PoreDekho VTO - Web AR Demo</title>
+    <!-- Import the <model-viewer> component first for faster initialization -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
     <style>
-        body { margin: 0; font-family: sans-serif; background-color: #f4f4f4; }
-        #ar-container { width: 100vw; height: 100vh; display: flex; justify-content: center; align-items: center; }
+        body { 
+            margin: 0; 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+            background-color: #f8fafc; /* Slate 50 */
+            color: #0f172a; /* Slate 900 */
+        }
+        
+        /* Layout */
+        .page-container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background: #ffffff;
+            padding: 1rem 2rem;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .back-link {
+            color: #3b82f6;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.875rem;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .ar-wrapper {
+            width: 100%;
+            max-width: 800px;
+            height: 600px;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+            position: relative;
+        }
         
         /* Model Viewer Styles */
         model-viewer { 
             width: 100%; 
             height: 100%; 
-            max-width: 800px; 
             background-color: #ffffff; 
+            --poster-color: transparent;
         }
         
         /* Loading Progress Bar */
         .progress-bar { 
             display: block; 
             width: 33%; 
-            height: 10%; 
-            max-height: 2%; 
+            height: 6px; 
             position: absolute; 
             left: 50%; 
             top: 50%; 
             transform: translate3d(-50%, -50%, 0); 
-            border-radius: 25px; 
-            box-shadow: 0px 3px 10px 3px rgba(0, 0, 0, 0.5), 0px 0px 5px 1px rgba(0, 0, 0, 0.6); 
-            border: 1px solid rgba(255, 255, 255, 0.9); 
-            background-color: rgba(0, 0, 0, 0.5); 
+            border-radius: 3px; 
+            background-color: #e2e8f0; 
+            overflow: hidden;
         }
-        .progress-bar.hide { visibility: hidden; transition: visibility 0.3s; }
-        .update-bar { background-color: rgba(255, 255, 255, 0.9); width: 0%; height: 100%; border-radius: 25px; float: left; transition: width 0.3s; }
+        .progress-bar.hide { 
+            visibility: hidden; 
+            transition: visibility 0.3s; 
+        }
+        .update-bar { 
+            background-color: #3b82f6; 
+            width: 0%; 
+            height: 100%; 
+            transition: width 0.3s; 
+        }
         
         /* AR Button */
         #ar-button { 
@@ -44,77 +109,121 @@
             position: absolute; 
             left: 50%; 
             transform: translateX(-50%); 
-            bottom: 132px; 
-            padding: 0px 16px 0px 40px; 
-            font-family: Roboto Regular, Helvetica Neue, sans-serif; 
+            bottom: 24px; 
+            padding: 0px 20px 0px 40px; 
+            font-family: inherit; 
             font-size: 14px; 
-            color:#4285f4; 
-            height: 36px; 
-            line-height: 36px; 
-            border-radius: 18px; 
-            border: 1px solid #DADCE0; 
+            font-weight: 500;
+            color: #3b82f6; 
+            height: 40px; 
+            line-height: 40px; 
+            border-radius: 20px; 
+            border: 1px solid #e2e8f0; 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
             cursor: pointer;
+            transition: all 0.2s ease;
         }
-        #ar-button:active { background-color: #E8EAED; }
-        #ar-button:focus { outline: none; }
-        #ar-button:focus-visible { outline: 1px solid #4285f4; }
+        #ar-button:hover {
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        #ar-button:active { 
+            background-color: #f8fafc; 
+        }
+        #ar-button:focus { 
+            outline: none; 
+        }
+        #ar-button:focus-visible { 
+            outline: 2px solid #3b82f6; 
+            outline-offset: 2px;
+        }
         
         /* AR Prompt Animation */
-        @keyframes circle { from { transform: translateX(-50%) rotate(0deg); } to { transform: translateX(-50%) rotate(360deg); } }
-        @keyframes elongate { from { transform: translateX(100px); } to { transform: translateX(-100px); } }
-        model-viewer > #ar-prompt { position: absolute; left: 50%; bottom: 175px; animation: elongate 2s infinite ease-in-out alternate; display: none; }
+        @keyframes circle { 
+            from { transform: translateX(-50%) rotate(0deg); } 
+            to { transform: translateX(-50%) rotate(360deg); } 
+        }
+        @keyframes elongate { 
+            from { transform: translateX(100px); } 
+            to { transform: translateX(-100px); } 
+        }
+        model-viewer > #ar-prompt { 
+            position: absolute; 
+            left: 50%; 
+            bottom: 175px; 
+            animation: elongate 2s infinite ease-in-out alternate; 
+            display: none; 
+        }
         model-viewer[ar-status="session-started"] > #ar-prompt { display: block; }
         model-viewer > #ar-prompt > img { animation: circle 4s linear infinite; }
+        
+        /* Responsiveness */
+        @media (max-width: 768px) {
+            .ar-wrapper {
+                height: 70vh;
+            }
+            main {
+                padding: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
-    <div id="ar-container">
-        <!-- 
-            PoreDekho VTO: <model-viewer> setup.
-            Using Meshopt & KTX2 compressed models is recommended for BD low-end devices.
-            Fallback to USDZ for iOS Quick Look.
-        -->
-        <model-viewer 
-            src="https://modelviewer.dev/shared-assets/models/Shoe.glb" 
-            ios-src="https://modelviewer.dev/shared-assets/models/Shoe.usdz"
-            poster="https://modelviewer.dev/shared-assets/models/Shoe.webp"
-            alt="A 3D model of a shoe for PoreDekho VTO"
-            shadow-intensity="1"
-            camera-controls
-            auto-rotate
-            ar
-            ar-modes="webxr scene-viewer quick-look"
-            environment-image="neutral">
-            
-            <button slot="ar-button" id="ar-button">
-                View in your space
-            </button>
-            
-            <div id="ar-prompt">
-                <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
+    <div class="page-container">
+        <header>
+            <h1>PoreDekho VTO Demo</h1>
+            <a href="index.html" class="back-link">&larr; Back to Home</a>
+        </header>
+
+        <main>
+            <div class="ar-wrapper">
+                <!-- 
+                    PoreDekho VTO: <model-viewer> setup.
+                    Using Meshopt & KTX2 compressed models is recommended for BD low-end devices.
+                    Fallback to USDZ for iOS Quick Look.
+                -->
+                <model-viewer 
+                    src="https://modelviewer.dev/shared-assets/models/Shoe.glb" 
+                    ios-src="https://modelviewer.dev/shared-assets/models/Shoe.usdz"
+                    poster="https://modelviewer.dev/shared-assets/models/Shoe.webp"
+                    alt="A 3D model of a shoe demonstrating PoreDekho VTO capabilities"
+                    shadow-intensity="1"
+                    camera-controls
+                    auto-rotate
+                    ar
+                    ar-modes="webxr scene-viewer quick-look"
+                    environment-image="neutral"
+                    loading="lazy">
+                    
+                    <button slot="ar-button" id="ar-button">
+                        View in your space
+                    </button>
+                    
+                    <div id="ar-prompt">
+                        <img src="https://modelviewer.dev/shared-assets/icons/hand.png" alt="AR prompt icon">
+                    </div>
+                    
+                    <div class="progress-bar hide" slot="progress-bar" role="progressbar" aria-label="Loading 3D model">
+                        <div class="update-bar"></div>
+                    </div>
+                </model-viewer>
             </div>
-            
-            <div class="progress-bar hide" slot="progress-bar">
-                <div class="update-bar"></div>
-            </div>
-        </model-viewer>
+        </main>
     </div>
-    
-    <!-- Import the <model-viewer> component -->
-    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
     
     <!-- Progress Bar Script -->
     <script>
-        const modelViewer = document.querySelector('model-viewer');
-        modelViewer.addEventListener('progress', (event) => {
-            const progressBar = event.target.querySelector('.progress-bar');
-            const updateBar = event.target.querySelector('.update-bar');
-            updateBar.style.width = `${event.detail.totalProgress * 100}%`;
-            if (event.detail.totalProgress === 1) {
-                progressBar.classList.add('hide');
-            } else {
-                progressBar.classList.remove('hide');
-            }
+        document.addEventListener("DOMContentLoaded", () => {
+            const modelViewer = document.querySelector('model-viewer');
+            modelViewer.addEventListener('progress', (event) => {
+                const progressBar = event.target.querySelector('.progress-bar');
+                const updateBar = event.target.querySelector('.update-bar');
+                updateBar.style.width = `${event.detail.totalProgress * 100}%`;
+                if (event.detail.totalProgress === 1) {
+                    progressBar.classList.add('hide');
+                } else {
+                    progressBar.classList.remove('hide');
+                }
+            });
         });
     </script>
 </body>

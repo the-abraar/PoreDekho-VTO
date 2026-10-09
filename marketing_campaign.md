@@ -1,45 +1,48 @@
 # PoreDekho VTO: Marketing Campaign Strategy
 
-## Facebook Ad Targeting Parameters (Bangladesh Market)
-**Objective:** Lead Generation & Conversion (Booking Demos)
-**Target Audience:** F-commerce and E-commerce owners, specifically in jewelry, watch, and high-end boutique niches.
+## B2B Facebook & LinkedIn Ad Targeting (Bangladesh Market)
+**Objective:** B2B Lead Generation & High-Ticket Conversion (Booking Demos)
+**Target Audience:** F-commerce owners, E-commerce founders, and retail directors specifically in jewelry, watches, opticals, and high-end boutique niches.
 
-*   **Locations:** Dhaka, Chittagong, Sylhet (Primary focus on major business and tech hubs).
-*   **Age:** 22 - 48
-*   **Detailed Targeting:**
-    *   **Demographics:** Facebook Page Admins, Business Page Admins.
-    *   **Interests:** E-commerce, Shopify, WooCommerce, Social media marketing, Entrepreneurship, Small business, Jewelry, Watches, Fashion accessories, Boutique.
-    *   **Behaviors:** Small business owners (Digital activities).
-*   **Placements:** Facebook News Feed, Instagram Feed, Instagram Reels, Facebook Stories.
-
----
-
-## 3 Ad Creatives
-
-### Ad 1: Focus on RTO (Return to Origin) Reduction
-*   **Visual Idea:** A split-screen graphic. The left side shows a frustrated seller surrounded by returned parcel packages with a red down arrow ("RTO Headache"). The right side shows a happy seller looking at a sales dashboard with a green up arrow, next to a customer happily trying on a necklace virtually on their smartphone.
-*   **Primary Text:** RTO niye paerate achen? 😩 Customer products order kore abar ferot dicche karon fit ba look pochondo hoynai? Try PoreDekho VTO! Introduce Augmented Reality Virtual Try-On to your F-commerce jewelry or watch brand. Let your customers "try before they buy" directly from their phones! Reduce returns, boost sales. 🚀 Book a free demo today!
-
-### Ad 2: Focus on Premium Branding & Innovation
-*   **Visual Idea:** A sleek, high-quality short video (Reel format). It shows a user scrolling through an Instagram page, clicking a product link, and immediately trying on a luxurious pair of earrings using their front camera. Text overlay pops up: "Transform your F-Commerce into a Premium Brand."
-*   **Primary Text:** Make your brand stand out from the crowd! 🌟 PoreDekho VTO brings high-end AR Virtual Try-On technology to local Bangladeshi jewelry and boutique shops. Ditch the boring static images. Give your customers a premium, interactive experience. Be the first in your niche to innovate and build trust! DM us to see how it works.
-
-### Ad 3: Focus on Sales Increase & Easy Integration
-*   **Visual Idea:** A carousel ad showing 3 different products (a premium watch, a bridal necklace, a pair of designer sunglasses) being tried on virtually by diverse Bangladeshi models.
-*   **Primary Text:** Sales barate chan? 📈 When customers can see exactly how a product looks on them, they are 3x more likely to buy. Setup PoreDekho VTO for your online store in just a few clicks. No heavy tech knowledge needed. Perfect for Facebook and Instagram sellers. Start increasing your conversions and customer confidence today! 💍⌚ Click "Learn More" to start.
+*   **Locations:** Dhaka (Gulshan, Banani, Dhanmondi), Chittagong, Sylhet (Focus on major business and affluent hubs).
+*   **Age:** 25 - 55
+*   **Detailed Targeting (Facebook):**
+    *   **Demographics:** Facebook Page Admins (Business Pages), E-commerce Store Owners.
+    *   **Interests:** E-commerce, Shopify, WooCommerce, Digital Marketing, Business administration, Jewelry design, Luxury goods, Boutique.
+    *   **Behaviors:** Small and medium business owners, Digital activities (active businesses).
+*   **Detailed Targeting (LinkedIn):**
+    *   **Job Titles:** Founder, Owner, Managing Director, CEO, Head of E-commerce, Marketing Director.
+    *   **Industries:** Retail, Luxury Goods & Jewelry, Apparel & Fashion.
+*   **Placements:** Facebook News Feed, Instagram Feed & Reels, LinkedIn Feed.
 
 ---
 
-## 2-Week Social Media Content Calendar (Instagram)
+## 3 High-Converting Ad Creatives
 
-### Week 1: Awareness & Education
-*   **Day 1 (Monday) - Reel:** *The Hook.* "What is PoreDekho VTO?" A quick, punchy 15-second demo of the virtual try-on in action. Show the UI and how seamless it is.
-*   **Day 3 (Wednesday) - Carousel Post:** "Top 3 Reasons Bangladeshi F-commerce Brands Need AR." (1. Reduce RTO & Delivery Losses, 2. Increase Customer Trust, 3. Give a Premium Feel).
-*   **Day 5 (Friday) - Single Image:** Stats infographic. "Did you know? Virtual Try-On can reduce return rates by up to 40%." with a strong CTA to book a demo.
-*   **Day 7 (Sunday) - Story:** Interactive Q&A sticker. "What's the biggest challenge in your online jewelry/watch business right now? (e.g., RTO, Sales, Trust)"
+### Ad 1: The ROI & RTO Focus (Pain-Point Agitation)
+*   **Visual Idea:** A sleek split-screen motion graphic. Left side: A rising graph of RTO (Return to Origin) costs with red warning signs ("Profit Leak"). Right side: A smooth AR try-on experience on a smartphone, followed by a green "Delivered" checkmark and rising sales graph. 
+*   **Primary Text:** High RTO rates killing your profit margins? 📉 When customers guess how a product fits, returns skyrocket. Eliminate the guesswork with PoreDekho VTO. Introduce enterprise-grade Augmented Reality Virtual Try-On to your jewelry or watch brand. Let your customers "try before they buy" straight from their phones—no app needed. Drastically reduce returns and boost conversion rates. 🚀 Protect your margins today. [Book a Free Demo]
 
-### Week 2: Consideration & Social Proof
-*   **Day 8 (Monday) - Reel:** *Behind the scenes.* Show how easy it is for a business owner to integrate PoreDekho VTO with their existing Facebook page or website. "Zero coding required."
-*   **Day 10 (Wednesday) - Single Image (Mock Testimonial/Case Study):** "How Brand X increased their sales by 20% and reduced RTO using PoreDekho." Highlight the pain points solved.
-*   **Day 12 (Friday) - Carousel Post:** "Static Images vs. PoreDekho VTO". Slide 1: A normal flat-lay product photo. Slide 2: An interactive, dynamic try-on experience. "Which one builds more trust?"
-*   **Day 14 (Sunday) - Story:** Poll. "Do you think AR is the future of online shopping in BD? Yes/No" Followed by a swipe-up/link sticker: "Experience the future today. Book a demo."
+### Ad 2: The Brand Prestige Focus (Aspirational)
+*   **Visual Idea:** A premium, cinematic video (Reel/Story format). A user scrolls an Instagram page of a high-end Bangladeshi boutique, taps a product, and instantly tries on a luxurious bridal necklace via their front camera. Text overlay: "Elevate Your Brand. Empower Your Customers."
+*   **Primary Text:** Stand out in a crowded market. 🌟 PoreDekho VTO brings world-class AR Virtual Try-On technology to premium Bangladeshi brands. Stop relying on flat, static images. Give your customers an immersive, interactive, and luxurious shopping experience directly on Facebook and Instagram. Be the innovator in your niche and build undeniable customer trust. DM us or click below to see the magic in action. [See How It Works]
+
+### Ad 3: The Seamless Integration Focus (Frictionless Tech)
+*   **Visual Idea:** A fast-paced, screen-recorded carousel showing how effortlessly a brand owner can set up the system, followed by models trying on 3 different products (sunglasses, earrings, watch).
+*   **Primary Text:** Think AR is too complex for your business? Think again. 📈 Setup PoreDekho VTO for your online store with zero coding and zero friction. Perfectly integrated for Facebook, Instagram, and web sellers. When customers see exactly how a product looks on them, they are 40% more likely to buy. Start scaling your conversions with next-gen tech today! 💍⌚ [Learn More]
+
+---
+
+## 2-Week Social Media Content Calendar (B2B Focus)
+
+### Week 1: Education & Problem Awareness
+*   **Day 1 (Monday) - Reel:** *The Hook.* "What is PoreDekho VTO?" A punchy 15-second demo of the virtual try-on in action, explicitly calling out how it solves the "Will it suit me?" hesitation.
+*   **Day 3 (Wednesday) - Carousel Post:** "The True Cost of RTO in Bangladesh." Break down the logistics and packaging losses for e-commerce, and present AR as the definitive solution.
+*   **Day 5 (Friday) - Single Image:** Data-driven infographic. "Brands using Virtual Try-On see up to a 40% increase in checkout rates and a 30% drop in returns. Are you leaving money on the table?"
+*   **Day 7 (Sunday) - Story:** Interactive Poll for business owners. "What's the biggest threat to your online sales right now? A) High RTO B) Low Trust C) High Ad Costs."
+
+### Week 2: Solution & Social Proof
+*   **Day 8 (Monday) - Reel:** *Integration made simple.* Show how easily a brand can integrate PoreDekho VTO with their existing Facebook page. "Enterprise tech, zero coding."
+*   **Day 10 (Wednesday) - Case Study/Highlight:** "How Virtual Try-On is transforming global retail." Highlight successful global case studies and position PoreDekho as the local gateway to this technology.
+*   **Day 12 (Friday) - Carousel Post:** "Static Images vs. PoreDekho VTO". Slide 1: A traditional flat-lay product photo. Slide 2: A dynamic, interactive try-on experience. "Which one drives more sales?"
+*   **Day 14 (Sunday) - Story:** Swipe-up/Link sticker. "Ready to future-proof your e-commerce business? The future of Bangladeshi retail is AR. Book your exclusive demo today."

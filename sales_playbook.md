@@ -78,3 +78,22 @@ Ami ki choto ekta 30-second er video pathabo jekhane dekhano thakbe apnader prod
 4.  **The Downgrade/Trial Close:**
     *   **English:** "How about this: Let's start with just your top 10 best-selling items instead of the whole catalog. That keeps the initial setup extremely low, and we can prove the ROI before you scale it to the rest of the store. Sound fair?"
     *   **Benglish:** "Tahole ekta kaaj kori: Pura catalog er bodole, apnader top 10 ta best-selling item diye start kori. Ete initial setup ta ekdom kom hobe, ar amrao apnake result ta proman kore dekhate parbo puro store e apply korar age. Kemon hoy?"
+
+## 4. Target Competitors & Market Gaps
+
+Understanding the competitive landscape and technological gaps in the Bangladeshi market is critical for our sales pitches. The market is ripe for PoreDekho VTO because local brands currently have no viable alternative.
+
+### Global AR Providers (Perfect Corp, Camweara, Wanna)
+*   **Their Approach:** High-cost, enterprise-tier SaaS platforms priced in USD, requiring robust technical integration and heavy 3D assets.
+*   **The Market Gap:** These platforms are entirely unaffordable for 99% of BD boutiques. Furthermore, they are optimized for large-scale websites rather than the Messenger/Facebook-first reality of Bangladeshi F-commerce.
+*   **Our Edge:** Localized pricing (Setup + Performance model), plug-and-play Meta Spark integration tailored for Facebook/Instagram, and lightweight 3D models (<4MB) optimized for BD's 4G mobile networks.
+
+### Mega-Retailers & E-commerce Giants (Daraz, Aarong, Diamond World)
+*   **Their Approach:** Standard 2D product photography, lookbooks, and high-budget Facebook Live sessions. As of currently, even market leaders like Aarong and Daraz do **not** offer native Augmented Reality Virtual Try-On for jewelry and accessories.
+*   **The Market Gap:** Daraz suffers from high RTO (Return to Origin) because of the "doesn't match the picture" (*Chhobir sathe mile nai*) phenomenon. High-ticket jewelry sellers on generic e-commerce platforms struggle to build trust. Meanwhile, Aarong’s digital experience lacks interactive sizing/fit visualization.
+*   **Our Edge:** We can pitch mid-tier boutiques the ability to "out-innovate Aarong" by offering a superior digital shopping experience. For larger platforms, we represent a missing piece to solve their multi-million taka RTO problem.
+
+### Local F-commerce (Facebook Live Boutiques)
+*   **Their Approach:** Relying heavily on page admins holding up jewelry to their own necks/ears during Live sessions, or posting endless photos to answer "inbox please" queries.
+*   **The Market Gap:** When the Live ends, the interactive element dies. Sellers cannot hire models for every piece, leading to massive customer hesitation for premium items off-stream. Most importantly, these boutiques lack the technical know-how to turn 2D catalog photos into 3D AR models.
+*   **Our Edge:** PoreDekho provides a complete "Digitization Pipeline" as a B2B service. We don't just sell software; we take their 2D photos, build the 3D models, and hand them a simple "Try it On" link they can send directly in Messenger chats or embed via QR codes on delivery boxes.

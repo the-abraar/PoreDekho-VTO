@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="PoreDekho VTO × Aarong Jewellery Interactive Pitch - See the future of Web-AR virtual try-on." />
   <title>PoreDekho VTO × Aarong Jewellery | Interactive Pitch</title>
 
   <!-- Model Viewer (Google) -->
@@ -22,6 +23,7 @@
       background: #0d0d0d;
       color: #f0ece4;
       overflow-x: hidden;
+      line-height: 1.6;
     }
 
     /* ===== AARONG BRAND PALETTE ===== */
@@ -36,9 +38,9 @@
     }
 
     /* ===== SCROLLBAR ===== */
-    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar { width: 8px; }
     ::-webkit-scrollbar-track { background: #111; }
-    ::-webkit-scrollbar-thumb { background: var(--aarong-gold); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb { background: var(--aarong-gold); border-radius: 4px; }
 
     /* ===== HERO ===== */
     #hero {
@@ -105,7 +107,15 @@
       transition: transform 0.2s, box-shadow 0.2s;
       letter-spacing: 0.03em;
     }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,168,76,0.4); }
+    .btn-primary:hover, .btn-primary:focus-visible { 
+      transform: translateY(-2px); 
+      box-shadow: 0 8px 24px rgba(201,168,76,0.4); 
+      outline: none;
+    }
+    .btn-primary:focus-visible {
+      outline: 2px solid #fff;
+      outline-offset: 4px;
+    }
     .btn-secondary {
       background: transparent;
       color: var(--aarong-gold);
@@ -118,7 +128,14 @@
       text-decoration: none;
       transition: background 0.2s;
     }
-    .btn-secondary:hover { background: rgba(201,168,76,0.08); }
+    .btn-secondary:hover, .btn-secondary:focus-visible { 
+      background: rgba(201,168,76,0.08); 
+      outline: none;
+    }
+    .btn-secondary:focus-visible {
+      outline: 2px solid #fff;
+      outline-offset: 4px;
+    }
 
     /* scroll hint */
     .scroll-hint {
@@ -233,11 +250,10 @@
       transition: color 0.2s, border-color 0.2s;
       white-space: nowrap;
     }
-    .demo-tab.active {
+    .demo-tab.active, .demo-tab:hover {
       color: var(--aarong-gold);
       border-bottom-color: var(--aarong-gold);
     }
-    .demo-tab:hover { color: var(--aarong-gold); }
 
     .product-panel { display: none; }
     .product-panel.active { display: block; }
@@ -282,7 +298,7 @@
       position: absolute;
       bottom: 16px; right: 16px;
     }
-    #ar-btn-1, #ar-btn-2, #ar-btn-3 {
+    .ar-btn {
       background: linear-gradient(135deg, var(--aarong-gold), #a8863a);
       color: #0d0d0d;
       font-weight: 700;
@@ -296,12 +312,12 @@
       gap: 8px;
       transition: transform 0.2s, box-shadow 0.2s;
     }
-    #ar-btn-1:hover, #ar-btn-2:hover, #ar-btn-3:hover {
+    .ar-btn:hover {
       transform: scale(1.04);
       box-shadow: 0 4px 20px rgba(201,168,76,0.5);
     }
 
-    .product-info h2 {
+    .product-info h3 {
       font-family: 'Playfair Display', serif;
       font-size: 2rem;
       margin-bottom: 10px;
@@ -641,7 +657,7 @@
     .nav-logo span { color: #f0ece4; font-size: 0.75rem; font-family: 'Inter', sans-serif; display: block; letter-spacing: 0.14em; text-transform: uppercase; }
     .nav-links { display: flex; gap: 28px; }
     .nav-links a { color: #7a7269; font-size: 0.85rem; text-decoration: none; transition: color 0.2s; }
-    .nav-links a:hover { color: var(--aarong-gold); }
+    .nav-links a:hover, .nav-links a:focus-visible { color: var(--aarong-gold); outline: none; }
     @media (max-width: 640px) { .nav-links { display: none; } }
 
     /* ===== DIVIDER ===== */
@@ -663,119 +679,121 @@
 <body>
 
 <!-- NAV -->
-<nav>
-  <div class="nav-logo">
-    PoreDekho VTO
-    <span>A Proposal for Aarong</span>
-  </div>
-  <div class="nav-links">
-    <a href="#demo">Live Demo</a>
-    <a href="#results">Results</a>
-    <a href="#roi">ROI</a>
-    <a href="#pricing">Pricing</a>
-    <a href="#cta">Contact</a>
-  </div>
-</nav>
+<header>
+  <nav aria-label="Main Navigation">
+    <div class="nav-logo">
+      PoreDekho VTO
+      <span>A Proposal for Aarong</span>
+    </div>
+    <div class="nav-links">
+      <a href="#demo">Live Demo</a>
+      <a href="#results">Results</a>
+      <a href="#roi">ROI</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#cta">Contact</a>
+    </div>
+  </nav>
+</header>
 
-<!-- ===== HERO ===== -->
-<section id="hero">
-  <p class="hero-badge">Confidential Proposal · October 2026</p>
-  <h1 class="hero-title">
-    Let Your Customers<br>
-    Wear It Before They Buy It.
-  </h1>
-  <p class="hero-sub">
-    PoreDekho VTO is proposing a dedicated <strong>Augmented Reality Virtual Try-On</strong> service for
-    <strong>Aarong's Jewellery</strong> catalogue — converting browsers into buyers and
-    slashing return rates with a single tap.
-  </p>
-  <div class="hero-cta-group">
-    <a href="#demo" class="btn-primary">✦ See the Live Demo</a>
-    <a href="#results" class="btn-secondary">View Results →</a>
-  </div>
-  <p class="scroll-hint">↓ scroll to explore</p>
-</section>
+<main>
+  <!-- ===== HERO ===== -->
+  <section id="hero" aria-labelledby="hero-heading">
+    <p class="hero-badge">Confidential Proposal &middot; October 2026</p>
+    <h1 id="hero-heading" class="hero-title">
+      Let Your Customers<br>
+      Wear It Before They Buy It.
+    </h1>
+    <p class="hero-sub">
+      PoreDekho VTO is proposing a dedicated <strong>Augmented Reality Virtual Try-On</strong> service for
+      <strong>Aarong's Jewellery</strong> catalogue &mdash; converting browsers into buyers and
+      slashing return rates with a single tap.
+    </p>
+    <div class="hero-cta-group">
+      <a href="#demo" class="btn-primary">✦ See the Live Demo</a>
+      <a href="#results" class="btn-secondary">View Results &rarr;</a>
+    </div>
+    <p class="scroll-hint" aria-hidden="true">&darr; scroll to explore</p>
+  </section>
 
-<!-- ===== STAT STRIP ===== -->
-<section id="stats">
-  <div class="stats-inner">
-    <div class="fade-in">
-      <div class="stat-num">40%</div>
-      <div class="stat-label">Average RTO rate in BD<br>fashion/accessories e-commerce</div>
+  <!-- ===== STAT STRIP ===== -->
+  <section id="stats" aria-label="Statistics">
+    <div class="stats-inner">
+      <div class="fade-in">
+        <div class="stat-num">40%</div>
+        <div class="stat-label">Average RTO rate in BD<br>fashion/accessories e-commerce</div>
+      </div>
+      <div class="fade-in">
+        <div class="stat-num">3&times;</div>
+        <div class="stat-label">Higher purchase intent<br>after virtual try-on</div>
+      </div>
+      <div class="fade-in">
+        <div class="stat-num">&#2547;&#2547;&#2547;</div>
+        <div class="stat-label">Wasted annually in return<br>logistics & restocking</div>
+      </div>
+      <div class="fade-in">
+        <div class="stat-num">94%</div>
+        <div class="stat-label">Customer satisfaction when<br>VTO matches real product</div>
+      </div>
     </div>
-    <div class="fade-in">
-      <div class="stat-num">3×</div>
-      <div class="stat-label">Higher purchase intent<br>after virtual try-on</div>
-    </div>
-    <div class="fade-in">
-      <div class="stat-num">৳৳৳</div>
-      <div class="stat-label">Wasted annually in return<br>logistics & restocking</div>
-    </div>
-    <div class="fade-in">
-      <div class="stat-num">94%</div>
-      <div class="stat-label">Customer satisfaction when<br>VTO matches real product</div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- ===== PROBLEM ===== -->
-<section style="padding: 100px 24px; max-width: 1200px; margin: 0 auto;">
-  <p class="section-label fade-in">The Problem</p>
-  <h2 class="section-title fade-in">Aarong's Jewellery Deserves<br>Better Than a Flat JPEG.</h2>
-  <p class="section-body fade-in">
-    Aarong has built a globally respected brand. But even the most beautiful necklace photograph
-    can't answer a customer's fundamental question: <em>"Will this look right on me?"</em>
-    That uncertainty is costing sales every single day.
-  </p>
-  <div class="problem-grid">
-    <div class="problem-card fade-in">
-      <div class="problem-icon">📦</div>
-      <h3>High Return Rates</h3>
-      <p>"Chhobir sathe mile nai" — customers reject parcels because the product didn't match
-         their mental image. Each return costs ৳150–৳400 in logistics alone.</p>
+  <!-- ===== PROBLEM ===== -->
+  <section class="section" aria-labelledby="problem-heading">
+    <p class="section-label fade-in">The Problem</p>
+    <h2 id="problem-heading" class="section-title fade-in">Aarong's Jewellery Deserves<br>Better Than a Flat JPEG.</h2>
+    <p class="section-body fade-in">
+      Aarong has built a globally respected brand. But even the most beautiful necklace photograph
+      can't answer a customer's fundamental question: <em>"Will this look right on me?"</em>
+      That uncertainty is costing sales every single day.
+    </p>
+    <div class="problem-grid">
+      <div class="problem-card fade-in">
+        <div class="problem-icon" aria-hidden="true">📦</div>
+        <h3>High Return Rates</h3>
+        <p>"Chhobir sathe mile nai" &mdash; customers reject parcels because the product didn't match
+           their mental image. Each return costs &#2547;150&ndash;&#2547;400 in logistics alone.</p>
+      </div>
+      <div class="problem-card fade-in">
+        <div class="problem-icon" aria-hidden="true">💬</div>
+        <h3>Pre-Purchase Anxiety</h3>
+        <p>High-ticket jewellery pieces require confidence. Without seeing the scale, finish,
+           and fit, customers hesitate, abandon carts, or choose cheaper alternatives.</p>
+      </div>
+      <div class="problem-card fade-in">
+        <div class="problem-icon" aria-hidden="true">📸</div>
+        <h3>Static Catalogue Limitations</h3>
+        <p>Even professional photography fails to communicate the three-dimensionality of
+           a brass collar necklace or the drape of a handcrafted earring.</p>
+      </div>
+      <div class="problem-card fade-in">
+        <div class="problem-icon" aria-hidden="true">🏆</div>
+        <h3>Competitive Differentiation</h3>
+        <p>International luxury brands like Tanishq and Kalyan are already deploying AR try-on.
+           Aarong has the catalogue, heritage, and audience to leapfrog them in BD.</p>
+      </div>
     </div>
-    <div class="problem-card fade-in">
-      <div class="problem-icon">💬</div>
-      <h3>Pre-Purchase Anxiety</h3>
-      <p>High-ticket jewellery pieces require confidence. Without seeing the scale, finish,
-         and fit, customers hesitate, abandon carts, or choose cheaper alternatives.</p>
-    </div>
-    <div class="problem-card fade-in">
-      <div class="problem-icon">📸</div>
-      <h3>Static Catalogue Limitations</h3>
-      <p>Even professional photography fails to communicate the three-dimensionality of
-         a brass collar necklace or the drape of a handcrafted earring.</p>
-    </div>
-    <div class="problem-card fade-in">
-      <div class="problem-icon">🏆</div>
-      <h3>Competitive Differentiation</h3>
-      <p>International luxury brands like Tanishq and Kalyan are already deploying AR try-on.
-         Aarong has the catalogue, heritage, and audience to leapfrog them in BD.</p>
-    </div>
-  </div>
-</section>
+  </section>
 
-<div class="gold-divider"></div>
+  <div class="gold-divider" aria-hidden="true"></div>
 
-<!-- ===== LIVE DEMO ===== -->
-<section id="demo">
-  <div class="section">
+  <!-- ===== LIVE DEMO ===== -->
+  <section id="demo" class="section" aria-labelledby="demo-heading">
     <p class="section-label">Live Interactive Demo</p>
-    <h2 class="section-title fade-in">Try Aarong Jewellery in 3D — Right Now.</h2>
+    <h2 id="demo-heading" class="section-title fade-in">Try Aarong Jewellery in 3D &mdash; Right Now.</h2>
     <p class="section-body fade-in">
       Below is a functional prototype using the same technology stack we would deploy for Aarong.com.
       Rotate, zoom, and inspect each piece. On a compatible Android device, tap
       <strong>"View in AR"</strong> to place it in your real environment.
     </p>
 
-    <div class="demo-tabs">
-      <button class="demo-tab active" onclick="showPanel('necklace', this)">🪙 Brass Collar Necklace</button>
-      <button class="demo-tab" onclick="showPanel('earring', this)">💛 Statement Earrings</button>
-      <button class="demo-tab" onclick="showPanel('ring', this)">💍 Artisan Ring</button>
+    <div class="demo-tabs" role="tablist" aria-label="Product selection">
+      <button class="demo-tab active" role="tab" aria-selected="true" aria-controls="panel-necklace" id="tab-necklace" onclick="showPanel('necklace', this)">🪙 Brass Collar Necklace</button>
+      <button class="demo-tab" role="tab" aria-selected="false" aria-controls="panel-earring" id="tab-earring" onclick="showPanel('earring', this)">💛 Statement Earrings</button>
+      <button class="demo-tab" role="tab" aria-selected="false" aria-controls="panel-ring" id="tab-ring" onclick="showPanel('ring', this)">💍 Artisan Ring</button>
     </div>
 
     <!-- PANEL 1: Necklace -->
-    <div id="panel-necklace" class="product-panel active">
+    <div id="panel-necklace" class="product-panel active" role="tabpanel" aria-labelledby="tab-necklace">
       <div class="product-layout">
         <div class="model-wrap">
           <div class="model-badge">🔄 Drag to Rotate</div>
@@ -792,22 +810,22 @@
             exposure="1.1"
             ar
             ar-modes="webxr scene-viewer quick-look"
+            loading="lazy"
           >
-            <button slot="ar-button" id="ar-btn-1">
+            <button slot="ar-button" class="ar-btn" id="ar-btn-1">
               📱 View in AR
             </button>
           </model-viewer>
         </div>
-
         <div class="product-info fade-in">
-          <h2>Brass Collar Necklace</h2>
-          <div class="product-price">৳ 1,800 – ৳ 4,200</div>
+          <h3>Brass Collar Necklace</h3>
+          <div class="product-price">&#2547; 1,800 &ndash; &#2547; 4,200</div>
           <p class="product-desc">
             Handcrafted by BRAC artisans, this bold collar-style necklace features intricate
             filigree work in antique-gold brass finish. A centrepiece of Aarong's fashion jewellery
-            catalogue — and the perfect VTO candidate.
+            catalogue &mdash; and the perfect VTO candidate.
           </p>
-          <div class="product-tags">
+          <div class="product-tags" aria-label="Product features">
             <span class="tag">Brass</span>
             <span class="tag">Antique Gold</span>
             <span class="tag">Handcrafted</span>
@@ -816,41 +834,41 @@
           </div>
           <div class="vto-steps">
             <div class="vto-step">
-              <div class="step-num">1</div>
+              <div class="step-num" aria-hidden="true">1</div>
               <div class="step-text">
                 <strong>Customer lands on product page</strong>
                 <span>A "Try in 3D" button appears alongside the standard photo gallery.</span>
               </div>
             </div>
             <div class="vto-step">
-              <div class="step-num">2</div>
+              <div class="step-num" aria-hidden="true">2</div>
               <div class="step-text">
                 <strong>Interactive 3D viewer launches</strong>
-                <span>Powered by Google's &lt;model-viewer&gt; — no app download needed.</span>
+                <span>Powered by Google's &lt;model-viewer&gt; &mdash; no app download needed.</span>
               </div>
             </div>
             <div class="vto-step">
-              <div class="step-num">3</div>
+              <div class="step-num" aria-hidden="true">3</div>
               <div class="step-text">
                 <strong>AR placement (Android/iOS)</strong>
                 <span>Tap "View in AR" to place the necklace in real space using the phone camera.</span>
               </div>
             </div>
             <div class="vto-step">
-              <div class="step-num">4</div>
+              <div class="step-num" aria-hidden="true">4</div>
               <div class="step-text">
                 <strong>Customer adds to cart with confidence</strong>
                 <span>Visual certainty drives conversion. Returns drop. Revenue rises.</span>
               </div>
             </div>
           </div>
-          <a href="#results" class="btn-primary">See Real-World Results →</a>
+          <a href="#results" class="btn-primary">See Real-World Results &rarr;</a>
         </div>
       </div>
     </div>
 
     <!-- PANEL 2: Earrings -->
-    <div id="panel-earring" class="product-panel">
+    <div id="panel-earring" class="product-panel" role="tabpanel" aria-labelledby="tab-earring">
       <div class="product-layout">
         <div class="model-wrap">
           <div class="model-badge">🔄 Drag to Rotate</div>
@@ -867,21 +885,22 @@
             exposure="1.1"
             ar
             ar-modes="webxr scene-viewer quick-look"
+            loading="lazy"
           >
-            <button slot="ar-button" id="ar-btn-2">
+            <button slot="ar-button" class="ar-btn" id="ar-btn-2">
               📱 View in AR
             </button>
           </model-viewer>
         </div>
         <div class="product-info fade-in">
-          <h2>Statement Chandelier Earrings</h2>
-          <div class="product-price">৳ 650 – ৳ 2,400</div>
+          <h3>Statement Chandelier Earrings</h3>
+          <div class="product-price">&#2547; 650 &ndash; &#2547; 2,400</div>
           <p class="product-desc">
             Long, dramatic chandelier earrings with stone-set detailing and layered brass
             construction. For Eid, weddings, and festive occasions. The hardest product to
-            photograph well — but trivially beautiful in 3D.
+            photograph well &mdash; but trivially beautiful in 3D.
           </p>
-          <div class="product-tags">
+          <div class="product-tags" aria-label="Product features">
             <span class="tag">Chandelier Style</span>
             <span class="tag">Stone Set</span>
             <span class="tag">Eid Collection</span>
@@ -889,34 +908,34 @@
           </div>
           <div class="vto-steps">
             <div class="vto-step">
-              <div class="step-num">1</div>
+              <div class="step-num" aria-hidden="true">1</div>
               <div class="step-text">
                 <strong>Length & drape visualisation</strong>
-                <span>Customers can see exactly how far the earrings would hang — something photography never captures.</span>
+                <span>Customers can see exactly how far the earrings would hang &mdash; something photography never captures.</span>
               </div>
             </div>
             <div class="vto-step">
-              <div class="step-num">2</div>
+              <div class="step-num" aria-hidden="true">2</div>
               <div class="step-text">
                 <strong>Material finish inspection</strong>
                 <span>PBR rendering shows gold vs. antique-gold finish differences in realistic lighting.</span>
               </div>
             </div>
             <div class="vto-step">
-              <div class="step-num">3</div>
+              <div class="step-num" aria-hidden="true">3</div>
               <div class="step-text">
                 <strong>Social sharing</strong>
-                <span>AR screenshots are shared on WhatsApp/IG Stories — free organic marketing for Aarong.</span>
+                <span>AR screenshots are shared on WhatsApp/IG Stories &mdash; free organic marketing for Aarong.</span>
               </div>
             </div>
           </div>
-          <a href="#roi" class="btn-primary">Calculate Your ROI →</a>
+          <a href="#roi" class="btn-primary">Calculate Your ROI &rarr;</a>
         </div>
       </div>
     </div>
 
     <!-- PANEL 3: Ring -->
-    <div id="panel-ring" class="product-panel">
+    <div id="panel-ring" class="product-panel" role="tabpanel" aria-labelledby="tab-ring">
       <div class="product-layout">
         <div class="model-wrap">
           <div class="model-badge">🔄 Drag to Rotate</div>
@@ -933,21 +952,22 @@
             exposure="1.15"
             ar
             ar-modes="webxr scene-viewer quick-look"
+            loading="lazy"
           >
-            <button slot="ar-button" id="ar-btn-3">
+            <button slot="ar-button" class="ar-btn" id="ar-btn-3">
               📱 View in AR
             </button>
           </model-viewer>
         </div>
         <div class="product-info fade-in">
-          <h2>Artisan Statement Ring</h2>
-          <div class="product-price">৳ 350 – ৳ 1,200</div>
+          <h3>Artisan Statement Ring</h3>
+          <div class="product-price">&#2547; 350 &ndash; &#2547; 1,200</div>
           <p class="product-desc">
             Chunky, hand-forged statement rings in oxidised silver and brass. Size ambiguity
             is the #1 reason for ring returns. With VTO, customers select sizes confidently
             after 3D inspection.
           </p>
-          <div class="product-tags">
+          <div class="product-tags" aria-label="Product features">
             <span class="tag">Oxidised Silver</span>
             <span class="tag">Hand Forged</span>
             <span class="tag">Adjustable Band</span>
@@ -955,77 +975,75 @@
           </div>
           <div class="vto-steps">
             <div class="vto-step">
-              <div class="step-num">1</div>
+              <div class="step-num" aria-hidden="true">1</div>
               <div class="step-text">
                 <strong>Ring size confidence</strong>
                 <span>3D scaling relative to a reference object eliminates sizing guesswork.</span>
               </div>
             </div>
             <div class="vto-step">
-              <div class="step-num">2</div>
+              <div class="step-num" aria-hidden="true">2</div>
               <div class="step-text">
                 <strong>Engraving preview</strong>
                 <span>Customers can preview custom engraving text on the band before ordering.</span>
               </div>
             </div>
             <div class="vto-step">
-              <div class="step-num">3</div>
+              <div class="step-num" aria-hidden="true">3</div>
               <div class="step-text">
                 <strong>Gifting confidence</strong>
                 <span>Gift-buyers purchase with certainty, reducing awkward returns after festivals.</span>
               </div>
             </div>
           </div>
-          <a href="#pricing" class="btn-primary">See Pricing →</a>
+          <a href="#pricing" class="btn-primary">See Pricing &rarr;</a>
         </div>
       </div>
     </div>
 
-  </div>
-</section>
+  </section>
 
-<div class="gold-divider"></div>
+  <div class="gold-divider" aria-hidden="true"></div>
 
-<!-- ===== RESULTS ===== -->
-<section id="results">
-  <div class="section">
+  <!-- ===== RESULTS ===== -->
+  <section id="results" class="section" aria-labelledby="results-heading">
     <p class="section-label">Proven Results</p>
-    <h2 class="section-title fade-in">What Virtual Try-On Does<br>for Jewellery Brands.</h2>
+    <h2 id="results-heading" class="section-title fade-in">What Virtual Try-On Does<br>for Jewellery Brands.</h2>
     <p class="section-body fade-in">
       These benchmarks are drawn from global AR commerce deployments (Tanishq, Mejuri, Kendra Scott)
-      and our own pilot data from BD boutique brands. We project similar — or better — performance
+      and our own pilot data from BD boutique brands. We project similar &mdash; or better &mdash; performance
       for Aarong given its established customer trust.
     </p>
 
     <div class="results-grid">
       <div class="result-card fade-in">
-        <div class="result-icon">📈</div>
+        <div class="result-icon" aria-hidden="true">📈</div>
         <div class="result-metric">+38%</div>
         <div class="result-label">Increase in add-to-cart rate<br>after VTO interaction</div>
       </div>
       <div class="result-card fade-in">
-        <div class="result-icon">📦</div>
-        <div class="result-metric">−32%</div>
+        <div class="result-icon" aria-hidden="true">📦</div>
+        <div class="result-metric">&minus;32%</div>
         <div class="result-label">Reduction in return-to-origin<br>for jewellery orders</div>
       </div>
       <div class="result-card fade-in">
-        <div class="result-icon">⏱️</div>
-        <div class="result-metric">+2.4×</div>
+        <div class="result-icon" aria-hidden="true">⏱️</div>
+        <div class="result-metric">+2.4&times;</div>
         <div class="result-label">Time-on-product-page when<br>3D viewer is present</div>
       </div>
       <div class="result-card fade-in">
-        <div class="result-icon">🤳</div>
+        <div class="result-icon" aria-hidden="true">🤳</div>
         <div class="result-metric">+61%</div>
         <div class="result-label">Social share rate of AR<br>screenshots by customers</div>
       </div>
       <div class="result-card fade-in">
-        <div class="result-icon">💸</div>
+        <div class="result-icon" aria-hidden="true">💸</div>
         <div class="result-metric">+22%</div>
         <div class="result-label">Average Order Value uplift<br>(upselling confidence)</div>
       </div>
       <div class="result-card fade-in">
-        <div class="result-icon">❤️</div>
-        <div class="result-metric">4.8★</div>
+        <div class="result-icon" aria-hidden="true">❤️</div>
+        <div class="result-metric">4.8&starf;</div>
         <div class="result-label">Average customer satisfaction<br>rating post-VTO purchase</div>
       </div>
     </div>
@@ -1038,8 +1056,8 @@
         <div class="ba-body">
           <div class="ba-item"><div class="dot-bad"></div>Flat 2D product photos only</div>
           <div class="ba-item"><div class="dot-bad"></div>Customer uncertainty on scale & finish</div>
-          <div class="ba-item"><div class="dot-bad"></div>30–42% cart abandonment on jewellery</div>
-          <div class="ba-item"><div class="dot-bad"></div>High RTO rate — ৳150–৳400 per return</div>
+          <div class="ba-item"><div class="dot-bad"></div>30&ndash;42% cart abandonment on jewellery</div>
+          <div class="ba-item"><div class="dot-bad"></div>High RTO rate &mdash; &#2547;150&ndash;&#2547;400 per return</div>
           <div class="ba-item"><div class="dot-bad"></div>Low re-purchase rate from new customers</div>
           <div class="ba-item"><div class="dot-bad"></div>Zero viral AR sharing content</div>
           <div class="ba-item"><div class="dot-bad"></div>No differentiation from competitors</div>
@@ -1051,7 +1069,7 @@
           <div class="ba-item"><div class="dot-good"></div>Interactive 3D + WebAR on every product</div>
           <div class="ba-item"><div class="dot-good"></div>Visual certainty before purchase</div>
           <div class="ba-item"><div class="dot-good"></div>Cart abandonment reduced by ~35%</div>
-          <div class="ba-item"><div class="dot-good"></div>RTO rate drops — logistics savings stack up</div>
+          <div class="ba-item"><div class="dot-good"></div>RTO rate drops &mdash; logistics savings stack up</div>
           <div class="ba-item"><div class="dot-good"></div>Second-purchase confidence increases</div>
           <div class="ba-item"><div class="dot-good"></div>AR screenshots go viral on IG/WhatsApp</div>
           <div class="ba-item"><div class="dot-good"></div>Bangladesh's first AR-enabled jeweller</div>
@@ -1059,77 +1077,73 @@
       </div>
     </div>
 
-  </div>
-</section>
+  </section>
 
-<!-- ===== ROI CALCULATOR ===== -->
-<section id="roi">
-  <div class="section">
+  <!-- ===== ROI CALCULATOR ===== -->
+  <section id="roi" class="section" aria-labelledby="roi-heading">
     <p class="section-label">ROI Calculator</p>
-    <h2 class="section-title fade-in">What Is One Collection's<br>Returns Costing Aarong?</h2>
+    <h2 id="roi-heading" class="section-title fade-in">What Is One Collection's<br>Returns Costing Aarong?</h2>
     <p class="section-body fade-in">Adjust the sliders below to see projected savings based on your current volume.</p>
 
     <div class="roi-layout">
       <div class="roi-form fade-in">
-        <label>Monthly Online Jewellery Orders</label>
-        <input type="range" id="r-orders" min="100" max="5000" step="50" value="1000" oninput="calcROI()" />
+        <label for="r-orders">Monthly Online Jewellery Orders</label>
+        <input type="range" id="r-orders" min="100" max="5000" step="50" value="1000" oninput="calcROI()" aria-valuetext="1000 orders" />
         <div class="range-val" id="v-orders">1,000 orders/mo</div>
 
-        <label>Current RTO Rate</label>
-        <input type="range" id="r-rto" min="5" max="50" step="1" value="30" oninput="calcROI()" />
+        <label for="r-rto">Current RTO Rate</label>
+        <input type="range" id="r-rto" min="5" max="50" step="1" value="30" oninput="calcROI()" aria-valuetext="30 percent" />
         <div class="range-val" id="v-rto">30% RTO</div>
 
-        <label>Average Order Value (৳)</label>
-        <input type="range" id="r-aov" min="500" max="10000" step="100" value="2500" oninput="calcROI()" />
-        <div class="range-val" id="v-aov">৳ 2,500</div>
+        <label for="r-aov">Average Order Value (&#2547;)</label>
+        <input type="range" id="r-aov" min="500" max="10000" step="100" value="2500" oninput="calcROI()" aria-valuetext="2500 Taka" />
+        <div class="range-val" id="v-aov">&#2547; 2,500</div>
 
-        <label>Cost Per Return (logistics + restock) ৳</label>
-        <input type="range" id="r-cpr" min="100" max="600" step="10" value="280" oninput="calcROI()" />
-        <div class="range-val" id="v-cpr">৳ 280</div>
+        <label for="r-cpr">Cost Per Return (logistics + restock) &#2547;</label>
+        <input type="range" id="r-cpr" min="100" max="600" step="10" value="280" oninput="calcROI()" aria-valuetext="280 Taka" />
+        <div class="range-val" id="v-cpr">&#2547; 280</div>
       </div>
 
       <div class="roi-output fade-in">
         <h3>📊 Projected Monthly Impact</h3>
-        <div class="roi-row"><span>Current monthly RTOs</span><strong id="o-rtos">—</strong></div>
-        <div class="roi-row"><span>Monthly return logistics cost</span><strong id="o-cost">—</strong></div>
-        <div class="roi-row"><span>RTOs prevented by VTO (est. 32%)</span><strong id="o-saved-orders">—</strong></div>
-        <div class="roi-row"><span>Logistics cost saved / month</span><strong id="o-saved-cost">—</strong></div>
-        <div class="roi-row"><span>Revenue recovered (avg AOV × saved RTOs)</span><strong id="o-revenue">—</strong></div>
+        <div class="roi-row"><span>Current monthly RTOs</span><strong id="o-rtos">&mdash;</strong></div>
+        <div class="roi-row"><span>Monthly return logistics cost</span><strong id="o-cost">&mdash;</strong></div>
+        <div class="roi-row"><span>RTOs prevented by VTO (est. 32%)</span><strong id="o-saved-orders">&mdash;</strong></div>
+        <div class="roi-row"><span>Logistics cost saved / month</span><strong id="o-saved-cost">&mdash;</strong></div>
+        <div class="roi-row"><span>Revenue recovered (avg AOV &times; saved RTOs)</span><strong id="o-revenue">&mdash;</strong></div>
         <div class="roi-total">
           <div class="roi-total-label">Total Monthly Value Unlocked</div>
-          <div class="roi-total-val" id="o-total">—</div>
+          <div class="roi-total-val" id="o-total">&mdash;</div>
         </div>
         <p style="font-size: 0.78rem; color: #555; margin-top: 16px; text-align: center;">
-          PoreDekho VTO setup cost is typically recovered within 30–60 days.
+          PoreDekho VTO setup cost is typically recovered within 30&ndash;60 days.
         </p>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<div class="gold-divider"></div>
+  <div class="gold-divider" aria-hidden="true"></div>
 
-<!-- ===== ONBOARDING TIMELINE ===== -->
-<section id="onboarding">
-  <div class="section">
+  <!-- ===== ONBOARDING TIMELINE ===== -->
+  <section id="onboarding" class="section" aria-labelledby="onboarding-heading">
     <p class="section-label">Implementation Plan</p>
-    <h2 class="section-title fade-in">Live on Aarong.com in<br>Under 30 Days.</h2>
+    <h2 id="onboarding-heading" class="section-title fade-in">Live on Aarong.com in<br>Under 30 Days.</h2>
     <p class="section-body fade-in">
-      Our pipeline is designed to move fast. We've done the R&D — you just need to say go.
+      Our pipeline is designed to move fast. We've done the R&D &mdash; you just need to say go.
     </p>
     <div class="timeline fade-in">
       <div class="tl-item">
         <div class="tl-dot"></div>
         <div class="tl-week">Week 1</div>
         <div class="tl-title">Catalogue Audit & Asset Collection</div>
-        <div class="tl-desc">We work with your product team to select the first 10–25 SKUs for digitisation.
+        <div class="tl-desc">We work with your product team to select the first 10&ndash;25 SKUs for digitisation.
           High-res reference photos + product specs shared via Drive.</div>
       </div>
       <div class="tl-item">
         <div class="tl-dot"></div>
         <div class="tl-week">Week 2</div>
         <div class="tl-title">3D Model Creation & Optimisation</div>
-        <div class="tl-desc">Our 3D artists build lightweight GLB models (≤ 4MB each) with accurate PBR materials
+        <div class="tl-desc">Our 3D artists build lightweight GLB models (&le; 4MB each) with accurate PBR materials
           to replicate gold, brass, and stone finishes. Each model is tested on mid-range Bangladeshi Android devices.</div>
       </div>
       <div class="tl-item">
@@ -1144,24 +1158,22 @@
         <div class="tl-week">Week 4</div>
         <div class="tl-title">Go-Live & Analytics Dashboard</div>
         <div class="tl-desc">🚀 VTO goes live. We set up a custom analytics dashboard tracking VTO engagement rate,
-          conversion lift, and RTO comparison — delivered to your team weekly.</div>
+          conversion lift, and RTO comparison &mdash; delivered to your team weekly.</div>
       </div>
       <div class="tl-item">
         <div class="tl-dot"></div>
         <div class="tl-week">Ongoing</div>
         <div class="tl-title">Seasonal Collection Drops</div>
-        <div class="tl-desc">Eid, Puja, New Year — every new collection gets 3D VTO assets within 7 days of
+        <div class="tl-desc">Eid, Puja, New Year &mdash; every new collection gets 3D VTO assets within 7 days of
           product photography. Retainer pricing keeps this affordable and predictable.</div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ===== PRICING ===== -->
-<section id="pricing">
-  <div class="section">
+  <!-- ===== PRICING ===== -->
+  <section id="pricing" class="section" aria-labelledby="pricing-heading">
     <p class="section-label">Transparent Pricing</p>
-    <h2 class="section-title fade-in">A Plan Built for<br>Aarong's Scale.</h2>
+    <h2 id="pricing-heading" class="section-title fade-in">A Plan Built for<br>Aarong's Scale.</h2>
     <p class="section-body fade-in">
       We understand Bangladeshi business realities. Our hybrid model means low risk upfront
       with strong ROI as the partnership grows.
@@ -1170,8 +1182,8 @@
 
       <div class="price-card fade-in">
         <div class="price-tier">Starter</div>
-        <div class="price-amount">৳ 15,000</div>
-        <div class="price-period">One-time setup + ৳ 5,000/month retainer</div>
+        <div class="price-amount">&#2547; 15,000</div>
+        <div class="price-period">One-time setup + &#2547; 5,000/month retainer</div>
         <ul class="price-features">
           <li>Up to 15 SKUs digitised</li>
           <li>&lt;model-viewer&gt; integration</li>
@@ -1185,8 +1197,8 @@
       <div class="price-card featured fade-in">
         <div class="price-badge">✦ Recommended for Aarong</div>
         <div class="price-tier">Growth</div>
-        <div class="price-amount">৳ 35,000</div>
-        <div class="price-period">One-time setup + ৳ 12,000/month retainer</div>
+        <div class="price-amount">&#2547; 35,000</div>
+        <div class="price-period">One-time setup + &#2547; 12,000/month retainer</div>
         <ul class="price-features">
           <li>Up to 50 SKUs digitised</li>
           <li>Full website + app integration</li>
@@ -1215,18 +1227,16 @@
       </div>
 
     </div>
-  </div>
-</section>
+  </section>
 
-<div class="gold-divider"></div>
+  <div class="gold-divider" aria-hidden="true"></div>
 
-<!-- ===== SOCIAL PROOF ===== -->
-<section id="proof">
-  <div class="section">
+  <!-- ===== SOCIAL PROOF ===== -->
+  <section id="proof" class="section" aria-labelledby="proof-heading">
     <p class="section-label">Industry Validation</p>
-    <h2 class="section-title fade-in">What Brands Say After<br>Going Live with AR Try-On.</h2>
+    <h2 id="proof-heading" class="section-title fade-in">What Brands Say After<br>Going Live with AR Try-On.</h2>
     <p class="section-body fade-in">
-      Projections from analogous jewellery VTO deployments globally & in APAC markets
+      Projections from analogous jewellery VTO deployments globally &amp; in APAC markets
       with similar consumer profiles to Bangladesh.
     </p>
     <div class="testimonials-grid">
@@ -1234,9 +1244,9 @@
         <blockquote>
           "We launched AR try-on for our gold jewellery line and within 60 days our
           online return rate dropped by 28%. Customers spend almost 4 minutes with
-          each product — that's unheard of in e-commerce."
+          each product &mdash; that's unheard of in e-commerce."
         </blockquote>
-        <cite>— Head of Digital, Regional Jewellery Brand (APAC)</cite>
+        <cite>&mdash; Head of Digital, Regional Jewellery Brand (APAC)</cite>
       </div>
       <div class="testimonial fade-in">
         <blockquote>
@@ -1244,49 +1254,54 @@
           their virtual try-on photos before they'd even bought the earrings.
           We got organic reach we couldn't have paid for."
         </blockquote>
-        <cite>— Founder, Boutique Fashion Label (Dhaka)</cite>
+        <cite>&mdash; Founder, Boutique Fashion Label (Dhaka)</cite>
       </div>
       <div class="testimonial fade-in">
         <blockquote>
-          "The ROI math is simple: every return prevented is ৳280 saved. After 200
+          "The ROI math is simple: every return prevented is &#2547;280 saved. After 200
           returns prevented in a month, the VTO service paid for itself three times over."
         </blockquote>
-        <cite>— E-Commerce Manager, Fashion Accessories Brand (BD)</cite>
+        <cite>&mdash; E-Commerce Manager, Fashion Accessories Brand (BD)</cite>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ===== CTA ===== -->
-<section id="cta">
-  <p class="section-label">Next Step</p>
-  <h2 class="section-title fade-in">
-    Ready to Make Aarong the First<br>AR Jeweller in Bangladesh?
-  </h2>
-  <p class="section-body fade-in">
-    We're proposing a <strong>free 30-day pilot</strong> with 5 of your top-selling jewellery SKUs.
-    No commitment. See the data. Then decide.
-  </p>
-  <div class="hero-cta-group" style="justify-content: center;">
-    <a href="mailto:hello@poredekhovto.example.com?subject=Aarong VTO Pilot Request" class="btn-primary">
-      📧 Request Free Pilot
-    </a>
-    <a href="tel:+8801XXXXXXXXX" class="btn-secondary">📞 Schedule a Call</a>
-  </div>
-  <p style="margin-top: 48px; font-size: 0.82rem; color: #3a3530;">
-    PoreDekho VTO · Dhaka, Bangladesh · hello@poredekhovto.example.com<br>
-    This proposal was prepared exclusively for Aarong / BRAC Enterprises Ltd.
-  </p>
-</section>
+  <!-- ===== CTA ===== -->
+  <section id="cta" aria-labelledby="cta-heading">
+    <p class="section-label">Next Step</p>
+    <h2 id="cta-heading" class="section-title fade-in">
+      Ready to Make Aarong the First<br>AR Jeweller in Bangladesh?
+    </h2>
+    <p class="section-body fade-in">
+      We're proposing a <strong>free 30-day pilot</strong> with 5 of your top-selling jewellery SKUs.
+      No commitment. See the data. Then decide.
+    </p>
+    <div class="hero-cta-group" style="justify-content: center;">
+      <a href="mailto:hello@poredekhovto.example.com?subject=Aarong VTO Pilot Request" class="btn-primary">
+        📧 Request Free Pilot
+      </a>
+      <a href="tel:+8801XXXXXXXXX" class="btn-secondary">📞 Schedule a Call</a>
+    </div>
+    <p style="margin-top: 48px; font-size: 0.82rem; color: #3a3530;">
+      PoreDekho VTO &middot; Dhaka, Bangladesh &middot; hello@poredekhovto.example.com<br>
+      This proposal was prepared exclusively for Aarong / BRAC Enterprises Ltd.
+    </p>
+  </section>
+</main>
 
 <!-- ===== SCRIPTS ===== -->
 <script>
   // Tab switching
   function showPanel(id, btn) {
     document.querySelectorAll('.product-panel').forEach(p => p.classList.remove('active'));
-    document.querySelectorAll('.demo-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.demo-tab').forEach(t => {
+      t.classList.remove('active');
+      t.setAttribute('aria-selected', 'false');
+    });
+    
     document.getElementById('panel-' + id).classList.add('active');
     btn.classList.add('active');
+    btn.setAttribute('aria-selected', 'true');
   }
 
   // ROI Calculator
@@ -1295,11 +1310,17 @@
     const rto    = +document.getElementById('r-rto').value / 100;
     const aov    = +document.getElementById('r-aov').value;
     const cpr    = +document.getElementById('r-cpr').value;
+    
+    // Update ARIA attributes
+    document.getElementById('r-orders').setAttribute('aria-valuetext', orders + ' orders');
+    document.getElementById('r-rto').setAttribute('aria-valuetext', (rto * 100).toFixed(0) + ' percent');
+    document.getElementById('r-aov').setAttribute('aria-valuetext', aov + ' Taka');
+    document.getElementById('r-cpr').setAttribute('aria-valuetext', cpr + ' Taka');
 
     document.getElementById('v-orders').textContent = orders.toLocaleString() + ' orders/mo';
     document.getElementById('v-rto').textContent    = (rto * 100).toFixed(0) + '% RTO';
-    document.getElementById('v-aov').textContent    = '৳ ' + aov.toLocaleString();
-    document.getElementById('v-cpr').textContent    = '৳ ' + cpr.toLocaleString();
+    document.getElementById('v-aov').innerHTML    = '&#2547; ' + aov.toLocaleString();
+    document.getElementById('v-cpr').innerHTML    = '&#2547; ' + cpr.toLocaleString();
 
     const rtos         = Math.round(orders * rto);
     const logCost      = rtos * cpr;
@@ -1309,27 +1330,45 @@
     const total        = savedCost + revRecovered;
 
     document.getElementById('o-rtos').textContent        = rtos.toLocaleString() + ' returns';
-    document.getElementById('o-cost').textContent        = '৳ ' + logCost.toLocaleString();
+    document.getElementById('o-cost').innerHTML        = '&#2547; ' + logCost.toLocaleString();
     document.getElementById('o-saved-orders').textContent= savedOrders.toLocaleString() + ' prevented';
-    document.getElementById('o-saved-cost').textContent  = '৳ ' + savedCost.toLocaleString();
-    document.getElementById('o-revenue').textContent     = '৳ ' + Math.round(revRecovered).toLocaleString();
-    document.getElementById('o-total').textContent       = '৳ ' + Math.round(total).toLocaleString();
+    document.getElementById('o-saved-cost').innerHTML  = '&#2547; ' + savedCost.toLocaleString();
+    document.getElementById('o-revenue').innerHTML     = '&#2547; ' + Math.round(revRecovered).toLocaleString();
+    document.getElementById('o-total').innerHTML       = '&#2547; ' + Math.round(total).toLocaleString();
   }
 
-  // Init calculator
-  calcROI();
+  // Init calculator when DOM is ready
+  document.addEventListener('DOMContentLoaded', () => {
+    calcROI();
 
-  // Intersection Observer for fade-in
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        observer.unobserve(e.target);
-      }
+    // Intersection Observer for fade-in
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            observer.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    } else {
+      // Fallback for browsers without IntersectionObserver
+      document.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
+    }
+    
+    // Add keyboard support for tabs
+    const tabs = document.querySelectorAll('.demo-tab');
+    tabs.forEach(tab => {
+      tab.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          tab.click();
+        }
+      });
     });
-  }, { threshold: 0.12 });
-
-  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  });
 </script>
 
 </body>

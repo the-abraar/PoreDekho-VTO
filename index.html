@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PoreDekho VTO - Premium Web-AR Solutions</title>
+    <meta name="description" content="PoreDekho VTO - Enterprise Web-AR Virtual Try-On Solutions to boost conversions and reduce returns.">
+    <title>PoreDekho VTO - Enterprise Web-AR Solutions</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: '#1E40AF',
-                        secondary: '#9333EA',
+                        primary: '#0f172a', /* Slate 900 */
+                        secondary: '#3b82f6', /* Blue 500 */
+                        accent: '#8b5cf6', /* Violet 500 */
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -22,194 +24,220 @@
     </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+        }
+        .gradient-text {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(90deg, #3b82f6, #8b5cf6);
+        }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-900 font-sans antialiased selection:bg-primary selection:text-white">
+<body class="bg-slate-50 text-slate-900 font-sans antialiased selection:bg-secondary selection:text-white">
 
     <!-- Navigation -->
-    <header class="fixed w-full top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <header class="fixed w-full top-0 z-50 glass-nav transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div class="flex-shrink-0 flex items-center">
-                    <span class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">PoreDekho</span>
+                    <a href="#" aria-label="PoreDekho Home" class="text-2xl font-bold tracking-tight text-primary">
+                        PoreDekho<span class="text-secondary">.</span>
+                    </a>
                 </div>
-                <nav class="hidden md:flex space-x-8">
-                    <a href="#features" class="text-gray-600 hover:text-gray-900 font-medium transition-colors">Features</a>
-                    <a href="#pricing" class="text-gray-600 hover:text-gray-900 font-medium transition-colors">Pricing</a>
+                <nav aria-label="Main Navigation" class="hidden md:flex space-x-8">
+                    <a href="#features" class="text-slate-600 hover:text-primary font-medium transition-colors">Features</a>
+                    <a href="#pricing" class="text-slate-600 hover:text-primary font-medium transition-colors">Pricing</a>
+                    <a href="aarong_pitch.html" class="text-slate-600 hover:text-primary font-medium transition-colors">Aarong Pitch</a>
+                    <a href="ar_demo.html" class="text-slate-600 hover:text-primary font-medium transition-colors">AR Demo</a>
                 </nav>
                 <div class="hidden md:flex items-center space-x-4">
-                    <a href="#demo" class="bg-black text-white px-5 py-2.5 rounded-full font-medium hover:bg-gray-800 transition-all transform hover:scale-105 shadow-sm">Book Demo</a>
+                    <a href="#demo" class="bg-primary text-white px-6 py-2.5 rounded-md font-medium hover:bg-slate-800 transition-colors shadow-sm text-sm">Book Demo</a>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden relative">
-        <div class="absolute inset-0 z-0">
-            <div class="absolute inset-0 bg-gradient-to-br from-blue-50 to-purple-50 opacity-90"></div>
-            <!-- Decorative blur -->
-            <div class="absolute top-1/4 -left-64 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
-            <div class="absolute top-1/3 -right-64 w-96 h-96 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
-        </div>
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-8">
-                Transform eCommerce with <br class="hidden md:block" />
-                <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">Web-AR Virtual Try-On</span>
-            </h1>
-            <p class="mt-4 max-w-2xl text-xl text-gray-600 mx-auto mb-10">
-                PoreDekho seamlessly integrates high-performance Virtual Try-On into your existing website. Boost confidence, skyrocket conversions, and eliminate guesswork.
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#demo" class="bg-black text-white px-8 py-4 rounded-full font-medium hover:bg-gray-800 transition-all transform hover:scale-105 shadow-lg text-lg">
-                    Book a Demo
-                </a>
-                <a href="#features" class="bg-white text-gray-900 border border-gray-200 px-8 py-4 rounded-full font-medium hover:bg-gray-50 transition-all shadow-sm text-lg">
-                    Explore Features
-                </a>
+    <main>
+        <!-- Hero Section -->
+        <section class="pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden relative" aria-labelledby="hero-heading">
+            <div class="absolute inset-0 z-0 pointer-events-none">
+                <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-100 via-slate-50 to-slate-50 opacity-70"></div>
             </div>
-        </div>
-    </section>
-
-    <!-- Features / Why VTO -->
-    <section id="features" class="py-24 bg-white relative z-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-20">
-                <h2 class="text-sm font-semibold text-blue-600 tracking-wide uppercase">Why VTO?</h2>
-                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-                    A smarter way to shop online
+            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 id="hero-heading" class="text-5xl md:text-7xl font-extrabold tracking-tight mb-8 text-primary leading-tight">
+                    Transform eCommerce with <br class="hidden md:block" />
+                    <span class="gradient-text">Web-AR Virtual Try-On</span>
+                </h1>
+                <p class="mt-4 max-w-2xl text-lg md:text-xl text-slate-600 mx-auto mb-10 leading-relaxed">
+                    PoreDekho seamlessly integrates enterprise-grade Virtual Try-On into your existing storefront. Boost buyer confidence, skyrocket conversions, and eliminate guesswork.
                 </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#demo" class="bg-primary text-white px-8 py-4 rounded-md font-medium hover:bg-slate-800 transition-colors shadow-lg text-lg flex items-center justify-center">
+                        Schedule a Consultation
+                    </a>
+                    <a href="#features" class="bg-white text-slate-900 border border-slate-200 px-8 py-4 rounded-md font-medium hover:bg-slate-50 transition-colors shadow-sm text-lg flex items-center justify-center">
+                        Explore Features
+                    </a>
+                </div>
             </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-                <!-- Feature 1 -->
-                <div class="p-8 rounded-3xl bg-gray-50 border border-gray-100 hover:shadow-xl transition-shadow duration-300">
-                    <div class="w-14 h-14 rounded-2xl bg-blue-100 flex items-center justify-center mb-6">
-                        <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Boost Conversions</h3>
-                    <p class="text-gray-600">Customers who use Virtual Try-On are up to 3x more likely to make a purchase. Let them see exactly how products look.</p>
+        </section>
+
+        <!-- Features / Why VTO -->
+        <section id="features" class="py-24 bg-white relative z-10 border-t border-slate-100" aria-labelledby="features-heading">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-20">
+                    <h2 id="features-heading" class="text-sm font-semibold text-secondary tracking-wide uppercase">Enterprise Benefits</h2>
+                    <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-primary sm:text-4xl">
+                        A smarter way to scale online
+                    </p>
                 </div>
                 
-                <!-- Feature 2 -->
-                <div class="p-8 rounded-3xl bg-gray-50 border border-gray-100 hover:shadow-xl transition-shadow duration-300">
-                    <div class="w-14 h-14 rounded-2xl bg-purple-100 flex items-center justify-center mb-6">
-                        <svg class="w-7 h-7 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                    <!-- Feature 1 -->
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-lg transition-shadow duration-300">
+                        <div class="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center mb-6">
+                            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-primary">Boost Conversions</h3>
+                        <p class="text-slate-600 leading-relaxed">Customers who use Virtual Try-On are up to 3x more likely to make a purchase. Let them see exactly how products look.</p>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">Reduce Returns</h3>
-                    <p class="text-gray-600">Give buyers confidence. By visualizing products accurately, you dramatically lower the rate of returns due to poor fit or style.</p>
-                </div>
-
-                <!-- Feature 3 -->
-                <div class="p-8 rounded-3xl bg-gray-50 border border-gray-100 hover:shadow-xl transition-shadow duration-300">
-                    <div class="w-14 h-14 rounded-2xl bg-green-100 flex items-center justify-center mb-6">
-                        <svg class="w-7 h-7 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Seamless Integration</h3>
-                    <p class="text-gray-600">Our lightweight Web-AR SDK embeds into any existing storefront in minutes. No app downloads required for your users.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing Section -->
-    <section id="pricing" class="py-24 bg-gray-900 text-white relative z-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-20">
-                <h2 class="text-sm font-semibold text-blue-400 tracking-wide uppercase">Pricing</h2>
-                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight sm:text-4xl">
-                    Simple, transparent pricing
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <!-- Starter -->
-                <div class="bg-gray-800 rounded-3xl p-8 border border-gray-700 flex flex-col">
-                    <h3 class="text-2xl font-semibold mb-2">Starter</h3>
-                    <p class="text-gray-400 mb-6">Perfect for small boutiques.</p>
-                    <div class="mb-8">
-                        <span class="text-5xl font-extrabold">$299</span>
-                        <span class="text-gray-400">/mo</span>
-                    </div>
-                    <ul class="space-y-4 mb-8 flex-1">
-                        <li class="flex items-center"><svg class="w-5 h-5 text-blue-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Up to 10k monthly views</li>
-                        <li class="flex items-center"><svg class="w-5 h-5 text-blue-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> 50 3D assets</li>
-                        <li class="flex items-center"><svg class="w-5 h-5 text-blue-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Basic analytics</li>
-                    </ul>
-                    <a href="#demo" class="block w-full text-center bg-gray-700 hover:bg-gray-600 text-white font-medium py-3 rounded-xl transition-colors">Get Started</a>
-                </div>
-
-                <!-- Professional -->
-                <div class="bg-gradient-to-b from-blue-600 to-purple-700 rounded-3xl p-8 border border-blue-500 transform md:-translate-y-4 shadow-2xl flex flex-col relative">
-                    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white text-blue-900 text-xs font-bold uppercase tracking-wider py-1 px-3 rounded-full">Most Popular</div>
-                    <h3 class="text-2xl font-semibold mb-2">Professional</h3>
-                    <p class="text-blue-200 mb-6">For growing eCommerce brands.</p>
-                    <div class="mb-8">
-                        <span class="text-5xl font-extrabold">$899</span>
-                        <span class="text-blue-200">/mo</span>
-                    </div>
-                    <ul class="space-y-4 mb-8 flex-1 text-white">
-                        <li class="flex items-center"><svg class="w-5 h-5 text-white mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Up to 100k monthly views</li>
-                        <li class="flex items-center"><svg class="w-5 h-5 text-white mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Unlimited 3D assets</li>
-                        <li class="flex items-center"><svg class="w-5 h-5 text-white mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Advanced analytics</li>
-                        <li class="flex items-center"><svg class="w-5 h-5 text-white mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Priority support</li>
-                    </ul>
-                    <a href="#demo" class="block w-full text-center bg-white text-blue-900 hover:bg-gray-100 font-bold py-3 rounded-xl transition-colors">Start Free Trial</a>
-                </div>
-
-                <!-- Enterprise -->
-                <div class="bg-gray-800 rounded-3xl p-8 border border-gray-700 flex flex-col">
-                    <h3 class="text-2xl font-semibold mb-2">Enterprise</h3>
-                    <p class="text-gray-400 mb-6">Custom solutions at scale.</p>
-                    <div class="mb-8">
-                        <span class="text-5xl font-extrabold">Custom</span>
-                    </div>
-                    <ul class="space-y-4 mb-8 flex-1">
-                        <li class="flex items-center"><svg class="w-5 h-5 text-blue-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Unlimited views</li>
-                        <li class="flex items-center"><svg class="w-5 h-5 text-blue-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Custom SDK integrations</li>
-                        <li class="flex items-center"><svg class="w-5 h-5 text-blue-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Dedicated account manager</li>
-                        <li class="flex items-center"><svg class="w-5 h-5 text-blue-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> SLA guarantees</li>
-                    </ul>
-                    <a href="#demo" class="block w-full text-center bg-gray-700 hover:bg-gray-600 text-white font-medium py-3 rounded-xl transition-colors">Contact Sales</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Book Demo CTA -->
-    <section id="demo" class="py-24 bg-white relative z-10">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-3xl p-10 md:p-16 text-center shadow-xl border border-white relative overflow-hidden">
-                <div class="relative z-10">
-                    <h2 class="text-3xl md:text-5xl font-extrabold text-gray-900 mb-6">Ready to transform your store?</h2>
-                    <p class="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">Schedule a tailored 30-minute demo to see how PoreDekho integrates with your existing catalog.</p>
                     
-                    <form class="max-w-md mx-auto space-y-4" onsubmit="event.preventDefault(); alert('Demo requested!');">
-                        <input type="email" placeholder="Enter your work email" class="w-full px-5 py-4 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 placeholder-gray-400" required>
-                        <button type="submit" class="w-full bg-black text-white px-5 py-4 rounded-xl font-medium hover:bg-gray-800 transition-colors shadow-md text-lg">
-                            Request Demo
-                        </button>
-                        <p class="text-sm text-gray-500 mt-4">No credit card required.</p>
-                    </form>
+                    <!-- Feature 2 -->
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-lg transition-shadow duration-300">
+                        <div class="w-12 h-12 rounded-lg bg-violet-100 flex items-center justify-center mb-6">
+                            <svg class="w-6 h-6 text-violet-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-primary">Reduce Returns</h3>
+                        <p class="text-slate-600 leading-relaxed">Give buyers confidence. By visualizing products accurately, you dramatically lower the rate of returns due to poor fit or style.</p>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-lg transition-shadow duration-300">
+                        <div class="w-12 h-12 rounded-lg bg-emerald-100 flex items-center justify-center mb-6">
+                            <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-primary">Seamless Integration</h3>
+                        <p class="text-slate-600 leading-relaxed">Our lightweight Web-AR SDK embeds into any existing storefront in minutes. No app downloads required for your users.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="py-24 bg-primary text-white relative z-10" aria-labelledby="pricing-heading">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-20">
+                    <h2 id="pricing-heading" class="text-sm font-semibold text-secondary tracking-wide uppercase">Pricing</h2>
+                    <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight sm:text-4xl">
+                        Transparent plans for growing brands
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <!-- Starter -->
+                    <div class="bg-slate-800 rounded-2xl p-8 border border-slate-700 flex flex-col">
+                        <h3 class="text-2xl font-semibold mb-2">Starter</h3>
+                        <p class="text-slate-400 mb-6 text-sm">Perfect for emerging boutiques.</p>
+                        <div class="mb-8">
+                            <span class="text-5xl font-extrabold">$299</span>
+                            <span class="text-slate-400">/mo</span>
+                        </div>
+                        <ul class="space-y-4 mb-8 flex-1 text-sm text-slate-300">
+                            <li class="flex items-center"><svg class="w-5 h-5 text-secondary mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Up to 10k monthly views</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-secondary mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> 50 3D assets</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-secondary mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Basic analytics</li>
+                        </ul>
+                        <a href="#demo" class="block w-full text-center bg-slate-700 hover:bg-slate-600 text-white font-medium py-3 rounded-md transition-colors">Get Started</a>
+                    </div>
+
+                    <!-- Professional -->
+                    <div class="bg-slate-800 rounded-2xl p-8 border-2 border-secondary transform md:-translate-y-4 shadow-2xl flex flex-col relative">
+                        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-secondary text-white text-xs font-bold uppercase tracking-wider py-1.5 px-4 rounded-full">Most Popular</div>
+                        <h3 class="text-2xl font-semibold mb-2">Professional</h3>
+                        <p class="text-slate-300 mb-6 text-sm">For scaling eCommerce stores.</p>
+                        <div class="mb-8">
+                            <span class="text-5xl font-extrabold">$899</span>
+                            <span class="text-slate-300">/mo</span>
+                        </div>
+                        <ul class="space-y-4 mb-8 flex-1 text-sm text-white">
+                            <li class="flex items-center"><svg class="w-5 h-5 text-secondary mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Up to 100k monthly views</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-secondary mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Unlimited 3D assets</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-secondary mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Advanced analytics</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-secondary mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Priority support</li>
+                        </ul>
+                        <a href="#demo" class="block w-full text-center bg-secondary hover:bg-blue-600 text-white font-bold py-3 rounded-md transition-colors">Start Free Trial</a>
+                    </div>
+
+                    <!-- Enterprise -->
+                    <div class="bg-slate-800 rounded-2xl p-8 border border-slate-700 flex flex-col">
+                        <h3 class="text-2xl font-semibold mb-2">Enterprise</h3>
+                        <p class="text-slate-400 mb-6 text-sm">Custom solutions at scale.</p>
+                        <div class="mb-8">
+                            <span class="text-5xl font-extrabold">Custom</span>
+                        </div>
+                        <ul class="space-y-4 mb-8 flex-1 text-sm text-slate-300">
+                            <li class="flex items-center"><svg class="w-5 h-5 text-secondary mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Unlimited views</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-secondary mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Custom SDK integrations</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-secondary mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Dedicated account manager</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-secondary mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> SLA guarantees</li>
+                        </ul>
+                        <a href="#demo" class="block w-full text-center bg-slate-700 hover:bg-slate-600 text-white font-medium py-3 rounded-md transition-colors">Contact Sales</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Book Demo CTA -->
+        <section id="demo" class="py-24 bg-slate-50 relative z-10 border-t border-slate-200" aria-labelledby="cta-heading">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-white rounded-2xl p-10 md:p-16 text-center shadow-sm border border-slate-200 relative overflow-hidden">
+                    <div class="relative z-10">
+                        <h2 id="cta-heading" class="text-3xl md:text-4xl font-extrabold text-primary mb-6">Ready to transform your store?</h2>
+                        <p class="text-lg text-slate-600 mb-10 max-w-2xl mx-auto">Schedule a tailored 30-minute consultation to see how PoreDekho integrates with your existing catalog.</p>
+                        
+                        <form class="max-w-md mx-auto space-y-4" onsubmit="event.preventDefault(); alert('Demo requested!');" aria-label="Demo Request Form">
+                            <div>
+                                <label for="email-input" class="sr-only">Work Email</label>
+                                <input id="email-input" type="email" placeholder="Enter your work email" class="w-full px-5 py-4 rounded-md border border-slate-300 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent text-slate-900 placeholder-slate-400" required>
+                            </div>
+                            <button type="submit" class="w-full bg-primary text-white px-5 py-4 rounded-md font-medium hover:bg-slate-800 transition-colors shadow-sm text-lg">
+                                Request Demo
+                            </button>
+                            <p class="text-sm text-slate-500 mt-4">No credit card required.</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-50 py-12 border-t border-gray-200">
+    <footer class="bg-white py-12 border-t border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
-            <div class="mb-4 md:mb-0">
-                <span class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">PoreDekho VTO</span>
-                <p class="text-gray-500 text-sm mt-2">© 2026 PoreDekho Inc. All rights reserved.</p>
+            <div class="mb-4 md:mb-0 text-center md:text-left">
+                <span class="text-xl font-bold text-primary">PoreDekho<span class="text-secondary">.</span></span>
+                <p class="text-slate-500 text-sm mt-2">&copy; <span id="year"></span> PoreDekho Inc. All rights reserved.</p>
             </div>
-            <div class="flex space-x-6">
-                <a href="#" class="text-gray-400 hover:text-gray-600">Twitter</a>
-                <a href="#" class="text-gray-400 hover:text-gray-600">LinkedIn</a>
-                <a href="#" class="text-gray-400 hover:text-gray-600">GitHub</a>
+            <div class="flex space-x-6 justify-center md:justify-start">
+                <a href="#" class="text-slate-400 hover:text-primary transition-colors" aria-label="Twitter">
+                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"/></svg>
+                </a>
+                <a href="#" class="text-slate-400 hover:text-primary transition-colors" aria-label="LinkedIn">
+                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd"/></svg>
+                </a>
+                <a href="#" class="text-slate-400 hover:text-primary transition-colors" aria-label="GitHub">
+                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/></svg>
+                </a>
             </div>
         </div>
     </footer>
 
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
