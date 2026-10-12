@@ -173,3 +173,12 @@ Audited 2026-10-12. Files read in full: README.md, pitch_deck.md, pitch_script.m
 4. **You:** pick one price from real unit costs (`docs/pricing_open_questions.md`).
 5. **You:** choose the distribution route (embeddable web widget is the simplest); build that, not a Meta filter.
 6. **You:** add a short privacy statement and host the demo; ask permission before using any real brand in a pitch.
+
+### Update 9 (2026-10-12, stopped at the 70% usage ceiling)
+
+**Done this round:** retro guardrails (`scripts/check.sh`, pre-commit hook `.githooks/pre-commit`, CI workflow, `AGENTS.md`, `CODING_STANDARDS.md`); orphaned worktrees removed (Suggest.Bike); all work committed and pushed to `origin/main`. Usage mirror `../usage.md` is live (status line writes the 5-hour and 7-day percentages); read it before starting a round.
+
+**I was in the middle of:** nothing half-done. The last action was this log. No uncommitted work remains apart from this file.
+
+**Not verified:** the GitHub CI workflows have never run; the pre-commit hook has never blocked a real commit; no real-device, real-user or real-host testing.
+**Next, first:** try `tryon.html` on real faces with the tuning panel; get a real seller's return-rate numbers; see Update 8.
