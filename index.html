@@ -72,13 +72,25 @@
                 <nav aria-label="Main Navigation" class="hidden md:flex space-x-8">
                     <a href="#features" class="text-charcoal-600 hover:text-secondary font-medium transition-colors">Features</a>
                     <a href="#pricing" class="text-charcoal-600 hover:text-secondary font-medium transition-colors">Pricing</a>
-                    <a href="aarong_pitch.html" class="text-charcoal-600 hover:text-secondary font-medium transition-colors">Aarong Pitch</a>
+                    <a href="sample_pitch.html" class="text-charcoal-600 hover:text-secondary font-medium transition-colors">Sample Pitch (Template)</a>
                     <a href="ar_demo.html" class="text-charcoal-600 hover:text-secondary font-medium transition-colors">AR Demo</a>
+                    <a href="tryon.html" class="text-charcoal-600 hover:text-secondary font-medium transition-colors">Live Try-On</a>
                 </nav>
                 <div class="hidden md:flex items-center space-x-4">
                     <a href="#demo" class="bg-primary text-white px-6 py-2.5 rounded-sm font-medium hover:bg-charcoal-800 transition-colors shadow-sm text-sm">Book Demo</a>
                 </div>
+                <button id="menu-btn" type="button" class="md:hidden p-2 text-primary" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle menu">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
             </div>
+            <nav id="mobile-menu" aria-label="Mobile Navigation" class="hidden md:hidden flex-col pb-4 space-y-1">
+                <a href="#features" class="block py-3 text-charcoal-600 font-medium">Features</a>
+                <a href="#pricing" class="block py-3 text-charcoal-600 font-medium">Pricing</a>
+                <a href="sample_pitch.html" class="block py-3 text-charcoal-600 font-medium">Sample Pitch (Template)</a>
+                <a href="ar_demo.html" class="block py-3 text-charcoal-600 font-medium">AR Demo</a>
+                <a href="tryon.html" class="block py-3 text-charcoal-600 font-medium">Live Try-On</a>
+                <a href="#demo" class="block py-3 text-primary font-semibold">Book Demo</a>
+            </nav>
         </div>
     </header>
 
@@ -141,7 +153,7 @@
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
                         </div>
                         <h3 class="text-xl font-serif font-bold mb-3 text-primary">Boost Conversions</h3>
-                        <p class="text-charcoal-600 leading-relaxed font-light">Shoppers who engage with Virtual Try-On are up to 3x more likely to complete a purchase, bridging the gap between digital browsing and physical fitting.</p>
+                        <p class="text-charcoal-600 leading-relaxed font-light">Shoppers who engage with Virtual Try-On are up to 3x more likely to complete a purchase <small style="color:#c0392b">[UNVERIFIED - source needed]</small>, bridging the gap between digital browsing and physical fitting.</p>
                     </div>
                     
                     <!-- Feature 2 -->
@@ -291,6 +303,13 @@
 
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
+        (function () {
+            var b = document.getElementById('menu-btn'), m = document.getElementById('mobile-menu');
+            function set(o) { b.setAttribute('aria-expanded', o); m.classList.toggle('hidden', !o); m.classList.toggle('flex', o); }
+            b.addEventListener('click', function () { set(b.getAttribute('aria-expanded') !== 'true'); });
+            m.addEventListener('click', function (e) { if (e.target.tagName === 'A') set(false); });
+            document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { set(false); b.focus(); } });
+        })();
     </script>
 </body>
 </html>

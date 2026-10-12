@@ -17,7 +17,7 @@
 ## Key Value Propositions (The "Why Us")
 1. **Frictionless Experience:** Zero app downloads required. Our AR integrates instantly natively on Facebook, Instagram, or your proprietary website.
 2. **Undeniable Customer Trust:** Bridges the gap between viewing a flat, lifeless 2D image and knowing exactly how a premium accessory fits, looks, and feels on the customer.
-3. **Data-Driven Profitability:** Customers who engage with AR are up to 40% more likely to convert and 30% less likely to return items. We don't just add a feature; we protect your profit margins.
+3. **Data-Driven Profitability:** Customers who engage with AR are up to 40% more likely to convert and 30% less likely to return items. We don't just add a feature; we protect your profit margins. [UNVERIFIED - source needed]
 
 ## Target Personas
 

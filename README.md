@@ -16,7 +16,7 @@ This repository contains the business strategy, marketing assets, and technical 
 A "Blue Ocean" B2B service tailored for the booming Bangladeshi market. We provide a **Virtual Try-On (VTO) Pipeline** that functions not just as a visual gimmick, but as a direct **sales conversion tool**.
 
 ## 🛠️ Technical Architecture & Best Practices
-*   **Engine:** Hosted and deployed via **Meta Spark** (for seamless FB/IG integration) or **8th Wall / Model-viewer** (for Web-AR).
+*   **Engine:** Hosted and deployed via **Model-viewer** (for Web-AR). Meta Spark and 8th Wall are discontinued/not available.
 *   **Focus on Face/Head Tracking:** More accurate and stable on older smartphones common in BD compared to full-body tracking.
 *   **Web-AR for Direct Web Sales:** Utilize Google's `<model-viewer>` for app-less AR directly in mobile browsers.
 *   **Low-End Optimization:** Keep 3D models lightweight for fast loading over standard 4G connections.

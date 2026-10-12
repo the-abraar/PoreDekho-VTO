@@ -13,7 +13,7 @@ At PoreDekho VTO, we build enterprise-grade **Augmented Reality (AR) Virtual Try
 **The Business Impact for [Shop Name]:**
 
 1. **Slashing RTO Rates:** When customers "try before they buy," expectations align with reality. This drastically reduces delivery failures, return logistics costs, and inventory lock-up.
-2. **Accelerated Conversions:** Interactive AR experiences are proven to increase purchase confidence. Customers who use AR are up to 40% more likely to check out.
+2. **Accelerated Conversions:** Interactive AR experiences are proven to increase purchase confidence. Customers who use AR are up to 40% more likely to check out. [UNVERIFIED - source needed]
 3. **Unmatched Brand Prestige:** Offering an interactive, futuristic shopping experience positions [Shop Name] as an innovative market leader, separating you from competitors relying on static images.
 
 I have prepared a custom, working demo showcasing how a [Product Type] looks in Augmented Reality. I would love 5 minutes of your time to show you how PoreDekho VTO can elevate your customer experience and protect your bottom line.

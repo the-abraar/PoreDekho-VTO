@@ -38,7 +38,7 @@
 ### Week 1: Education & Problem Awareness
 *   **Day 1 (Monday) - Reel:** *The Hook.* "What is PoreDekho VTO?" A punchy 15-second demo of the virtual try-on in action, explicitly calling out how it solves the "Will it suit me?" hesitation.
 *   **Day 3 (Wednesday) - Carousel Post:** "The True Cost of RTO in Bangladesh." Break down the logistics and packaging losses for e-commerce, and present AR as the definitive solution.
-*   **Day 5 (Friday) - Single Image:** Data-driven infographic. "Brands using Virtual Try-On see up to a 40% increase in checkout rates and a 30% drop in returns. Are you leaving money on the table?"
+*   **Day 5 (Friday) - Single Image:** Data-driven infographic. "Brands using Virtual Try-On see up to a 40% increase in checkout rates and a 30% drop in returns. Are you leaving money on the table?" [UNVERIFIED - source needed: 40%, 30%]
 *   **Day 7 (Sunday) - Story:** Interactive Poll for business owners. "What's the biggest threat to your online sales right now? A) High RTO B) Low Trust C) High Ad Costs."
 
 ### Week 2: Solution & Social Proof

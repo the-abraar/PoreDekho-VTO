@@ -24,12 +24,12 @@ To close deals with jewelry brands and F-commerce boutiques in Bangladesh, we ne
 **English:**
 "Hi [Name/Brand Name] team! I've been following your page and I love the [mention a specific piece/collection] you posted recently. I noticed you get a lot of engagement on your Live sessions! 
 Quick question - how are you handling customers who want to see how the jewelry looks on them before buying? 
-We built PoreDekho VTO to let customers virtually try on your jewelry directly from their phones. It usually boosts conversion rates by 20-30% and reduces 'size issue' returns. Open to a quick chat to see how it works? Cheers!"
+We built PoreDekho VTO to let customers virtually try on your jewelry directly from their phones. It usually boosts conversion rates by 20-30% and reduces 'size issue' returns. Open to a quick chat to see how it works? Cheers!" [UNVERIFIED - source needed]
 
 **Benglish (Banglish):**
 "Hello [Brand Name] team! Apnader page follow korchilam, recent [collection/piece name] ta khub bhalo legeche. Dekhlam apnader Live session gulote onek response ashe! 
 Ekta quick proshno chilo - kustomer ra jokhon dekhte chay je goyna ta porle kemon lagbe, tokhon apnara ki bhabe handle koren?
-Amra PoreDekho VTO toiri korechi, jeta diye apnar kustomer ra nijeder phone thekei apnader jewelry virtually try-on kore dekhte parbe. Ete sel normally 20-30% bere jay ar return onek kome jay. Jodi ektu somoy den, tahole etar ekta demo dekhate partam. Kotha bola jabe ki?"
+Amra PoreDekho VTO toiri korechi, jeta diye apnar kustomer ra nijeder phone thekei apnader jewelry virtually try-on kore dekhte parbe. Ete sel normally 20-30% bere jay ar return onek kome jay. Jodi ektu somoy den, tahole etar ekta demo dekhate partam. Kotha bola jabe ki?" [UNVERIFIED - source needed]
 
 ### Template 2: The "Setup + Performance Bonus" Pitch (Direct Value)
 **Target:** Larger brands or those who might be hesitant about upfront software costs.
@@ -85,13 +85,13 @@ Understanding the competitive landscape and technological gaps in the Bangladesh
 
 ### Global AR Providers (Perfect Corp, Camweara, Wanna)
 *   **Their Approach:** High-cost, enterprise-tier SaaS platforms priced in USD, requiring robust technical integration and heavy 3D assets.
-*   **The Market Gap:** These platforms are entirely unaffordable for 99% of BD boutiques. Furthermore, they are optimized for large-scale websites rather than the Messenger/Facebook-first reality of Bangladeshi F-commerce.
-*   **Our Edge:** Localized pricing (Setup + Performance model), plug-and-play Meta Spark integration tailored for Facebook/Instagram, and lightweight 3D models (<4MB) optimized for BD's 4G mobile networks.
+*   **The Market Gap:** These platforms are entirely unaffordable for 99% of BD boutiques [UNVERIFIED - source needed]. Furthermore, they are optimized for large-scale websites rather than the Messenger/Facebook-first reality of Bangladeshi F-commerce.
+*   **Our Edge:** Localized pricing (Setup + Performance model), hosted try-on links shareable on Facebook/Instagram (Meta Spark is discontinued; no plug-and-play social integration), and lightweight 3D models (<4MB) optimized for BD's 4G mobile networks.
 
-### Mega-Retailers & E-commerce Giants (Daraz, Aarong, Diamond World)
-*   **Their Approach:** Standard 2D product photography, lookbooks, and high-budget Facebook Live sessions. As of currently, even market leaders like Aarong and Daraz do **not** offer native Augmented Reality Virtual Try-On for jewelry and accessories.
-*   **The Market Gap:** Daraz suffers from high RTO (Return to Origin) because of the "doesn't match the picture" (*Chhobir sathe mile nai*) phenomenon. High-ticket jewelry sellers on generic e-commerce platforms struggle to build trust. Meanwhile, Aarong’s digital experience lacks interactive sizing/fit visualization.
-*   **Our Edge:** We can pitch mid-tier boutiques the ability to "out-innovate Aarong" by offering a superior digital shopping experience. For larger platforms, we represent a missing piece to solve their multi-million taka RTO problem.
+### Mega-Retailers & E-commerce Giants (Daraz, [Prospect brand], [Prospect brand])
+*   **Their Approach:** Standard 2D product photography, lookbooks, and high-budget Facebook Live sessions. As of currently, even market leaders like [Prospect brand] and Daraz do **not** offer native Augmented Reality Virtual Try-On for jewelry and accessories.
+*   **The Market Gap:** Daraz suffers from high RTO (Return to Origin) because of the "doesn't match the picture" (*Chhobir sathe mile nai*) phenomenon. High-ticket jewelry sellers on generic e-commerce platforms struggle to build trust. Meanwhile, [Prospect brand]’s digital experience lacks interactive sizing/fit visualization.
+*   **Our Edge:** We can pitch mid-tier boutiques the ability to "out-innovate [Prospect brand]" by offering a superior digital shopping experience. For larger platforms, we represent a missing piece to solve their multi-million taka RTO problem.
 
 ### Local F-commerce (Facebook Live Boutiques)
 *   **Their Approach:** Relying heavily on page admins holding up jewelry to their own necks/ears during Live sessions, or posting endless photos to answer "inbox please" queries.

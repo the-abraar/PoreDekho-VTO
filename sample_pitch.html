@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="PoreDekho VTO × Aarong Jewellery Interactive Pitch - See the future of Web-AR virtual try-on." />
-  <title>PoreDekho VTO × Aarong Jewellery | Interactive Pitch</title>
+  <meta name="description" content="PoreDekho VTO × [Prospect brand] Jewellery Interactive Pitch - See the future of Web-AR virtual try-on." />
+  <title>PoreDekho VTO × [Prospect brand] Jewellery | Interactive Pitch</title>
 
   <!-- Model Viewer (Google) -->
   <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
@@ -26,21 +26,21 @@
       line-height: 1.6;
     }
 
-    /* ===== AARONG BRAND PALETTE ===== */
+    /* ===== PLACEHOLDER PROSPECT PALETTE ===== */
     :root {
-      --aarong-red:    #c0392b;
-      --aarong-gold:   #c9a84c;
-      --aarong-cream:  #f5f0e8;
-      --aarong-dark:   #0d0d0d;
-      --aarong-card:   #161616;
-      --aarong-border: rgba(201,168,76,0.25);
+      --brand-red:    #c0392b;
+      --brand-gold:   #c9a84c;
+      --brand-cream:  #f5f0e8;
+      --brand-dark:   #0d0d0d;
+      --brand-card:   #161616;
+      --brand-border: rgba(201,168,76,0.25);
       --glow: 0 0 40px rgba(201,168,76,0.15);
     }
 
     /* ===== SCROLLBAR ===== */
     ::-webkit-scrollbar { width: 8px; }
     ::-webkit-scrollbar-track { background: #111; }
-    ::-webkit-scrollbar-thumb { background: var(--aarong-gold); border-radius: 4px; }
+    ::-webkit-scrollbar-thumb { background: var(--brand-gold); border-radius: 4px; }
 
     /* ===== HERO ===== */
     #hero {
@@ -62,8 +62,8 @@
     }
     .hero-badge {
       display: inline-block;
-      border: 1px solid var(--aarong-gold);
-      color: var(--aarong-gold);
+      border: 1px solid var(--brand-gold);
+      color: var(--brand-gold);
       font-size: 0.72rem;
       letter-spacing: 0.18em;
       text-transform: uppercase;
@@ -76,7 +76,7 @@
       font-size: clamp(2.4rem, 6vw, 5.2rem);
       line-height: 1.08;
       margin-bottom: 20px;
-      background: linear-gradient(135deg, #f5e8c0 30%, var(--aarong-gold) 60%, #e8c97a 100%);
+      background: linear-gradient(135deg, #f5e8c0 30%, var(--brand-gold) 60%, #e8c97a 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -95,7 +95,7 @@
       justify-content: center;
     }
     .btn-primary {
-      background: linear-gradient(135deg, var(--aarong-gold), #a8863a);
+      background: linear-gradient(135deg, var(--brand-gold), #a8863a);
       color: #0d0d0d;
       font-weight: 700;
       font-size: 0.95rem;
@@ -118,12 +118,12 @@
     }
     .btn-secondary {
       background: transparent;
-      color: var(--aarong-gold);
+      color: var(--brand-gold);
       font-weight: 600;
       font-size: 0.95rem;
       padding: 14px 32px;
       border-radius: 8px;
-      border: 1px solid var(--aarong-gold);
+      border: 1px solid var(--brand-gold);
       cursor: pointer;
       text-decoration: none;
       transition: background 0.2s;
@@ -157,7 +157,7 @@
       font-size: 0.72rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--aarong-gold);
+      color: var(--brand-gold);
       margin-bottom: 12px;
     }
     .section-title {
@@ -176,9 +176,9 @@
 
     /* ===== STAT STRIP ===== */
     #stats {
-      background: var(--aarong-card);
-      border-top: 1px solid var(--aarong-border);
-      border-bottom: 1px solid var(--aarong-border);
+      background: var(--brand-card);
+      border-top: 1px solid var(--brand-border);
+      border-bottom: 1px solid var(--brand-border);
     }
     .stats-inner {
       max-width: 1200px;
@@ -192,7 +192,7 @@
     .stat-num {
       font-family: 'Playfair Display', serif;
       font-size: 3rem;
-      color: var(--aarong-gold);
+      color: var(--brand-gold);
       line-height: 1;
     }
     .stat-label { color: #7a7269; font-size: 0.9rem; margin-top: 6px; }
@@ -204,8 +204,8 @@
       gap: 24px;
     }
     .problem-card {
-      background: var(--aarong-card);
-      border: 1px solid var(--aarong-border);
+      background: var(--brand-card);
+      border: 1px solid var(--brand-border);
       border-radius: 16px;
       padding: 32px;
       position: relative;
@@ -221,20 +221,20 @@
       position: absolute;
       top: 0; left: 0; right: 0;
       height: 3px;
-      background: linear-gradient(90deg, transparent, var(--aarong-gold), transparent);
+      background: linear-gradient(90deg, transparent, var(--brand-gold), transparent);
     }
     .problem-icon { font-size: 2.4rem; margin-bottom: 16px; }
     .problem-card h3 { font-size: 1.1rem; margin-bottom: 10px; color: #f0ece4; }
     .problem-card p  { font-size: 0.93rem; color: #7a7269; line-height: 1.7; }
 
     /* ===== DEMO SECTION ===== */
-    #demo { background: var(--aarong-card); }
+    #demo { background: var(--brand-card); }
     .demo-tabs {
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
       margin-bottom: 40px;
-      border-bottom: 1px solid var(--aarong-border);
+      border-bottom: 1px solid var(--brand-border);
       padding-bottom: 0;
     }
     .demo-tab {
@@ -251,8 +251,8 @@
       white-space: nowrap;
     }
     .demo-tab.active, .demo-tab:hover {
-      color: var(--aarong-gold);
-      border-bottom-color: var(--aarong-gold);
+      color: var(--brand-gold);
+      border-bottom-color: var(--brand-gold);
     }
 
     .product-panel { display: none; }
@@ -273,7 +273,7 @@
       background: #111;
       border-radius: 20px;
       overflow: hidden;
-      border: 1px solid var(--aarong-border);
+      border: 1px solid var(--brand-border);
       box-shadow: var(--glow);
     }
     .model-wrap model-viewer {
@@ -286,20 +286,20 @@
       top: 16px; left: 16px;
       background: rgba(0,0,0,0.75);
       backdrop-filter: blur(10px);
-      border: 1px solid var(--aarong-border);
+      border: 1px solid var(--brand-border);
       border-radius: 8px;
       padding: 8px 14px;
       font-size: 0.72rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--aarong-gold);
+      color: var(--brand-gold);
     }
     .ar-btn-wrap {
       position: absolute;
       bottom: 16px; right: 16px;
     }
     .ar-btn {
-      background: linear-gradient(135deg, var(--aarong-gold), #a8863a);
+      background: linear-gradient(135deg, var(--brand-gold), #a8863a);
       color: #0d0d0d;
       font-weight: 700;
       font-size: 0.82rem;
@@ -325,7 +325,7 @@
     .product-price {
       font-size: 1.5rem;
       font-weight: 700;
-      color: var(--aarong-gold);
+      color: var(--brand-gold);
       margin-bottom: 16px;
     }
     .product-desc {
@@ -342,8 +342,8 @@
     }
     .tag {
       background: rgba(201,168,76,0.1);
-      border: 1px solid var(--aarong-border);
-      color: var(--aarong-gold);
+      border: 1px solid var(--brand-border);
+      color: var(--brand-gold);
       padding: 4px 14px;
       border-radius: 50px;
       font-size: 0.78rem;
@@ -358,7 +358,7 @@
     }
     .step-num {
       width: 28px; height: 28px;
-      background: var(--aarong-gold);
+      background: var(--brand-gold);
       color: #0d0d0d;
       border-radius: 50%;
       font-size: 0.8rem;
@@ -382,8 +382,8 @@
       margin-bottom: 64px;
     }
     .result-card {
-      background: var(--aarong-card);
-      border: 1px solid var(--aarong-border);
+      background: var(--brand-card);
+      border: 1px solid var(--brand-border);
       border-radius: 16px;
       padding: 32px;
       text-align: center;
@@ -397,7 +397,7 @@
     .result-metric {
       font-family: 'Playfair Display', serif;
       font-size: 2.8rem;
-      color: var(--aarong-gold);
+      color: var(--brand-gold);
       line-height: 1;
       margin-bottom: 6px;
     }
@@ -426,7 +426,7 @@
     }
     .before .ba-header { background: #1a0a0a; color: #c0392b; }
     .after  .ba-header { background: #0a1a08; color: #4caf50;  }
-    .ba-body { padding: 24px; background: var(--aarong-card); }
+    .ba-body { padding: 24px; background: var(--brand-card); }
     .ba-item {
       display: flex;
       align-items: center;
@@ -441,7 +441,7 @@
     .dot-good { width: 8px; height: 8px; border-radius: 50%; background: #4caf50; flex-shrink: 0; }
 
     /* ===== ROI CALCULATOR ===== */
-    #roi { background: var(--aarong-card); }
+    #roi { background: var(--brand-card); }
     .roi-layout {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -453,14 +453,14 @@
     .roi-form label {
       display: block;
       font-size: 0.84rem;
-      color: var(--aarong-gold);
+      color: var(--brand-gold);
       letter-spacing: 0.06em;
       margin-bottom: 6px;
       margin-top: 20px;
     }
     .roi-form input[type=range] {
       width: 100%;
-      accent-color: var(--aarong-gold);
+      accent-color: var(--brand-gold);
       height: 4px;
       cursor: pointer;
     }
@@ -473,7 +473,7 @@
     }
     .roi-output {
       background: #0d0d0d;
-      border: 1px solid var(--aarong-border);
+      border: 1px solid var(--brand-border);
       border-radius: 20px;
       padding: 40px;
     }
@@ -496,7 +496,7 @@
       margin-top: 20px;
       padding: 20px;
       background: rgba(201,168,76,0.08);
-      border: 1px solid var(--aarong-gold);
+      border: 1px solid var(--brand-gold);
       border-radius: 12px;
       text-align: center;
     }
@@ -504,7 +504,7 @@
     .roi-total-val {
       font-family: 'Playfair Display', serif;
       font-size: 2.8rem;
-      color: var(--aarong-gold);
+      color: var(--brand-gold);
     }
 
     /* ===== TIMELINE ===== */
@@ -518,7 +518,7 @@
       position: absolute;
       left: 12px; top: 0; bottom: 0;
       width: 2px;
-      background: linear-gradient(to bottom, var(--aarong-gold), transparent);
+      background: linear-gradient(to bottom, var(--brand-gold), transparent);
     }
     .tl-item {
       position: relative;
@@ -530,21 +530,21 @@
       top: 4px;
       width: 16px; height: 16px;
       border-radius: 50%;
-      background: var(--aarong-gold);
+      background: var(--brand-gold);
       border: 3px solid #0a0a0a;
     }
     .tl-week {
       font-size: 0.72rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--aarong-gold);
+      color: var(--brand-gold);
       margin-bottom: 4px;
     }
     .tl-title { font-size: 1.05rem; font-weight: 600; margin-bottom: 6px; }
     .tl-desc { font-size: 0.9rem; color: #7a7269; line-height: 1.7; }
 
     /* ===== PRICING ===== */
-    #pricing { background: var(--aarong-card); }
+    #pricing { background: var(--brand-card); }
     .pricing-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -552,14 +552,14 @@
     }
     .price-card {
       background: #0d0d0d;
-      border: 1px solid var(--aarong-border);
+      border: 1px solid var(--brand-border);
       border-radius: 20px;
       padding: 36px;
       position: relative;
       transition: transform 0.3s, box-shadow 0.3s;
     }
     .price-card.featured {
-      border-color: var(--aarong-gold);
+      border-color: var(--brand-gold);
       box-shadow: var(--glow);
     }
     .price-card:hover { transform: translateY(-4px); }
@@ -567,7 +567,7 @@
       position: absolute;
       top: -13px; left: 50%;
       transform: translateX(-50%);
-      background: var(--aarong-gold);
+      background: var(--brand-gold);
       color: #0d0d0d;
       font-size: 0.7rem;
       font-weight: 700;
@@ -581,7 +581,7 @@
     .price-amount {
       font-family: 'Playfair Display', serif;
       font-size: 2.6rem;
-      color: var(--aarong-gold);
+      color: var(--brand-gold);
       margin-bottom: 4px;
     }
     .price-period { font-size: 0.82rem; color: #555; margin-bottom: 28px; }
@@ -595,7 +595,7 @@
       align-items: center;
       gap: 10px;
     }
-    .price-features li::before { content: '✦'; color: var(--aarong-gold); font-size: 0.6rem; }
+    .price-features li::before { content: '✦'; color: var(--brand-gold); font-size: 0.6rem; }
 
     /* ===== SOCIAL PROOF ===== */
     #proof { background: #0a0a0a; }
@@ -605,8 +605,8 @@
       gap: 24px;
     }
     .testimonial {
-      background: var(--aarong-card);
-      border: 1px solid var(--aarong-border);
+      background: var(--brand-card);
+      border: 1px solid var(--brand-border);
       border-radius: 16px;
       padding: 32px;
     }
@@ -617,7 +617,7 @@
       color: #c0b8ae;
       margin-bottom: 20px;
     }
-    .testimonial cite { font-size: 0.85rem; color: var(--aarong-gold); font-style: normal; }
+    .testimonial cite { font-size: 0.85rem; color: var(--brand-gold); font-style: normal; }
 
     /* ===== CTA FOOTER ===== */
     #cta {
@@ -651,19 +651,19 @@
     .nav-logo {
       font-family: 'Playfair Display', serif;
       font-size: 1.3rem;
-      color: var(--aarong-gold);
+      color: var(--brand-gold);
       letter-spacing: 0.04em;
     }
     .nav-logo span { color: #f0ece4; font-size: 0.75rem; font-family: 'Inter', sans-serif; display: block; letter-spacing: 0.14em; text-transform: uppercase; }
     .nav-links { display: flex; gap: 28px; }
     .nav-links a { color: #7a7269; font-size: 0.85rem; text-decoration: none; transition: color 0.2s; }
-    .nav-links a:hover, .nav-links a:focus-visible { color: var(--aarong-gold); outline: none; }
+    .nav-links a:hover, .nav-links a:focus-visible { color: var(--brand-gold); outline: none; }
     @media (max-width: 640px) { .nav-links { display: none; } }
 
     /* ===== DIVIDER ===== */
     .gold-divider {
       height: 1px;
-      background: linear-gradient(90deg, transparent, var(--aarong-gold), transparent);
+      background: linear-gradient(90deg, transparent, var(--brand-gold), transparent);
       margin: 0;
     }
 
@@ -674,16 +674,17 @@
       transition: opacity 0.7s ease, transform 0.7s ease;
     }
     .fade-in.visible { opacity: 1; transform: translateY(0); }
-  </style>
+  .unv{display:block;font:600 .65rem/1.2 sans-serif;color:#ff6b5b;letter-spacing:.04em;margin-top:4px}</style>
 </head>
 <body>
+<div style="background:#b00020;color:#fff;text-align:center;padding:6px;font-size:13px">SAMPLE TEMPLATE: [Prospect brand] is a placeholder. Figures and quotes are illustrative, not real data.</div>
 
 <!-- NAV -->
 <header>
   <nav aria-label="Main Navigation">
     <div class="nav-logo">
       PoreDekho VTO
-      <span>A Proposal for Aarong</span>
+      <span>A Proposal for [Prospect brand]</span>
     </div>
     <div class="nav-links">
       <a href="#demo">Live Demo</a>
@@ -705,7 +706,7 @@
     </h1>
     <p class="hero-sub">
       PoreDekho VTO is proposing a dedicated <strong>Augmented Reality Virtual Try-On</strong> service for
-      <strong>Aarong's Jewellery</strong> catalogue &mdash; converting browsers into buyers and
+      <strong>[Prospect brand]'s Jewellery</strong> catalogue &mdash; converting browsers into buyers and
       slashing return rates with a single tap.
     </p>
     <div class="hero-cta-group">
@@ -719,19 +720,19 @@
   <section id="stats" aria-label="Statistics">
     <div class="stats-inner">
       <div class="fade-in">
-        <div class="stat-num">40%</div>
+        <div class="stat-num">40%<small class="unv">UNVERIFIED - source needed</small></div>
         <div class="stat-label">Average RTO rate in BD<br>fashion/accessories e-commerce</div>
       </div>
       <div class="fade-in">
-        <div class="stat-num">3&times;</div>
+        <div class="stat-num">3&times;<small class="unv">UNVERIFIED - source needed</small></div>
         <div class="stat-label">Higher purchase intent<br>after virtual try-on</div>
       </div>
       <div class="fade-in">
-        <div class="stat-num">&#2547;&#2547;&#2547;</div>
+        <div class="stat-num">&#2547;&#2547;&#2547;<small class="unv">UNVERIFIED - source needed</small></div>
         <div class="stat-label">Wasted annually in return<br>logistics & restocking</div>
       </div>
       <div class="fade-in">
-        <div class="stat-num">94%</div>
+        <div class="stat-num">94%<small class="unv">UNVERIFIED - source needed</small></div>
         <div class="stat-label">Customer satisfaction when<br>VTO matches real product</div>
       </div>
     </div>
@@ -740,9 +741,9 @@
   <!-- ===== PROBLEM ===== -->
   <section class="section" aria-labelledby="problem-heading">
     <p class="section-label fade-in">The Problem</p>
-    <h2 id="problem-heading" class="section-title fade-in">Aarong's Jewellery Deserves<br>Better Than a Flat JPEG.</h2>
+    <h2 id="problem-heading" class="section-title fade-in">[Prospect brand]'s Jewellery Deserves<br>Better Than a Flat JPEG.</h2>
     <p class="section-body fade-in">
-      Aarong has built a globally respected brand. But even the most beautiful necklace photograph
+      [Prospect brand] has built a globally respected brand. But even the most beautiful necklace photograph
       can't answer a customer's fundamental question: <em>"Will this look right on me?"</em>
       That uncertainty is costing sales every single day.
     </p>
@@ -768,8 +769,8 @@
       <div class="problem-card fade-in">
         <div class="problem-icon" aria-hidden="true">🏆</div>
         <h3>Competitive Differentiation</h3>
-        <p>International luxury brands like Tanishq and Kalyan are already deploying AR try-on.
-           Aarong has the catalogue, heritage, and audience to leapfrog them in BD.</p>
+        <p>International luxury brands like [international luxury brands] are already deploying AR try-on.
+           [Prospect brand] has the catalogue, heritage, and audience to leapfrog them in BD.</p>
       </div>
     </div>
   </section>
@@ -779,9 +780,9 @@
   <!-- ===== LIVE DEMO ===== -->
   <section id="demo" class="section" aria-labelledby="demo-heading">
     <p class="section-label">Live Interactive Demo</p>
-    <h2 id="demo-heading" class="section-title fade-in">Try Aarong Jewellery in 3D &mdash; Right Now.</h2>
+    <h2 id="demo-heading" class="section-title fade-in">Try [Prospect brand] Jewellery in 3D &mdash; Right Now.</h2>
     <p class="section-body fade-in">
-      Below is a functional prototype using the same technology stack we would deploy for Aarong.com.
+      Below is a functional prototype using the same technology stack we would deploy for [Prospect brand].com.
       Rotate, zoom, and inspect each piece. On a compatible Android device, tap
       <strong>"View in AR"</strong> to place it in your real environment.
     </p>
@@ -800,7 +801,7 @@
           <model-viewer
             id="mv-necklace"
             src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
-            alt="Aarong-style brass collar necklace 3D model"
+            alt="[Prospect brand]-style brass collar necklace 3D model"
             shadow-intensity="1.2"
             camera-controls
             auto-rotate
@@ -821,8 +822,8 @@
           <h3>Brass Collar Necklace</h3>
           <div class="product-price">&#2547; 1,800 &ndash; &#2547; 4,200</div>
           <p class="product-desc">
-            Handcrafted by BRAC artisans, this bold collar-style necklace features intricate
-            filigree work in antique-gold brass finish. A centrepiece of Aarong's fashion jewellery
+            Handcrafted by [Prospect brand] artisans, this bold collar-style necklace features intricate
+            filigree work in antique-gold brass finish. A centrepiece of [Prospect brand]'s fashion jewellery
             catalogue &mdash; and the perfect VTO candidate.
           </p>
           <div class="product-tags" aria-label="Product features">
@@ -925,7 +926,7 @@
               <div class="step-num" aria-hidden="true">3</div>
               <div class="step-text">
                 <strong>Social sharing</strong>
-                <span>AR screenshots are shared on WhatsApp/IG Stories &mdash; free organic marketing for Aarong.</span>
+                <span>AR screenshots are shared on WhatsApp/IG Stories &mdash; free organic marketing for [Prospect brand].</span>
               </div>
             </div>
           </div>
@@ -1010,40 +1011,40 @@
     <p class="section-label">Proven Results</p>
     <h2 id="results-heading" class="section-title fade-in">What Virtual Try-On Does<br>for Jewellery Brands.</h2>
     <p class="section-body fade-in">
-      These benchmarks are drawn from global AR commerce deployments (Tanishq, Mejuri, Kendra Scott)
-      and our own pilot data from BD boutique brands. We project similar &mdash; or better &mdash; performance
-      for Aarong given its established customer trust.
+      These benchmarks are drawn from global AR commerce deployments ([sources to be cited])
+      We have no pilot data yet; these are unverified projections. We project similar &mdash; or better &mdash; performance
+      for [Prospect brand] given its established customer trust.
     </p>
 
     <div class="results-grid">
       <div class="result-card fade-in">
         <div class="result-icon" aria-hidden="true">📈</div>
-        <div class="result-metric">+38%</div>
+        <div class="result-metric">+38%<small class="unv">UNVERIFIED - source needed</small></div>
         <div class="result-label">Increase in add-to-cart rate<br>after VTO interaction</div>
       </div>
       <div class="result-card fade-in">
         <div class="result-icon" aria-hidden="true">📦</div>
-        <div class="result-metric">&minus;32%</div>
+        <div class="result-metric">&minus;32%<small class="unv">UNVERIFIED - source needed</small></div>
         <div class="result-label">Reduction in return-to-origin<br>for jewellery orders</div>
       </div>
       <div class="result-card fade-in">
         <div class="result-icon" aria-hidden="true">⏱️</div>
-        <div class="result-metric">+2.4&times;</div>
+        <div class="result-metric">+2.4&times;<small class="unv">UNVERIFIED - source needed</small></div>
         <div class="result-label">Time-on-product-page when<br>3D viewer is present</div>
       </div>
       <div class="result-card fade-in">
         <div class="result-icon" aria-hidden="true">🤳</div>
-        <div class="result-metric">+61%</div>
+        <div class="result-metric">+61%<small class="unv">UNVERIFIED - source needed</small></div>
         <div class="result-label">Social share rate of AR<br>screenshots by customers</div>
       </div>
       <div class="result-card fade-in">
         <div class="result-icon" aria-hidden="true">💸</div>
-        <div class="result-metric">+22%</div>
+        <div class="result-metric">+22%<small class="unv">UNVERIFIED - source needed</small></div>
         <div class="result-label">Average Order Value uplift<br>(upselling confidence)</div>
       </div>
       <div class="result-card fade-in">
         <div class="result-icon" aria-hidden="true">❤️</div>
-        <div class="result-metric">4.8&starf;</div>
+        <div class="result-metric">4.8&starf;<small class="unv">UNVERIFIED - source needed</small></div>
         <div class="result-label">Average customer satisfaction<br>rating post-VTO purchase</div>
       </div>
     </div>
@@ -1082,7 +1083,7 @@
   <!-- ===== ROI CALCULATOR ===== -->
   <section id="roi" class="section" aria-labelledby="roi-heading">
     <p class="section-label">ROI Calculator</p>
-    <h2 id="roi-heading" class="section-title fade-in">What Is One Collection's<br>Returns Costing Aarong?</h2>
+    <h2 id="roi-heading" class="section-title fade-in">What Is One Collection's<br>Returns Costing [Prospect brand]?</h2>
     <p class="section-body fade-in">Adjust the sliders below to see projected savings based on your current volume.</p>
 
     <div class="roi-layout">
@@ -1127,7 +1128,7 @@
   <!-- ===== ONBOARDING TIMELINE ===== -->
   <section id="onboarding" class="section" aria-labelledby="onboarding-heading">
     <p class="section-label">Implementation Plan</p>
-    <h2 id="onboarding-heading" class="section-title fade-in">Live on Aarong.com in<br>Under 30 Days.</h2>
+    <h2 id="onboarding-heading" class="section-title fade-in">Live on [Prospect brand].com in<br>Under 30 Days.</h2>
     <p class="section-body fade-in">
       Our pipeline is designed to move fast. We've done the R&D &mdash; you just need to say go.
     </p>
@@ -1150,7 +1151,7 @@
         <div class="tl-dot"></div>
         <div class="tl-week">Week 3</div>
         <div class="tl-title">Integration & QA</div>
-        <div class="tl-desc">We integrate the &lt;model-viewer&gt; component into Aarong's product detail pages
+        <div class="tl-desc">We integrate the &lt;model-viewer&gt; component into [Prospect brand]'s product detail pages
           (or provide an embeddable widget for your dev team). We test across iOS Safari Quick Look and Android WebXR.</div>
       </div>
       <div class="tl-item">
@@ -1173,7 +1174,7 @@
   <!-- ===== PRICING ===== -->
   <section id="pricing" class="section" aria-labelledby="pricing-heading">
     <p class="section-label">Transparent Pricing</p>
-    <h2 id="pricing-heading" class="section-title fade-in">A Plan Built for<br>Aarong's Scale.</h2>
+    <h2 id="pricing-heading" class="section-title fade-in">A Plan Built for<br>[Prospect brand]'s Scale.</h2>
     <p class="section-body fade-in">
       We understand Bangladeshi business realities. Our hybrid model means low risk upfront
       with strong ROI as the partnership grows.
@@ -1195,7 +1196,7 @@
       </div>
 
       <div class="price-card featured fade-in">
-        <div class="price-badge">✦ Recommended for Aarong</div>
+        <div class="price-badge">✦ Recommended for [Prospect brand]</div>
         <div class="price-tier">Growth</div>
         <div class="price-amount">&#2547; 35,000</div>
         <div class="price-period">One-time setup + &#2547; 12,000/month retainer</div>
@@ -1205,7 +1206,7 @@
           <li>Real-time analytics dashboard</li>
           <li>A/B test support (3D vs. photo)</li>
           <li>Seasonal collection fast-track</li>
-          <li>Social AR filter creation (IG/FB)</li>
+          <li>Social AR filter creation (IG/FB) &mdash; not available: Meta Spark was discontinued</li>
           <li>Dedicated account manager</li>
           <li>QR codes for delivery packaging</li>
         </ul>
@@ -1218,7 +1219,7 @@
         <ul class="price-features">
           <li>Entire jewellery catalogue (200+ SKUs)</li>
           <li>Face-tracking try-on (earrings/necklaces)</li>
-          <li>White-label "Aarong VTO" branding</li>
+          <li>White-label "[Prospect brand] VTO" branding</li>
           <li>In-store AR kiosk integration</li>
           <li>API for mobile app</li>
           <li>SLA-backed uptime guarantee</li>
@@ -1233,10 +1234,10 @@
 
   <!-- ===== SOCIAL PROOF ===== -->
   <section id="proof" class="section" aria-labelledby="proof-heading">
-    <p class="section-label">Industry Validation</p>
+    <p class="section-label">Illustrative Projections (Placeholder, Not Real Testimonials)</p>
     <h2 id="proof-heading" class="section-title fade-in">What Brands Say After<br>Going Live with AR Try-On.</h2>
     <p class="section-body fade-in">
-      Projections from analogous jewellery VTO deployments globally &amp; in APAC markets
+      PLACEHOLDER quotes, not real customers. Illustrative projections modelled on analogous jewellery VTO deployments globally &amp; in APAC markets
       with similar consumer profiles to Bangladesh.
     </p>
     <div class="testimonials-grid">
@@ -1270,21 +1271,21 @@
   <section id="cta" aria-labelledby="cta-heading">
     <p class="section-label">Next Step</p>
     <h2 id="cta-heading" class="section-title fade-in">
-      Ready to Make Aarong the First<br>AR Jeweller in Bangladesh?
+      Ready to Make [Prospect brand] the First<br>AR Jeweller in Bangladesh?
     </h2>
     <p class="section-body fade-in">
       We're proposing a <strong>free 30-day pilot</strong> with 5 of your top-selling jewellery SKUs.
       No commitment. See the data. Then decide.
     </p>
     <div class="hero-cta-group" style="justify-content: center;">
-      <a href="mailto:hello@poredekhovto.example.com?subject=Aarong VTO Pilot Request" class="btn-primary">
+      <a href="mailto:hello@poredekhovto.example.com?subject=[Prospect brand] VTO Pilot Request" class="btn-primary">
         📧 Request Free Pilot
       </a>
       <a href="tel:+8801XXXXXXXXX" class="btn-secondary">📞 Schedule a Call</a>
     </div>
     <p style="margin-top: 48px; font-size: 0.82rem; color: #3a3530;">
       PoreDekho VTO &middot; Dhaka, Bangladesh &middot; hello@poredekhovto.example.com<br>
-      This proposal was prepared exclusively for Aarong / BRAC Enterprises Ltd.
+      This proposal was prepared exclusively for [Prospect brand]
     </p>
   </section>
 </main>
@@ -1319,8 +1320,8 @@
 
     document.getElementById('v-orders').textContent = orders.toLocaleString() + ' orders/mo';
     document.getElementById('v-rto').textContent    = (rto * 100).toFixed(0) + '% RTO';
-    document.getElementById('v-aov').innerHTML    = '&#2547; ' + aov.toLocaleString();
-    document.getElementById('v-cpr').innerHTML    = '&#2547; ' + cpr.toLocaleString();
+    document.getElementById('v-aov').textContent    = '\u09F3 ' + aov.toLocaleString();
+    document.getElementById('v-cpr').textContent    = '\u09F3 ' + cpr.toLocaleString();
 
     const rtos         = Math.round(orders * rto);
     const logCost      = rtos * cpr;
@@ -1330,11 +1331,11 @@
     const total        = savedCost + revRecovered;
 
     document.getElementById('o-rtos').textContent        = rtos.toLocaleString() + ' returns';
-    document.getElementById('o-cost').innerHTML        = '&#2547; ' + logCost.toLocaleString();
+    document.getElementById('o-cost').textContent        = '\u09F3 ' + logCost.toLocaleString();
     document.getElementById('o-saved-orders').textContent= savedOrders.toLocaleString() + ' prevented';
-    document.getElementById('o-saved-cost').innerHTML  = '&#2547; ' + savedCost.toLocaleString();
-    document.getElementById('o-revenue').innerHTML     = '&#2547; ' + Math.round(revRecovered).toLocaleString();
-    document.getElementById('o-total').innerHTML       = '&#2547; ' + Math.round(total).toLocaleString();
+    document.getElementById('o-saved-cost').textContent  = '\u09F3 ' + savedCost.toLocaleString();
+    document.getElementById('o-revenue').textContent     = '\u09F3 ' + Math.round(revRecovered).toLocaleString();
+    document.getElementById('o-total').textContent       = '\u09F3 ' + Math.round(total).toLocaleString();
   }
 
   // Init calculator when DOM is ready
