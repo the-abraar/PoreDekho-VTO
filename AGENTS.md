@@ -7,7 +7,8 @@ Static HTML + Markdown pitch/demo repo. No package.json, no Python. Needs only b
 - CI: `.github/workflows/check.yml` runs the same script on Node 20.
 - `scripts/check-inline-scripts.mjs` syntax-checks every inline `<script>` in `*.html`.
 - Allow a deliberate HTML sink with a trailing `// safe-html: <reason>`.
-- Known failing check: `claims-guard` flags Meta Spark mentions in `ar_pipeline_guide.md` (judge.md blocker 2: the content must be deleted, not whitelisted).
+- The Meta Spark section of `ar_pipeline_guide.md` is deleted (2026-10-16); keep it that way (judge.md blocker 2).
+- Browser-test the try-on with a fake camera: Chrome flags `--use-fake-device-for-media-stream --use-file-for-fake-video-capture=<face>.y4m`, served from localhost.
 - Brand-name guard exempts only `judge.md`, `docs/claims_to_verify.md`, `docs/pricing_open_questions.md`.
 - Read `judge.md` when changing positioning, pricing or claims; it is the launch-readiness verdict and progress log.
 - Read `docs/claims_to_verify.md` when adding any statistic.

@@ -40,8 +40,8 @@ We are focusing on high-value, high-margin niches where visual fit is everything
 # ⚙️ How It Works (The Pipeline)
 We provide an end-to-end B2B service for the brand.
 
-1. **Digitization:** We take the brand's 2D catalog and generate hyper-optimized, lightweight 3D models (under 4MB for fast BD 4G loading).
-2. **Deployment:** We build the AR engine using Google's `<model-viewer>` for websites, (Meta Spark was discontinued in Jan 2025; FB/IG social AR filters are not currently available).
+1. **Digitization:** The seller photographs each piece on a plain background; we remove the background and set anchor points and real size in `admin.html` to make a 2D overlay (3D only as a later premium tier).
+2. **Deployment:** An in-browser try-on (`tryon.html`: front camera plus MediaPipe face tracking, on-device). Each SKU gets a hosted try-on link the seller pastes into Messenger, IG DMs, comments and Live descriptions.
 3. **Distribution:** We provide the brand with "Try it On" buttons for their site, and QR codes to print on their physical delivery boxes to drive repeat sales.
 
 ---

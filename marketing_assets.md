@@ -15,7 +15,7 @@
 * "Return er jhamela theke mukti, PoreDekho VTO er shathe." *(Freedom from the hassle of returns, with PoreDekho VTO.)*
 
 ## Key Value Propositions (The "Why Us")
-1. **Frictionless Experience:** Zero app downloads required. Our AR integrates instantly natively on Facebook, Instagram, or your proprietary website.
+1. **Frictionless Experience:** Zero app downloads required. Customers open a try-on link from Messenger, Instagram, Facebook or your website, in the browser.
 2. **Undeniable Customer Trust:** Bridges the gap between viewing a flat, lifeless 2D image and knowing exactly how a premium accessory fits, looks, and feels on the customer.
 3. **Data-Driven Profitability:** Customers who engage with AR are up to 40% more likely to convert and 30% less likely to return items. We don't just add a feature; we protect your profit margins. [UNVERIFIED - source needed]
 
@@ -34,4 +34,4 @@
 ### 3. The High-Volume F-Commerce Director
 * **Mindset:** Runs a massive Facebook/Instagram operation. Needs viral marketing and high engagement rates.
 * **Pain Point:** High ad spend with diminishing returns; needs a fresh way to engage users and stand out in a saturated feed.
-* **The Pitch:** "Turn your audience into brand ambassadors. A seamless VTO filter gives your customers a reason to interact, share selfies, tag your shop, and drive organic, viral traffic."
+* **The Pitch:** "Turn your audience into brand ambassadors. A try-on link gives your customers a reason to interact, share selfies, tag your shop, and drive organic, viral traffic."

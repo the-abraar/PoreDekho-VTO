@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="PoreDekho VTO - Enterprise Web-AR Virtual Try-On Solutions to boost conversions and reduce returns.">
-    <title>PoreDekho VTO - Enterprise Web-AR Solutions</title>
+    <meta name="description" content="PoreDekho: in-browser jewellery try-on links for Instagram and Facebook sellers.">
+    <title>PoreDekho: Jewellery Try-On</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -50,12 +49,6 @@
         .bg-gold {
             background-color: #D4AF37;
         }
-        model-viewer {
-            width: 100%;
-            height: 100%;
-            background-color: transparent;
-            --poster-color: transparent;
-        }
     </style>
 </head>
 <body class="bg-charcoal-50 text-charcoal-950 font-sans antialiased selection:bg-secondary selection:text-white">
@@ -65,15 +58,13 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div class="flex-shrink-0 flex items-center">
-                    <a href="#" aria-label="PoreDekho Home" class="text-2xl font-serif font-bold tracking-tight text-primary">
+                    <a href="index.html" aria-label="PoreDekho Home" class="text-2xl font-serif font-bold tracking-tight text-primary">
                         PoreDekho<span class="text-secondary">.</span>
                     </a>
                 </div>
                 <nav aria-label="Main Navigation" class="hidden md:flex space-x-8">
                     <a href="#features" class="text-charcoal-600 hover:text-secondary font-medium transition-colors">Features</a>
                     <a href="#pricing" class="text-charcoal-600 hover:text-secondary font-medium transition-colors">Pricing</a>
-                    <a href="sample_pitch.html" class="text-charcoal-600 hover:text-secondary font-medium transition-colors">Sample Pitch (Template)</a>
-                    <a href="ar_demo.html" class="text-charcoal-600 hover:text-secondary font-medium transition-colors">AR Demo</a>
                     <a href="tryon.html" class="text-charcoal-600 hover:text-secondary font-medium transition-colors">Live Try-On</a>
                 </nav>
                 <div class="hidden md:flex items-center space-x-4">
@@ -86,8 +77,6 @@
             <nav id="mobile-menu" aria-label="Mobile Navigation" class="hidden md:hidden flex-col pb-4 space-y-1">
                 <a href="#features" class="block py-3 text-charcoal-600 font-medium">Features</a>
                 <a href="#pricing" class="block py-3 text-charcoal-600 font-medium">Pricing</a>
-                <a href="sample_pitch.html" class="block py-3 text-charcoal-600 font-medium">Sample Pitch (Template)</a>
-                <a href="ar_demo.html" class="block py-3 text-charcoal-600 font-medium">AR Demo</a>
                 <a href="tryon.html" class="block py-3 text-charcoal-600 font-medium">Live Try-On</a>
                 <a href="#demo" class="block py-3 text-primary font-semibold">Book Demo</a>
             </nav>
@@ -106,30 +95,22 @@
                             Return Problem.
                         </h1>
                         <p class="mt-4 text-lg md:text-xl text-charcoal-600 mb-10 leading-relaxed font-light">
-                            Give your customers absolute certainty before they buy. PoreDekho's premium Web-AR Virtual Try-On brings luxury retail experiences directly to your existing e-commerce storefront. No apps. No guesswork. Just perfect fits.
+                            Let customers see earrings and necklaces on their own face before they order. PoreDekho's try-on runs in the phone's browser from a link you share in Messenger, Instagram or your website. No app, and the camera picture never leaves the phone.
                         </p>
                         <div class="flex flex-col sm:flex-row gap-4">
                             <a href="#demo" class="bg-primary text-white px-8 py-4 rounded-sm font-medium hover:bg-charcoal-800 transition-colors shadow-lg text-lg flex items-center justify-center">
                                 Schedule a Consultation
                             </a>
-                            <a href="ar_demo.html" class="bg-white text-primary border border-charcoal-200 px-8 py-4 rounded-sm font-medium hover:bg-charcoal-50 transition-colors shadow-sm text-lg flex items-center justify-center">
-                                Try Interactive Demo
+                            <a href="tryon.html" class="bg-white text-primary border border-charcoal-200 px-8 py-4 rounded-sm font-medium hover:bg-charcoal-50 transition-colors shadow-sm text-lg flex items-center justify-center">
+                                Try It On (camera)
                             </a>
                         </div>
                     </div>
                     <div class="relative h-[500px] w-full bg-white rounded-lg shadow-2xl border border-charcoal-100 overflow-hidden flex items-center justify-center">
-                        <!-- 3D Model Placeholder for Hero -->
-                        <model-viewer 
-                            src="https://modelviewer.dev/shared-assets/models/Astronaut.glb" 
-                            alt="3D model placeholder for VTO"
-                            camera-controls
-                            auto-rotate
-                            shadow-intensity="1"
-                            environment-image="neutral"
-                            exposure="1.0">
-                        </model-viewer>
-                        <div class="absolute bottom-4 left-0 right-0 text-center pointer-events-none">
-                            <span class="bg-white/80 backdrop-blur text-xs font-semibold px-3 py-1 rounded-full text-charcoal-600 tracking-widest uppercase">Interactive 3D Preview</span>
+                        <div class="p-10 text-center">
+                            <p class="text-2xl font-serif font-bold text-primary mb-4">Live try-on, on your phone</p>
+                            <p class="text-charcoal-600 font-light mb-8">Earrings and necklaces placed on your face with the front camera. Prototype: sample shapes, not real products yet.</p>
+                            <a href="tryon.html" class="bg-primary text-white px-8 py-4 rounded-sm font-medium hover:bg-charcoal-800 transition-colors">Open the try-on</a>
                         </div>
                     </div>
                 </div>
@@ -153,7 +134,7 @@
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
                         </div>
                         <h3 class="text-xl font-serif font-bold mb-3 text-primary">Boost Conversions</h3>
-                        <p class="text-charcoal-600 leading-relaxed font-light">Shoppers who engage with Virtual Try-On are up to 3x more likely to complete a purchase <small style="color:#c0392b">[UNVERIFIED - source needed]</small>, bridging the gap between digital browsing and physical fitting.</p>
+                        <p class="text-charcoal-600 leading-relaxed font-light">Shoppers see the piece on their own face before they order. Orders placed from a try-on carry an order code, so each shop can compare them with its other orders.</p>
                     </div>
                     
                     <!-- Feature 2 -->
@@ -162,7 +143,7 @@
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg>
                         </div>
                         <h3 class="text-xl font-serif font-bold mb-3 text-primary">Radically Reduce RTO</h3>
-                        <p class="text-charcoal-600 leading-relaxed font-light">Eliminate the "Return to Origin" plague. By setting exact visual expectations, returns driven by poor fit, incorrect sizing, or unmet aesthetic expectations plummet.</p>
+                        <p class="text-charcoal-600 leading-relaxed font-light">Eliminate the "Return to Origin" plague. Aimed at the returns caused by "it looked different in the picture". How much it cuts returns is what our free pilots will measure.</p>
                     </div>
 
                     <!-- Feature 3 -->
@@ -171,7 +152,7 @@
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
                         </div>
                         <h3 class="text-xl font-serif font-bold mb-3 text-primary">Seamless Integration</h3>
-                        <p class="text-charcoal-600 leading-relaxed font-light">Our bespoke Web-AR SDK embeds into any storefront effortlessly. No app downloads required—delivering an uninterrupted, high-end user journey.</p>
+                        <p class="text-charcoal-600 leading-relaxed font-light">Each product gets a try-on link you paste into Messenger, Instagram, Facebook or your website. It opens in the browser; no app download.</p>
                     </div>
                 </div>
             </div>
@@ -181,80 +162,19 @@
         <section id="pricing" class="py-24 bg-primary text-white relative z-10" aria-labelledby="pricing-heading">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-20">
-                    <h2 id="pricing-heading" class="text-sm font-semibold text-secondary tracking-widest uppercase">Investment</h2>
+                    <h2 id="pricing-heading" class="text-sm font-semibold text-secondary tracking-widest uppercase">Pilot</h2>
                     <p class="mt-4 text-3xl leading-8 font-serif font-bold tracking-tight sm:text-4xl">
-                        Designed for Modern Retail Drops
+                        Start with a free pilot
                     </p>
                     <p class="mt-4 max-w-2xl text-charcoal-300 mx-auto font-light">
-                        Forget generic SaaS subscriptions. Our hybrid pricing model aligns with how modern fashion and jewelry brands actually operate: one-time integration and flexible pricing for seasonal collections.
+                        We are looking for 3&ndash;5 Instagram and Facebook jewellery sellers to test the try-on with real orders.
                     </p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                    <!-- Boutique -->
-                    <div class="bg-charcoal-900 rounded-lg p-10 border border-charcoal-700 flex flex-col">
-                        <h3 class="text-2xl font-serif font-bold mb-2">Boutique</h3>
-                        <p class="text-charcoal-400 mb-8 text-sm font-light">For emerging designers.</p>
-                        <div class="mb-8 border-b border-charcoal-700 pb-8">
-                            <div class="text-sm text-charcoal-400 uppercase tracking-wider mb-1">One-time Setup</div>
-                            <span class="text-4xl font-light">$500</span>
-                        </div>
-                        <div class="mb-8">
-                            <div class="text-sm text-charcoal-400 uppercase tracking-wider mb-1">Seasonal Drop</div>
-                            <span class="text-4xl font-light">$200</span>
-                            <span class="text-charcoal-400 text-sm"> / collection</span>
-                        </div>
-                        <ul class="space-y-4 mb-10 flex-1 text-sm text-charcoal-300 font-light">
-                            <li class="flex items-start"><span class="text-secondary mr-3 mt-1">✦</span> Up to 15 3D SKU integrations</li>
-                            <li class="flex items-start"><span class="text-secondary mr-3 mt-1">✦</span> Standard web-AR viewer</li>
-                            <li class="flex items-start"><span class="text-secondary mr-3 mt-1">✦</span> Quarterly drop cycle support</li>
-                        </ul>
-                        <a href="#demo" class="block w-full text-center border border-charcoal-500 hover:border-white text-white font-medium py-3 rounded-sm transition-colors">Start Pilot</a>
-                    </div>
-
-                    <!-- Established -->
-                    <div class="bg-charcoal-800 rounded-lg p-10 border border-secondary transform md:-translate-y-4 shadow-2xl flex flex-col relative">
-                        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-secondary text-primary text-xs font-bold uppercase tracking-widest py-1.5 px-4 rounded-full">Recommended</div>
-                        <h3 class="text-2xl font-serif font-bold mb-2">Established Brand</h3>
-                        <p class="text-charcoal-300 mb-8 text-sm font-light">For growing e-commerce retail.</p>
-                        <div class="mb-8 border-b border-charcoal-600 pb-8">
-                            <div class="text-sm text-charcoal-300 uppercase tracking-wider mb-1">One-time Setup</div>
-                            <span class="text-4xl font-light">$1,500</span>
-                        </div>
-                        <div class="mb-8">
-                            <div class="text-sm text-charcoal-300 uppercase tracking-wider mb-1">Seasonal Drop</div>
-                            <span class="text-4xl font-light">$600</span>
-                            <span class="text-charcoal-300 text-sm"> / collection</span>
-                        </div>
-                        <ul class="space-y-4 mb-10 flex-1 text-sm text-white font-light">
-                            <li class="flex items-start"><span class="text-secondary mr-3 mt-1">✦</span> Up to 50 3D SKU integrations</li>
-                            <li class="flex items-start"><span class="text-secondary mr-3 mt-1">✦</span> High-fidelity textures & lighting</li>
-                            <li class="flex items-start"><span class="text-secondary mr-3 mt-1">✦</span> Monthly drop cycle support</li>
-                            <li class="flex items-start"><span class="text-secondary mr-3 mt-1">✦</span> Conversion analytics dashboard</li>
-                        </ul>
-                        <a href="#demo" class="block w-full text-center bg-secondary hover:bg-yellow-600 text-primary font-bold py-3 rounded-sm transition-colors">Partner With Us</a>
-                    </div>
-
-                    <!-- Enterprise -->
-                    <div class="bg-charcoal-900 rounded-lg p-10 border border-charcoal-700 flex flex-col">
-                        <h3 class="text-2xl font-serif font-bold mb-2">Enterprise</h3>
-                        <p class="text-charcoal-400 mb-8 text-sm font-light">Full catalog virtualization.</p>
-                        <div class="mb-8 border-b border-charcoal-700 pb-8">
-                            <div class="text-sm text-charcoal-400 uppercase tracking-wider mb-1">One-time Setup</div>
-                            <span class="text-4xl font-light">Custom</span>
-                        </div>
-                        <div class="mb-8">
-                            <div class="text-sm text-charcoal-400 uppercase tracking-wider mb-1">Continuous Drop</div>
-                            <span class="text-4xl font-light">Volume based</span>
-                        </div>
-                        <ul class="space-y-4 mb-10 flex-1 text-sm text-charcoal-300 font-light">
-                            <li class="flex items-start"><span class="text-secondary mr-3 mt-1">✦</span> Unlimited SKU virtualization pipeline</li>
-                            <li class="flex items-start"><span class="text-secondary mr-3 mt-1">✦</span> White-labeled AR interface</li>
-                            <li class="flex items-start"><span class="text-secondary mr-3 mt-1">✦</span> Dedicated account manager</li>
-                            <li class="flex items-start"><span class="text-secondary mr-3 mt-1">✦</span> Native app SDK integration</li>
-                        </ul>
-                        <a href="#demo" class="block w-full text-center border border-charcoal-500 hover:border-white text-white font-medium py-3 rounded-sm transition-colors">Contact Sales</a>
-                    </div>
+                <div class="max-w-xl mx-auto bg-charcoal-800 rounded-lg p-10 border border-secondary text-center">
+                    <h3 class="text-2xl font-serif font-bold mb-2">Free pilot</h3>
+                    <p class="text-charcoal-300 mb-8 font-light">5 of your products, 4&ndash;6 weeks, no charge. Prices in taka are set after the pilots, from what each product really costs us to prepare.</p>
+                    <a href="#demo" class="block w-full text-center bg-secondary hover:bg-yellow-600 text-primary font-bold py-3 rounded-sm transition-colors">Ask for a pilot</a>
                 </div>
             </div>
         </section>
@@ -265,9 +185,9 @@
                 <div class="bg-white rounded-lg p-10 md:p-16 text-center shadow-sm border border-charcoal-100 relative overflow-hidden">
                     <div class="relative z-10">
                         <h2 id="cta-heading" class="text-3xl md:text-4xl font-serif font-bold text-primary mb-6">Elevate your digital storefront.</h2>
-                        <p class="text-lg text-charcoal-600 mb-10 max-w-2xl mx-auto font-light">Schedule a tailored 30-minute consultation to see how PoreDekho brings your upcoming collection to life in 3D.</p>
+                        <p class="text-lg text-charcoal-600 mb-10 max-w-2xl mx-auto font-light">Schedule a tailored 30-minute consultation to see the try-on with your products.</p>
                         
-                        <form class="max-w-md mx-auto space-y-4" onsubmit="event.preventDefault(); alert('Demo requested!');" aria-label="Demo Request Form">
+                        <form class="max-w-md mx-auto space-y-4" onsubmit="event.preventDefault(); document.getElementById('form-status').textContent = 'This form is not connected yet, so nothing was sent.';" aria-label="Demo Request Form">
                             <div>
                                 <label for="email-input" class="sr-only">Work Email</label>
                                 <input id="email-input" type="email" placeholder="Enter your work email" class="w-full px-5 py-4 rounded-sm border border-charcoal-300 focus:outline-none focus:ring-1 focus:ring-secondary focus:border-secondary text-primary placeholder-charcoal-400" required>
@@ -275,7 +195,7 @@
                             <button type="submit" class="w-full bg-primary text-white px-5 py-4 rounded-sm font-medium hover:bg-charcoal-800 transition-colors shadow-sm text-lg tracking-wide">
                                 Request Access
                             </button>
-                            <p class="text-xs text-charcoal-400 mt-4 uppercase tracking-widest">Exclusive Partners Only</p>
+                            <p id="form-status" role="status" class="text-sm text-charcoal-600 mt-4"></p>
                         </form>
                     </div>
                 </div>
@@ -288,15 +208,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
             <div class="mb-4 md:mb-0 text-center md:text-left">
                 <span class="text-xl font-serif font-bold text-primary">PoreDekho<span class="text-secondary">.</span></span>
-                <p class="text-charcoal-500 text-sm mt-2 font-light">&copy; <span id="year"></span> PoreDekho Inc. All rights reserved.</p>
-            </div>
-            <div class="flex space-x-6 justify-center md:justify-start">
-                <a href="#" class="text-charcoal-400 hover:text-primary transition-colors" aria-label="Twitter">
-                    <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"/></svg>
-                </a>
-                <a href="#" class="text-charcoal-400 hover:text-primary transition-colors" aria-label="LinkedIn">
-                    <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd"/></svg>
-                </a>
+                <p class="text-charcoal-500 text-sm mt-2 font-light">&copy; <span id="year"></span> PoreDekho. <a href="privacy.html" class="underline">Privacy</a></p>
             </div>
         </div>
     </footer>

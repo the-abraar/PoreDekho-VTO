@@ -29,7 +29,7 @@
 
 ### Ad 3: The Seamless Integration Focus (Frictionless Tech)
 *   **Visual Idea:** A fast-paced, screen-recorded carousel showing how effortlessly a brand owner can set up the system, followed by models trying on 3 different products (sunglasses, earrings, watch).
-*   **Primary Text:** Think AR is too complex for your business? Think again. 📈 Setup PoreDekho VTO for your online store with zero coding and zero friction. Perfectly integrated for Facebook, Instagram, and web sellers. When customers see exactly how a product looks on them, they are 40% more likely to buy. Start scaling your conversions with next-gen tech today! 💍⌚ [Learn More]
+*   **Primary Text:** Think AR is too complex for your business? Think again. 📈 We set up a try-on link for each product; you paste it into Messenger, Instagram or your website. When customers see exactly how a product looks on them, they are 40% more likely to buy. Start scaling your conversions with next-gen tech today! 💍⌚ [Learn More]
 
 ---
 
@@ -42,7 +42,7 @@
 *   **Day 7 (Sunday) - Story:** Interactive Poll for business owners. "What's the biggest threat to your online sales right now? A) High RTO B) Low Trust C) High Ad Costs."
 
 ### Week 2: Solution & Social Proof
-*   **Day 8 (Monday) - Reel:** *Integration made simple.* Show how easily a brand can integrate PoreDekho VTO with their existing Facebook page. "Enterprise tech, zero coding."
+*   **Day 8 (Monday) - Reel:** *Integration made simple.* Show how easily a brand can integrate PoreDekho VTO with their existing Facebook page. "We set it up; you paste the link."
 *   **Day 10 (Wednesday) - Case Study/Highlight:** "How Virtual Try-On is transforming global retail." Highlight successful global case studies and position PoreDekho as the local gateway to this technology.
 *   **Day 12 (Friday) - Carousel Post:** "Static Images vs. PoreDekho VTO". Slide 1: A traditional flat-lay product photo. Slide 2: A dynamic, interactive try-on experience. "Which one drives more sales?"
 *   **Day 14 (Sunday) - Story:** Swipe-up/Link sticker. "Ready to future-proof your e-commerce business? The future of Bangladeshi retail is AR. Book your exclusive demo today."

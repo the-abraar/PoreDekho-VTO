@@ -86,7 +86,7 @@ Understanding the competitive landscape and technological gaps in the Bangladesh
 ### Global AR Providers (Perfect Corp, Camweara, Wanna)
 *   **Their Approach:** High-cost, enterprise-tier SaaS platforms priced in USD, requiring robust technical integration and heavy 3D assets.
 *   **The Market Gap:** These platforms are entirely unaffordable for 99% of BD boutiques [UNVERIFIED - source needed]. Furthermore, they are optimized for large-scale websites rather than the Messenger/Facebook-first reality of Bangladeshi F-commerce.
-*   **Our Edge:** Localized pricing (Setup + Performance model), hosted try-on links shareable on Facebook/Instagram (Meta Spark is discontinued; no plug-and-play social integration), and lightweight 3D models (<4MB) optimized for BD's 4G mobile networks.
+*   **Our Edge:** Localized pricing (Setup + Performance model), hosted try-on links shareable on Facebook/Instagram/Messenger, and lightweight 2D overlays that work without ARCore on budget Android phones.
 
 ### Mega-Retailers & E-commerce Giants (Daraz, [Prospect brand], [Prospect brand])
 *   **Their Approach:** Standard 2D product photography, lookbooks, and high-budget Facebook Live sessions. As of currently, even market leaders like [Prospect brand] and Daraz do **not** offer native Augmented Reality Virtual Try-On for jewelry and accessories.

@@ -35,25 +35,5 @@ gltf-transform optimize raw_model.glb poredekho_model.glb --texture-compress ktx
 
 ---
 
-## 2. Meta Spark Filters (Facebook / Instagram) [discontinued]
-> **DISCONTINUED / NOT AVAILABLE:** Meta Spark was shut down in Jan 2025 and third-party AR effects were removed from FB/IG. This section is kept for reference only; it cannot be used today.
-
-PoreDekho's earlier social commerce strategy relied on Meta Spark filters (discontinued, no longer an option). 
-
-### A. Setup & Tracker Types
-*   **Face Tracking (Makeup/Glasses/Jewelry):** Keep the Face Mesh geometry clean. Use the default face tracker provided by Spark but optimize all custom materials applied to it.
-*   **Target Tracking (Product Packaging):** Ensure the tracking image has high contrast and isn't repetitive, which allows the mobile tracker to quickly latch on without burning battery.
-
-### B. Material & Texture Optimization in Spark
-*   **Resize Textures:** (Meta Spark Studio is discontinued; kept as a general tip.) Texture compression varies by tool, but you should never import 4K textures. Pre-scale to 1024x1024 (or ideally 512x512) maximum.
-*   **Compression Settings:** In Spark Studio, select your texture, and under the Inspector panel, check **Manual Compression**. 
-    *   Use **PVRTC** for iOS.
-    *   Use **ETC2** for Android to maximize compatibility.
-*   **Disable Unused Maps:** If an item isn't highly reflective, remove the Environment/Metallic/Roughness maps and rely purely on the Base Color to save space.
-
-### C. Block Instancing
-*   If using multiple similar objects (e.g., multiple color variants of a lipstick, glasses frames, or eyelashes), use **Blocks** in Spark Studio to instance the objects rather than duplicating geometry, saving precious megabytes.
-
-### D. Testing & Publishing
-*   **Test on Realistic Devices:** (the Meta Spark Player app is discontinued) Always test on a low-end Android (e.g., a standard Xiaomi, Symphony, or Walton device) to check for FPS drops and thermal throttling before submitting.
-*   **File Size Limits:** Ensure the final export `.arexport` is strictly under 4MB to guarantee rapid downloads on cellular data. Meta allows up to 4MB for IG and FB, but aiming for 2MB yields significantly higher user engagement.
+## 2. Social channels (FB / IG / Messenger)
+There is no native AR surface on Facebook or Instagram for third-party effects any more. Distribute a hosted try-on link per SKU (`tryon.html?sku=...`, made by `admin.html`) that sellers paste into Messenger, IG DMs, comments and Live descriptions. See judge.md blocker 2.

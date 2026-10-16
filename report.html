@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Try-On Order Report</title>
+<style>
+body{margin:0;font-family:system-ui,sans-serif;background:#111;color:#eee}
+main{max-width:720px;margin:0 auto;padding:12px 16px}
+textarea{width:100%;box-sizing:border-box;min-height:180px;font:14px ui-monospace,monospace;background:#1d1d1d;color:#eee;border:1px solid #666;border-radius:6px;padding:8px}
+table{border-collapse:collapse;width:100%;margin-top:12px}th,td{border:1px solid #444;padding:8px;text-align:right}th:first-child,td:first-child{text-align:left}
+small{color:#aaa}
+</style></head><body><main>
+<h1 style="font-size:1.3rem">Try-on vs other orders</h1>
+<p><small>Paste two columns from your order sheet: order code, status (delivered or returned). Orders whose code starts with <code>PD-</code> came from a try-on link. Other statuses (pending, cancelled) are skipped. Runs in this browser; nothing is uploaded.</small></p>
+<label for="csv">Orders (one per line: <code>code,status</code>)</label>
+<textarea id="csv" placeholder="PD-7KQ2M,delivered&#10;1043,returned"></textarea>
+<table aria-live="polite"><thead><tr><th>Group</th><th>Delivered</th><th>Returned</th><th>Return rate</th></tr></thead><tbody id="out"></tbody></table>
+<p><small>A difference means little below about 100 finished orders per group, and only if both groups sell similar products (A/B test by SKU).</small></p>
+</main>
+<script>
+// shortcut: plain comma split, no quoted fields; use a CSV library if sellers paste exported sheets with commas in cells.
+function tally(text) {
+  const g = {tryon: {d: 0, r: 0}, other: {d: 0, r: 0}};
+  for (const line of text.split(/\r?\n/)) {
+    const [code = "", status = ""] = line.split(/[,\t]/).map(s => s.trim().toLowerCase());
+    const k = /^(delivered|returned|rto)$/.test(status) ? (status === "delivered" ? "d" : "r") : null;
+    if (k) g[code.startsWith("pd-") ? "tryon" : "other"][k]++;
+  }
+  return g;
+}
+const t = tally("code,status\nPD-AAAAA,delivered\nPD-BBBBB,returned\n17,RTO\n18,delivered\n19,pending");
+console.assert(t.tryon.d === 1 && t.tryon.r === 1 && t.other.d === 1 && t.other.r === 1, "tally self-check failed");
+
+const out = document.getElementById("out");
+function render() {
+  const g = tally(document.getElementById("csv").value);
+  out.replaceChildren(...[["Try-on (PD-)", g.tryon], ["Other", g.other]].map(([name, v]) => {
+    const tr = document.createElement("tr"), n = v.d + v.r;
+    for (const c of [name, v.d, v.r, n ? (100 * v.r / n).toFixed(1) + "%" : "-"]) { const td = document.createElement("td"); td.textContent = c; tr.append(td); }
+    return tr;
+  }));
+}
+document.getElementById("csv").oninput = render; render();
+</script></body></html>

@@ -20,5 +20,5 @@ To cater to the Bangladeshi B2B market—balancing the need for accessible entry
 * **Value Prop:** "We win when you win." This model completely removes the barrier to entry for large brands and aligns our incentives with their direct sales growth and RTO reduction. 
 
 ## Add-On Services (Upsells)
-* **Custom AR Mini-Games / Filters:** For viral brand awareness campaigns (e.g., Catch the jewelry to win a discount code).
-* **Advanced Analytics Dashboard:** Monthly reports detailing which items are tried on the most, average try-on time, and conversion correlation.
+* **Custom web mini-games:** For viral brand awareness campaigns (e.g., Catch the jewelry to win a discount code).
+* **Order-code report (planned, not built as a dashboard):** delivered vs returned rate for try-on orders (order codes starting `PD-`) against other orders, from the seller's order sheet (`report.html`).

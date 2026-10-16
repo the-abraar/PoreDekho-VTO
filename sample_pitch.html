@@ -597,28 +597,6 @@
     }
     .price-features li::before { content: '✦'; color: var(--brand-gold); font-size: 0.6rem; }
 
-    /* ===== SOCIAL PROOF ===== */
-    #proof { background: #0a0a0a; }
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 24px;
-    }
-    .testimonial {
-      background: var(--brand-card);
-      border: 1px solid var(--brand-border);
-      border-radius: 16px;
-      padding: 32px;
-    }
-    .testimonial blockquote {
-      font-style: italic;
-      font-size: 0.97rem;
-      line-height: 1.8;
-      color: #c0b8ae;
-      margin-bottom: 20px;
-    }
-    .testimonial cite { font-size: 0.85rem; color: var(--brand-gold); font-style: normal; }
-
     /* ===== CTA FOOTER ===== */
     #cta {
       text-align: center;
@@ -1008,7 +986,7 @@
 
   <!-- ===== RESULTS ===== -->
   <section id="results" class="section" aria-labelledby="results-heading">
-    <p class="section-label">Proven Results</p>
+    <p class="section-label">Unverified Industry Claims</p>
     <h2 id="results-heading" class="section-title fade-in">What Virtual Try-On Does<br>for Jewellery Brands.</h2>
     <p class="section-body fade-in">
       These benchmarks are drawn from global AR commerce deployments ([sources to be cited])
@@ -1103,21 +1081,29 @@
         <label for="r-cpr">Cost Per Return (logistics + restock) &#2547;</label>
         <input type="range" id="r-cpr" min="100" max="600" step="10" value="280" oninput="calcROI()" aria-valuetext="280 Taka" />
         <div class="range-val" id="v-cpr">&#2547; 280</div>
+
+        <label for="r-prev">RTOs prevented by try-on (%) &mdash; 0 until a pilot measures it</label>
+        <input type="range" id="r-prev" min="0" max="50" step="1" value="0" oninput="calcROI()" aria-valuetext="0 percent" />
+        <div class="range-val" id="v-prev">0%</div>
+
+        <label for="r-recap">Prevented RTOs that become paid sales (%)</label>
+        <input type="range" id="r-recap" min="0" max="100" step="5" value="0" oninput="calcROI()" aria-valuetext="0 percent" />
+        <div class="range-val" id="v-recap">0%</div>
       </div>
 
       <div class="roi-output fade-in">
         <h3>📊 Projected Monthly Impact</h3>
         <div class="roi-row"><span>Current monthly RTOs</span><strong id="o-rtos">&mdash;</strong></div>
         <div class="roi-row"><span>Monthly return logistics cost</span><strong id="o-cost">&mdash;</strong></div>
-        <div class="roi-row"><span>RTOs prevented by VTO (est. 32%)</span><strong id="o-saved-orders">&mdash;</strong></div>
+        <div class="roi-row"><span>RTOs prevented by try-on</span><strong id="o-saved-orders">&mdash;</strong></div>
         <div class="roi-row"><span>Logistics cost saved / month</span><strong id="o-saved-cost">&mdash;</strong></div>
-        <div class="roi-row"><span>Revenue recovered (avg AOV &times; saved RTOs)</span><strong id="o-revenue">&mdash;</strong></div>
+        <div class="roi-row"><span>Revenue recovered (AOV &times; prevented RTOs &times; paid-sale %)</span><strong id="o-revenue">&mdash;</strong></div>
         <div class="roi-total">
           <div class="roi-total-label">Total Monthly Value Unlocked</div>
           <div class="roi-total-val" id="o-total">&mdash;</div>
         </div>
         <p style="font-size: 0.78rem; color: #555; margin-top: 16px; text-align: center;">
-          PoreDekho VTO setup cost is typically recovered within 30&ndash;60 days.
+          No pilot data yet: both try-on percentages start at 0%. Enter your own estimates; they are not our claims.
         </p>
       </div>
     </div>
@@ -1157,9 +1143,9 @@
       <div class="tl-item">
         <div class="tl-dot"></div>
         <div class="tl-week">Week 4</div>
-        <div class="tl-title">Go-Live & Analytics Dashboard</div>
-        <div class="tl-desc">🚀 VTO goes live. We set up a custom analytics dashboard tracking VTO engagement rate,
-          conversion lift, and RTO comparison &mdash; delivered to your team weekly.</div>
+        <div class="tl-title">Go-Live & Order-Code Report</div>
+        <div class="tl-desc">🚀 Try-on links go live. Orders placed from a try-on carry a <code>PD-</code> order code; from your order sheet we compare
+          delivered vs returned for those orders against your other orders, weekly.</div>
       </div>
       <div class="tl-item">
         <div class="tl-dot"></div>
@@ -1189,7 +1175,7 @@
           <li>Up to 15 SKUs digitised</li>
           <li>&lt;model-viewer&gt; integration</li>
           <li>WebAR on Android + iOS Quick Look</li>
-          <li>Monthly analytics report</li>
+          <li>Monthly order-code report (try-on vs other orders)</li>
           <li>2 revision rounds per model</li>
           <li>7-day turnaround for new SKUs</li>
         </ul>
@@ -1203,10 +1189,8 @@
         <ul class="price-features">
           <li>Up to 50 SKUs digitised</li>
           <li>Full website + app integration</li>
-          <li>Real-time analytics dashboard</li>
           <li>A/B test support (3D vs. photo)</li>
           <li>Seasonal collection fast-track</li>
-          <li>Social AR filter creation (IG/FB) &mdash; not available: Meta Spark was discontinued</li>
           <li>Dedicated account manager</li>
           <li>QR codes for delivery packaging</li>
         </ul>
@@ -1231,41 +1215,6 @@
   </section>
 
   <div class="gold-divider" aria-hidden="true"></div>
-
-  <!-- ===== SOCIAL PROOF ===== -->
-  <section id="proof" class="section" aria-labelledby="proof-heading">
-    <p class="section-label">Illustrative Projections (Placeholder, Not Real Testimonials)</p>
-    <h2 id="proof-heading" class="section-title fade-in">What Brands Say After<br>Going Live with AR Try-On.</h2>
-    <p class="section-body fade-in">
-      PLACEHOLDER quotes, not real customers. Illustrative projections modelled on analogous jewellery VTO deployments globally &amp; in APAC markets
-      with similar consumer profiles to Bangladesh.
-    </p>
-    <div class="testimonials-grid">
-      <div class="testimonial fade-in">
-        <blockquote>
-          "We launched AR try-on for our gold jewellery line and within 60 days our
-          online return rate dropped by 28%. Customers spend almost 4 minutes with
-          each product &mdash; that's unheard of in e-commerce."
-        </blockquote>
-        <cite>&mdash; Head of Digital, Regional Jewellery Brand (APAC)</cite>
-      </div>
-      <div class="testimonial fade-in">
-        <blockquote>
-          "Our WhatsApp groups went crazy with AR screenshots. People were sharing
-          their virtual try-on photos before they'd even bought the earrings.
-          We got organic reach we couldn't have paid for."
-        </blockquote>
-        <cite>&mdash; Founder, Boutique Fashion Label (Dhaka)</cite>
-      </div>
-      <div class="testimonial fade-in">
-        <blockquote>
-          "The ROI math is simple: every return prevented is &#2547;280 saved. After 200
-          returns prevented in a month, the VTO service paid for itself three times over."
-        </blockquote>
-        <cite>&mdash; E-Commerce Manager, Fashion Accessories Brand (BD)</cite>
-      </div>
-    </div>
-  </section>
 
   <!-- ===== CTA ===== -->
   <section id="cta" aria-labelledby="cta-heading">
@@ -1311,6 +1260,12 @@
     const rto    = +document.getElementById('r-rto').value / 100;
     const aov    = +document.getElementById('r-aov').value;
     const cpr    = +document.getElementById('r-cpr').value;
+    const prev   = +document.getElementById('r-prev').value / 100;
+    const recap  = +document.getElementById('r-recap').value / 100;
+    document.getElementById('r-prev').setAttribute('aria-valuetext', (prev * 100).toFixed(0) + ' percent');
+    document.getElementById('r-recap').setAttribute('aria-valuetext', (recap * 100).toFixed(0) + ' percent');
+    document.getElementById('v-prev').textContent  = (prev * 100).toFixed(0) + '%';
+    document.getElementById('v-recap').textContent = (recap * 100).toFixed(0) + '%';
     
     // Update ARIA attributes
     document.getElementById('r-orders').setAttribute('aria-valuetext', orders + ' orders');
@@ -1325,9 +1280,9 @@
 
     const rtos         = Math.round(orders * rto);
     const logCost      = rtos * cpr;
-    const savedOrders  = Math.round(rtos * 0.32);
+    const savedOrders  = Math.round(rtos * prev);
     const savedCost    = savedOrders * cpr;
-    const revRecovered = savedOrders * aov * 0.15; // 15% revenue re-captured assumption
+    const revRecovered = savedOrders * aov * recap;
     const total        = savedCost + revRecovered;
 
     document.getElementById('o-rtos').textContent        = rtos.toLocaleString() + ' returns';

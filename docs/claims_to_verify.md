@@ -11,9 +11,6 @@ Each is marked inline "UNVERIFIED - source needed" where practical. Copy kept. L
 | `sample_pitch.html:1022-1048` | +38% add-to-cart, -32% RTO, +2.4x time on page, +61% share rate, +22% AOV, 4.8 stars |
 | `sample_pitch.html:755,1061,1105` | Return cost 150-400 BDT (280 default) |
 | `sample_pitch.html:1060,1072` | 30-42% cart abandonment, ~35% reduction |
-| `sample_pitch.html:1247` | Placeholder testimonial: 28% return drop, ~4 min on page |
-| `sample_pitch.html:1330` | 15% revenue re-captured, 32% prevention rate (hardcoded; label disagrees with maths) |
-| `index.html:145` | Up to 3x more likely to purchase |
 | `pitch_script.md:16` | Up to 40% more likely to check out |
 | `marketing_assets.md:20` | 40% more likely to convert, 30% less likely to return |
 | `marketing_campaign.md:41` | 40% checkout increase, 30% return drop |
@@ -22,3 +19,5 @@ Each is marked inline "UNVERIFIED - source needed" where practical. Copy kept. L
 | `pitch_deck.md:63` | "Top 10% of local brands" |
 
 The headline numbers conflict (3x, 40%, 20-30%, +38%); pick none until a pilot measures it.
+
+Removed 2026-10-16 (no longer claimed anywhere): the placeholder testimonials in `sample_pitch.html`, the hardcoded 32% prevention and 15% recapture rates (now visible calculator inputs, default 0%), and the "up to 3x" line on `index.html`.
