@@ -54,6 +54,8 @@ small{color:#aaa;display:block;margin-top:8px}a{color:#c9a24b}
 <script type="module">
 import {FaceLandmarker, ImageSegmenter, FilesetResolver} from "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.21/vision_bundle.mjs";
 const WASM = "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.21/wasm";
+// sw.js caches the MediaPipe files after the first visit (camera frames never go through it)
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
 const MODEL = "https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/1/face_landmarker.task";
 const HAIR_MODEL = "https://storage.googleapis.com/mediapipe-models/image_segmenter/hair_segmenter/float32/1/hair_segmenter.tflite"; // 0.8 MB, loaded only when ticked
 // Indices verified against FACEMESH_FACE_OVAL (mediapipe face_mesh_connections.py) and tfjs-models faceOval contour:

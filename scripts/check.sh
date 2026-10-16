@@ -11,7 +11,7 @@ run() { # run <name> <cmd...>
   names+=("$n")
 }
 
-inline_scripts() { node scripts/check-inline-scripts.mjs ./*.html; }
+inline_scripts() { node scripts/check-inline-scripts.mjs ./*.html && node --check sw.js; }
 
 stray() {
   local out; out=$(find . \( -path ./.git -o -path ./node_modules \) -prune -o \

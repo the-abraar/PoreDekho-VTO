@@ -11,6 +11,7 @@ This repository contains the business strategy, marketing assets, and technical 
 *   [**tryon.html**](./tryon.html): The camera try-on. Sample shapes by default; a per-SKU link (`tryon.html?sku=<name>&type=ear|neck&ax&ay&mm[&name&shop&wa&m]`) loads `skus/<name>.png` and shows an order code with WhatsApp/Messenger buttons. Needs HTTPS or localhost (`python3 -m http.server`).
 *   [**admin.html**](./admin.html): Asset tool: product photo, background removal, anchor point, real width, then a PNG for `skus/` and the try-on link.
 *   [**report.html**](./report.html): Paste `code,status` rows from an order sheet; compares return rates of try-on orders (`PD-` codes) with other orders.
+*   [**sw.js**](./sw.js): Service worker that keeps the MediaPipe runtime and face model (~6 MB) in the browser cache after the first visit; registered by `tryon.html`.
 *   [**privacy.html**](./privacy.html): Privacy statement (draft, not legally reviewed).
 *   [**sample_pitch.html**](./sample_pitch.html), [**ar_demo.html**](./ar_demo.html): Old prospect template and 3D viewer demo; not linked from the site.
 *   [**judge.md**](./judge.md): Launch-readiness verdict and progress log. `docs/`: claims to verify, pricing questions, device QA matrix.
