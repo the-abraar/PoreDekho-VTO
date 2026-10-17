@@ -38,6 +38,7 @@ privacy() {
 
 run "inline-scripts" inline_scripts
 run "lint-innerhtml" scripts/lint-innerhtml.sh
+run "sw-test" node scripts/test-sw.mjs
 run "stray-files" stray
 if [ $FAST -eq 0 ]; then
   run "claims-guard" claims
