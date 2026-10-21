@@ -23,4 +23,16 @@ assert.ok(claimed);
 let responded = false;
 handlers.fetch({ request: { method: 'GET', url: 'https://example.com/x.js' }, respondWith: () => { responded = true; } });
 assert.equal(responded, false);
+
+// fetch: MediaPipe wasm + model URLs must be cached in the current cache, and served from it when offline
+const cstore = new Map(), opened = [];
+caches.open = async (n) => { opened.push(n); return { match: async (r) => cstore.get(r.url), put: async (r, v) => { cstore.set(r.url, v); } }; };
+let net = 0;
+const ctx2 = { self, caches, fetch: async () => { net++; return { ok: true, clone() { return this; } }; } };
+vm.runInNewContext(readFileSync(new URL('../sw.js', import.meta.url), 'utf8'), ctx2);
+for (const url of ['https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.21/wasm/x.wasm', 'https://storage.googleapis.com/mediapipe-models/face_landmarker/f.task']) {
+  for (let i = 0; i < 2; i++) { let r; handlers.fetch({ request: { method: 'GET', url }, respondWith: (x) => { r = x; } }); assert.ok(r, 'not intercepted: ' + url); await r; }
+}
+assert.equal(net, 2, 'second load must come from cache');
+assert.ok(opened.every((n) => n === 'pd-mediapipe-0.10.21-v1'));
 console.log('sw ok');
