@@ -6,6 +6,7 @@ Static HTML + Markdown pitch/demo repo. No package.json, no Python. Needs only b
 - Hook setup: `git config core.hooksPath .githooks` is set locally (re-run it in a fresh clone).
 - CI: `.github/workflows/check.yml` runs the same script on Node 20.
 - `scripts/test-sw.mjs` checks the service worker deletes only its own old caches.
+- `placement.js` holds the try-on placement maths; `scripts/test-placement.mjs` checks it against labelled earlobes on real photos (`docs/test_faces.md`). Re-fit and update the labels together.
 - `scripts/check-inline-scripts.mjs` syntax-checks every inline `<script>` in `*.html`.
 - Allow a deliberate HTML sink with a trailing `// safe-html: <reason>`.
 - The Meta Spark section of `ar_pipeline_guide.md` is deleted (2026-10-16); keep it that way (judge.md blocker 2).

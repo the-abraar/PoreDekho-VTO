@@ -45,7 +45,7 @@ small{color:#aaa;display:block;margin-top:8px}a{color:#c9a24b}
 </div>
 
 <button id="snap" type="button">Save or share picture</button>
-<details id="tune"><summary>Tuning and speed (placement untested on real faces)</summary>
+<details id="tune"><summary>Tuning and speed (placement fitted on 3 photos, not yet on live faces)</summary>
 <div id="sliders"></div><button id="tuneReset" type="button">Reset</button>
 <p id="perf">Speed: -</p></details>
 <small id="note">On-device only. Sample shapes, not real products. <a href="index.html">Back</a></small>
@@ -53,17 +53,13 @@ small{color:#aaa;display:block;margin-top:8px}a{color:#c9a24b}
 <video id="v" playsinline muted hidden></video>
 <script type="module">
 import {FaceLandmarker, ImageSegmenter, FilesetResolver} from "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.21/vision_bundle.mjs";
+import {place, DEF} from "./placement.js";
 const WASM = "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.21/wasm";
 // sw.js caches the MediaPipe files after the first visit (camera frames never go through it)
 if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
 const MODEL = "https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/1/face_landmarker.task";
 const HAIR_MODEL = "https://storage.googleapis.com/mediapipe-models/image_segmenter/hair_segmenter/float32/1/hair_segmenter.tflite"; // 0.8 MB, loaded only when ticked
-// Indices verified against FACEMESH_FACE_OVAL (mediapipe face_mesh_connections.py) and tfjs-models faceOval contour:
-// chin 152, face sides 234 (subject's right) & 454 (left), jaw corners 172 & 397 are all oval points.
-// Earlobe has no official landmark: 132 & 361 are oval contour points just below 234/454 on the jaw-line toward the ear
-// (oval order ...172,58,132,93,234), the closest defensible proxy.
-const L_LOBE = 132, R_LOBE = 361, L_SIDE = 234, R_SIDE = 454, CHIN = 152, L_JAW = 172, R_JAW = 397;
-// shortcut: product PNGs are sized from an average adult face width; calibrate per face (iris size) if pilots show scale errors.
+// shortcut: product PNGs are sized from an average adult face width (iris checks on 4 test faces gave 125-149 mm); calibrate per face (iris size) if pilots show scale errors.
 const FACE_MM = 140;
 const $ = id => document.getElementById(id), msg = $("msg"), cv = $("c"), ctx = cv.getContext("2d"), vid = $("v");
 const say = t => msg.textContent = t;
@@ -133,11 +129,12 @@ $("snap").onclick = () => cv.toBlob(async blob => {
 }, "image/png");
 
 // Tuning panel: fractions of face width, saved in localStorage (may throw in private mode, so always try/catch).
-// defaults set from one test face (2026-10-16, fake camera); re-check on real faces
-const TUNE = {earX: ["Earring sideways offset", .06, -.2, .2], earY: ["Earring vertical offset", -.12, -.3, .3], earS: ["Earring scale (sample shapes)", .45, .15, .9], neckY: ["Necklace vertical offset", .08, -.1, .8], size: ["Product size (real products)", 1, .5, 2]};
-const T = {}; for (const k in TUNE) T[k] = TUNE[k][1];
-try { Object.assign(T, JSON.parse(localStorage.getItem("tryonTune") || "{}")); } catch (e) {}
-const saveT = () => { try { localStorage.setItem("tryonTune", JSON.stringify(T)); } catch (e) {} };
+// Placement defaults live in placement.js (fitted on real test faces, docs/test_faces.md).
+const TUNE = {earOut: ["Earring sideways offset", DEF.earOut, -.2, .2], earDown: ["Earring vertical offset", DEF.earDown, -.3, .3], earBack: ["Earring depth behind cheek (turned head)", DEF.earBack, 0, .5], earS: ["Earring scale (sample shapes)", .45, .15, .9], neckY: ["Necklace vertical offset", DEF.neckY, -.1, .8], size: ["Product size (real products)", 1, .5, 2]};
+const T = {hideYaw: DEF.hideYaw}; for (const k in TUNE) T[k] = TUNE[k][1];
+// key changed 2026-10-27: values saved under "tryonTune" used the old, untested geometry
+try { Object.assign(T, JSON.parse(localStorage.getItem("tryonTune2") || "{}")); } catch (e) {}
+const saveT = () => { try { localStorage.setItem("tryonTune2", JSON.stringify(T)); } catch (e) {} };
 const ins = {};
 for (const k in TUNE) {
   const [name, , lo, hi] = TUNE[k], l = document.createElement("label"), i = document.createElement("input");
@@ -185,25 +182,23 @@ function hairOverlay(ts) {
 }
 
 function draw(lm, ts) {
-  const W = cv.width, H = cv.height;
-  const P = (k, i) => ema(k, {x: (1 - lm[i].x) * W, y: lm[i].y * H}); // mirrored like a selfie view
-  const ls = P("ls", L_SIDE), rs = P("rs", R_SIDE), ll = P("ll", L_LOBE), rl = P("rl", R_LOBE);
-  const chin = P("ch", CHIN), lj = P("lj", L_JAW), rj = P("rj", R_JAW);
-  // mirrored view puts 234/132 (ls, ll) on the screen right; roll must run screen-left to screen-right or everything draws upside down
-  const faceW = Math.hypot(rs.x - ls.x, rs.y - ls.y), roll = Math.atan2(ls.y - rs.y, ls.x - rs.x);
+  const r = place(lm, cv.width, cv.height, T), faceW = ema("F", {x: r.F, y: 0}).x;
   const earOn = ear || (product?.type === "ear" && ready());
   if (earOn) {
-    for (const [p, dir] of [[ll, 1], [rl, -1]]) { // dir points away from the face
-      ctx.save(); ctx.translate(p.x + dir*faceW*T.earX, p.y + faceW*T.earY); ctx.rotate(roll);
+    r.ears.forEach((e, i) => {
+      const p = ema("ear" + i, e);
+      if (!e.show) return; // far ear is behind the face when the head is turned
+      // shortcut: earrings hang straight down the screen (gravity with the phone held upright); use DeviceOrientation if tilted phones look wrong
+      ctx.save(); ctx.translate(p.x, p.y);
       ear ? EAR[ear](ctx, faceW*T.earS) : drawPng(faceW); ctx.restore();
-    }
+    });
     if (seg && $("hair").checked) hairOverlay(ts);
   }
   // necklace: centered below chin, width from jaw corners, rolled with head
   if (neck || (product?.type === "neck" && ready())) {
-    const nw = Math.hypot(rj.x - lj.x, rj.y - lj.y) * 1.3;
-    ctx.save(); ctx.translate(chin.x, chin.y + faceW*T.neckY); ctx.rotate(roll);
-    neck ? NECK[neck](ctx, nw) : drawPng(faceW); ctx.restore();
+    const n = ema("neck", r.neck), roll = ema("roll", {x: Math.cos(r.roll), y: Math.sin(r.roll)});
+    ctx.save(); ctx.translate(n.x, n.y); ctx.rotate(Math.atan2(roll.y, roll.x));
+    neck ? NECK[neck](ctx, r.neck.w) : drawPng(faceW); ctx.restore();
   }
 }
 
