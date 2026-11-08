@@ -12,6 +12,7 @@ This repository contains the business strategy, marketing assets, and technical 
 *   [**admin.html**](./admin.html): Asset tool: product photo, background removal, anchor point, real width, then a PNG for `skus/` and the try-on link.
 *   [**report.html**](./report.html): Paste `code,status` rows from an order sheet; compares return rates of try-on orders (`PD-` codes) with other orders.
 *   [**sw.js**](./sw.js): Service worker that keeps the MediaPipe runtime and face model (~6 MB) in the browser cache after the first visit; registered by `tryon.html`.
+*   [**vendor/mediapipe/0.10.21/**](./vendor/mediapipe/0.10.21/): Self-hosted MediaPipe Tasks Vision (Apache-2.0: bundle, wasm, face and hair models) with `SHA256SUMS`, checked by `scripts/check.sh`. The try-on loads nothing from a CDN; any static host must publish this folder next to `tryon.html`.
 *   [**privacy.html**](./privacy.html): Privacy statement (draft, not legally reviewed).
 *   [**sample_pitch.html**](./sample_pitch.html), [**ar_demo.html**](./ar_demo.html): Old prospect template and 3D viewer demo; not linked from the site.
 *   [**judge.md**](./judge.md): Launch-readiness verdict and progress log. `docs/`: claims to verify, pricing questions, device QA matrix.

@@ -20,10 +20,16 @@ stray() {
 }
 
 claims() {
-  local rc=0 ex=(--exclude-dir=.git --exclude-dir=node_modules --exclude-dir=scripts --exclude=AGENTS.md --exclude=CODING_STANDARDS.md --exclude=judge.md --exclude=claims_to_verify.md --exclude=pricing_open_questions.md)
+  local rc=0 ex=(--exclude-dir=.git --exclude-dir=node_modules --exclude-dir=vendor --exclude-dir=scripts --exclude=AGENTS.md --exclude=CODING_STANDARDS.md --exclude=judge.md --exclude=claims_to_verify.md --exclude=pricing_open_questions.md)
   grep -rniE "Aarong|BRAC|Tanishq|Kalyan|Mejuri|Kendra Scott|Diamond World|Jarwa" "${ex[@]}" . && rc=1
   grep -rniE "Meta Spark|8th Wall" "${ex[@]}" . | grep -viE "discontinued|not available|shut down|wind-down" && rc=1
   return $rc
+}
+
+# Self-hosted MediaPipe must match the recorded hashes, and the try-on must not load it from a CDN again.
+vendor() {
+  (cd vendor/mediapipe/0.10.21 && shasum -a 256 -c --quiet SHA256SUMS) || return 1
+  ! grep -nE 'cdn\.jsdelivr\.net|storage\.googleapis\.com' tryon.html sw.js placement.js
 }
 
 # Camera frames must stay on-device: flag canvas export in tryon.html near network calls.
@@ -38,6 +44,7 @@ privacy() {
 
 run "inline-scripts" inline_scripts
 run "lint-innerhtml" scripts/lint-innerhtml.sh
+run "vendor-sha256" vendor
 run "sw-test" node scripts/test-sw.mjs
 run "placement-test" node scripts/test-placement.mjs
 run "stray-files" stray

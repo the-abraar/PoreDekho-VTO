@@ -2,7 +2,7 @@
 # Fail on interpolation/concatenation into innerHTML & co. Allow with trailing `// safe-html: <reason>`.
 set -uo pipefail
 cd "$(dirname "$0")/.."
-files=$(find . \( -path ./.git -o -path ./node_modules -o -path ./dist -o -path ./build \) -prune -o \
+files=$(find . \( -path ./.git -o -path ./node_modules -o -path ./dist -o -path ./build -o -path ./vendor \) -prune -o \
   \( -name '*.html' -o -name '*.js' -o -name '*.jsx' -o -name '*.tsx' -o -name '*.mjs' \) -print | grep -v '\.min\.')
 [ -z "$files" ] && exit 0
 sink='(innerHTML|outerHTML)[[:space:]]*\+?=|insertAdjacentHTML[[:space:]]*\(|document\.write(ln)?[[:space:]]*\(|dangerouslySetInnerHTML'
