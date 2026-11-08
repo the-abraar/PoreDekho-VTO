@@ -234,3 +234,12 @@ Audited 2026-10-12. Files read in full: README.md, pitch_deck.md, pitch_script.m
 - **1280 px:** the desktop nav shows; the button and mobile menu are hidden. Features and Pricing land with their headings below the header. No horizontal scroll.
 - **Errors:** none on the page; the only console error is a favicon 404 from the test server.
 - **Not checked:** real phones, screen readers, and `tryon.html` (needs real faces). The test script lives in the session scratchpad, not the repo (the repo has no package.json by design).
+
+### Update 13 (2026-11-08, agent round): self-hosted MediaPipe
+
+- **Done:** `tryon.html` no longer loads MediaPipe from jsDelivr or its models from storage.googleapis.com. The npm `@mediapipe/tasks-vision@0.10.21` tarball (checked against the registry's sha512 integrity) and the two Google models now live in `vendor/mediapipe/0.10.21/` with `SHA256SUMS` and the Apache-2.0 licence. Both wasm builds (SIMD and no-SIMD) are kept, so phones without wasm SIMD still work. About 23 MB in git.
+- `sw.js` now caches only `vendor/mediapipe/0.10.21/` on its own origin (cache `pd-mediapipe-0.10.21-v2`, so the old CDN entries are dropped on activate). `scripts/test-sw.mjs` checks that the vendor URLs are cached and that the old CDN URLs, other origins and other vendor versions are not intercepted.
+- New check.sh step `vendor-sha256`: `shasum -a 256 -c` on the vendor folder, and no `cdn.jsdelivr.net` / `storage.googleapis.com` in `tryon.html`, `sw.js`, `placement.js`. Mutation check: one appended byte in a model and a CDN import put back in `tryon.html` both fail it. `lint-innerhtml` and `claims-guard` skip `vendor/` (third-party code, covered by the sums).
+- **Proof:** headless Chrome (puppeteer-core, fake camera, 127.0.0.1): face model and hair model both load; 9 requests, 0 to any other host; the worker cached the wasm and both models. `scripts/check.sh` passes all 8 steps.
+- **Privacy text** updated: the try-on page now downloads its code and models from this site only.
+- **Not checked:** real phones, the no-SIMD wasm path (headless Chrome has SIMD), and first-load time from a real host. No GitHub Pages deploy workflow exists yet; when one is added, its copy list must include `vendor/`.
