@@ -1,0 +1,38 @@
+name: pages
+# Publishes only the curated try-on. Pitch files, docs, scripts and any face photos never reach _site/.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: true
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: scripts/check.sh
+      - name: Build _site from an allowlist
+        run: |
+          mkdir _site
+          cp index.html tryon.html placement.js sw.js privacy.html report.html admin.html _site/
+          cp -R vendor _site/
+          for d in skus demo; do [ ! -d "$d" ] || cp -R "$d" _site/; done
+          # fail closed if anything outside the allowlist slipped in
+          if find _site -name '*.md' -o -name 'sample_pitch.html' -o -name 'ar_demo.html' -o -name '*.y4m' -o -name '*.jpg' -o -name '*.jpeg' | grep .; then exit 1; fi
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deploy
+        uses: actions/deploy-pages@v4
