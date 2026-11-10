@@ -1,3 +1,5 @@
+Time-boxed until 21 Nov 2026 (then frozen or killed): only work that serves the seller test (hosting, CDN pinning, order-number lock, outreach kit, LEARNINGS.md, demo). Call source: `~/Everything/dev/products/decision.md` (labs under the November bet).
+
 # AGENTS.md
 
 Static HTML + Markdown pitch/demo repo. No package.json, no Python. Needs only bash and node.
